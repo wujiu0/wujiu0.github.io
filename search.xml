@@ -311,9 +311,9 @@
     
     
     <entry>
-      <title>maven中pluginManagement的坑</title>
-      <link href="/2022/03/18/maven%E4%B8%ADpluginManagement%E7%9A%84%E5%9D%91/"/>
-      <url>/2022/03/18/maven%E4%B8%ADpluginManagement%E7%9A%84%E5%9D%91/</url>
+      <title>maven中pluginManagement</title>
+      <link href="/2022/03/18/maven%E4%B8%ADpluginManagement/"/>
+      <url>/2022/03/18/maven%E4%B8%ADpluginManagement/</url>
       
         <content type="html"><![CDATA[<p>pluginManagement是表示插件声明，Maven不会加载其中的插件</p><p>一般是用来在父POM中定义，提供给子POM使用，子模块中直接应用groupId和artifactId，而不用指定版本，同时也方便统一管理；</p>]]></content>
       
