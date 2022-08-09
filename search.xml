@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>lombok继承父类时的问题</title>
+      <link href="/2022/08/09/lombok%E7%BB%A7%E6%89%BF%E7%88%B6%E7%B1%BB%E6%97%B6%E7%9A%84%E9%97%AE%E9%A2%98/"/>
+      <url>/2022/08/09/lombok%E7%BB%A7%E6%89%BF%E7%88%B6%E7%B1%BB%E6%97%B6%E7%9A%84%E9%97%AE%E9%A2%98/</url>
+      
+        <content type="html"><![CDATA[<h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>使用Lombok时，在继承关系中，子类使用@Data注解，产生的ToString()方法不包含父类的属性。</p><h3 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h3><p><code>lombok.Data</code>是默认使用<code>lombok.EqualsAndHashCode</code> 和 <code>lombok.ToString</code>。而这两种注解有一个参数<code>callSuper</code> 默认是false，即默认不适用父类。</p><h3 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h3><p>添加<code>@ToString(callSuper = true)</code></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>springboot项目热部署</title>
       <link href="/2022/08/08/springboot%E9%A1%B9%E7%9B%AE%E7%83%AD%E9%83%A8%E7%BD%B2/"/>
       <url>/2022/08/08/springboot%E9%A1%B9%E7%9B%AE%E7%83%AD%E9%83%A8%E7%BD%B2/</url>
