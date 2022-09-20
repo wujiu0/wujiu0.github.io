@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="try-catch-finally语句中有return的各类情况, java">
+    <meta name="keywords" content="fastjson关于属性is开头的序列化问题, java">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>try-catch-finally语句中有return的各类情况 | 伍玖</title>
+    <title>fastjson关于属性is开头的序列化问题 | 伍玖</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -260,12 +260,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/47.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/51.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">try-catch-finally语句中有return的各类情况</h1>
+                    <h1 class="description center-align post-title">fastjson关于属性is开头的序列化问题</h1>
                 </div>
             </div>
         </div>
@@ -393,7 +393,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-09-17
+                    2022-09-20
                 </div>
                 
 
@@ -417,19 +417,43 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p> try语句在返回前，将其他所有的操作执行完，保留好要返回的值，而后转入执行finally中的语句，而后分为以下三种情况：</p>
-<pre><code>情况一：如果finally中有return语句，则会将try中的return语句”覆盖“掉，直接执行finally中的return语句，得到返回值，这样便无法得到try之前保留好的返回值。
+                <h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Demo</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">private</span> <span class="token class-name">Boolean</span> isHot<span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token class-name">Boolean</span> isQuick<span class="token punctuation">;</span>
 
-情况二：如果finally中没有return语句，也没有改变要返回值，则执行完finally中的语句后，会接着执行try中的return语句，返回之前保留的值。
+    <span class="token keyword">public</span> <span class="token class-name">Boolean</span> <span class="token function">getHot</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">return</span> isHot<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
 
-情况三：如果finally中没有return语句，但是改变了要返回的值，这里有点类似与引用传递和值传递的区别，分以下两种情况，：
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setHot</span><span class="token punctuation">(</span><span class="token class-name">Boolean</span> hot<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        isHot <span class="token operator">=</span> hot<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
 
-    1）如果return的数据是基本数据类型或文本字符串，则在finally中对该基本数据的改变不起作用，try中的return语句依然会返回进入finally块之前保留的值。
+    <span class="token keyword">public</span> <span class="token class-name">Boolean</span> <span class="token function">getQuick</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">return</span> isQuick<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
 
-    2）如果return的数据是引用数据类型，而在finally中对该引用数据类型的属性值的改变起作用，try中的return语句返回的就是在finally中改变后的该属性的值。
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setQuick</span><span class="token punctuation">(</span><span class="token class-name">Boolean</span> quick<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        isQuick <span class="token operator">=</span> quick<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
- 情况四：当finally语句块中有return 语句时，并且在finally语句块外面还有return语句时，这个时候编译不通过，编译会出现错误（对于返回值为基本数据类型的情况。）。当try语句块儿中出现return语句时，执行完finally语句的时候便会执行try中的return语句，这个时候便不会在执行finally语句块儿后面的语句了（返回值是基本数据类型的时候是这样）当是引用类型的时候又会出现新的情况。（引用类型必须在catch语句中写return语句，）
-</code></pre>
+<p>如上面一个bean，get&#x2F;set方法均为idea自动生成的，Fastjson序列化后的结果为</p>
+<pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token punctuation">&#123;</span>
+    <span class="token property">"hot"</span><span class="token operator">:</span><span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token property">"quick"</span><span class="token operator">:</span><span class="token boolean">true</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>我们其实期望的是</p>
+<pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token punctuation">&#123;</span>
+    <span class="token property">"isHot"</span><span class="token operator">:</span><span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token property">"isQuick"</span><span class="token operator">:</span><span class="token boolean">true</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><h3 id="方案一"><a href="#方案一" class="headerlink" title="方案一"></a>方案一</h3><p>修改get方法为<code>getIsXXX</code><br><code>public Boolean getHot()</code>-&gt;<code>public Boolean getIsHot()</code></p>
+<h3 id="方案二"><a href="#方案二" class="headerlink" title="方案二"></a>方案二</h3><p>不要以is开头，加入公司的代码规范，《Java开发手册（泰山版）》中也提到了</p>
+<p>【强制】POJO 类中的任何布尔类型的变量，都不要加 is 前缀，否则部分框架解析会引起序列 化错误。</p>
 
                 
             </div>
@@ -456,7 +480,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://wujiu0.github.io/2022/09/17/try-catch-finally%E8%AF%AD%E5%8F%A5%E4%B8%AD%E6%9C%89return%E7%9A%84%E5%90%84%E7%B1%BB%E6%83%85%E5%86%B5/">http://wujiu0.github.io/2022/09/17/try-catch-finally%E8%AF%AD%E5%8F%A5%E4%B8%AD%E6%9C%89return%E7%9A%84%E5%90%84%E7%B1%BB%E6%83%85%E5%86%B5/</a>
+                    <a href="http://wujiu0.github.io/2022/09/20/fastjson%E5%85%B3%E4%BA%8E%E5%B1%9E%E6%80%A7is%E5%BC%80%E5%A4%B4%E7%9A%84%E5%BA%8F%E5%88%97%E5%8C%96%E9%97%AE%E9%A2%98/">http://wujiu0.github.io/2022/09/20/fastjson%E5%85%B3%E4%BA%8E%E5%B1%9E%E6%80%A7is%E5%BC%80%E5%A4%B4%E7%9A%84%E5%BA%8F%E5%88%97%E5%8C%96%E9%97%AE%E9%A2%98/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -663,9 +687,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2022/09/20/fastjson%E5%85%B3%E4%BA%8E%E5%B1%9E%E6%80%A7is%E5%BC%80%E5%A4%B4%E7%9A%84%E5%BA%8F%E5%88%97%E5%8C%96%E9%97%AE%E9%A2%98/">
                     <div class="card-image">
@@ -683,9 +708,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-09-20
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-09-20
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -694,6 +719,7 @@
                         </span>
                     </div>
                 </div>
+
                 
             </div>
         </div>
@@ -704,13 +730,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/09/09/PowerShell-%E5%8F%8A-wsl%E4%B8%AD%E4%BD%BF%E7%94%A8%E4%B8%BB%E6%9C%BA%E4%BB%A3%E7%90%86%E7%9A%84%E6%96%B9%E5%BC%8F/">
+                <a href="/2022/09/17/try-catch-finally%E8%AF%AD%E5%8F%A5%E4%B8%AD%E6%9C%89return%E7%9A%84%E5%90%84%E7%B1%BB%E6%83%85%E5%86%B5/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/88.jpg" class="responsive-img" alt="PowerShell 及 wsl中使用主机代理的方式">
+                        <img src="/medias/featureimages/47.jpg" class="responsive-img" alt="try-catch-finally语句中有return的各类情况">
                         
-                        <span class="card-title">PowerShell 及 wsl中使用主机代理的方式</span>
+                        <span class="card-title">try-catch-finally语句中有return的各类情况</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -721,7 +747,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-09-09
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-09-17
                             </span>
                         <span class="publish-author">
                             
