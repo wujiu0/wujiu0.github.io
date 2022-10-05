@@ -4,6 +4,58 @@
   
     
     <entry>
+      <title>File类的getPath()方法的一个问题</title>
+      <link href="/2022/10/06/File%E7%B1%BB%E7%9A%84getPath/"/>
+      <url>/2022/10/06/File%E7%B1%BB%E7%9A%84getPath/</url>
+      
+        <content type="html"><![CDATA[<p>若创建的File对象是一个目录，那么它的getPath()方法的返回值会默认去掉末尾的&#x2F;，这点在路径拼接时可能会导致出错。</p><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">File</span> <span class="token keyword">implements</span> <span class="token class-name">Serializable</span><span class="token punctuation">,</span> <span class="token class-name">Comparable</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">File</span><span class="token punctuation">></span></span> <span class="token punctuation">&#123;</span>    <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>        <span class="token keyword">return</span> <span class="token function">getPath</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token punctuation">&#125;</span>        <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">getPath</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>        <span class="token keyword">return</span> path<span class="token punctuation">;</span>    <span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>若是要创建新的File文件对象的话，可以使用<code>public File(File parent, String child)</code>这个构造方法</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>springboot属性加载优先顺序</title>
+      <link href="/2022/10/02/springboot%E5%B1%9E%E6%80%A7%E5%8A%A0%E8%BD%BD%E4%BC%98%E5%85%88%E9%A1%BA%E5%BA%8F/"/>
+      <url>/2022/10/02/springboot%E5%B1%9E%E6%80%A7%E5%8A%A0%E8%BD%BD%E4%BC%98%E5%85%88%E9%A1%BA%E5%BA%8F/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>来源：<a href="https://docs.spring.io/spring-boot/docs/current/reference/html/features.html#features.external-config">spring.io</a> </p></blockquote><p>由上至下优先级依次提升（下方覆盖上方）</p><ol><li>Default properties (specified by setting <code>SpringApplication.setDefaultProperties</code>).</li><li><code>@PropertySource</code>annotations on your <code>@Configuration</code> classes. Please note that such property sources are not added to the <code>Environment</code> until the application context is being refreshed. This is too late to configure certain properties such as <code>logging.*</code> and <code>spring.main.*</code> which are read before refresh begins.</li><li>Config data (such as <code>application.properties</code> files).</li><li>A <code>RandomValuePropertySource</code> that has properties only in <code>random.*</code>.</li><li>OS environment variables.</li><li>Java System properties (<code>System.getProperties()</code>).</li><li>JNDI attributes from <code>java:comp/env</code>.</li><li><code>ServletContext</code> init parameters.</li><li><code>ServletConfig</code> init parameters.</li><li>Properties from <code>SPRING_APPLICATION_JSON</code> (inline JSON embedded in an environment variable or system property).</li><li>Command line arguments.</li><li><code>properties</code> attribute on your tests. Available on <code>@SpringBootTest</code>and the test annotations for testing a particular slice of your application.</li><li><code>@TestPropertySource</code> annotations on your tests.</li><li>Devtools global settings properties in the <code>$HOME/.config/spring-boot</code> directory when devtools is active.</li></ol><p>Config data files are considered in the following order:</p><ol><li>Application properties packaged inside your jar (<code>application.properties</code> and YAML variants).</li><li>Profile-specific application properties packaged inside your jar (<code>application-&#123;profile&#125;.properties</code> and YAML variants).</li><li>Application properties outside of your packaged jar (<code>application.properties</code> and YAML variants).</li><li>Profile-specific application properties outside of your packaged jar (<code>application-&#123;profile&#125;.properties</code> and YAML variants).</li></ol>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>windows端口相关命令</title>
+      <link href="/2022/10/02/windows%E7%AB%AF%E5%8F%A3%E7%9B%B8%E5%85%B3%E5%91%BD%E4%BB%A4/"/>
+      <url>/2022/10/02/windows%E7%AB%AF%E5%8F%A3%E7%9B%B8%E5%85%B3%E5%91%BD%E4%BB%A4/</url>
+      
+        <content type="html"><![CDATA[<ul><li><p>查询端口</p><p><code>netstat -ano</code></p></li><li><p>查询指定端口</p><p><code>netstat -ano |findstr ”端口号&quot;</code></p></li><li><p>根据进程PID查询进程名称</p></li></ul><p>  <code>tasklist |findstr &quot;进程PID号&quot;</code></p><ul><li><p>根据PID杀死任务</p><p><code>taskkill /F/PID &quot;进程PID号&quot;</code></p></li><li><p>根据进程名称杀死任务<br><code>taskkill -f -t -im &quot;进程名称&quot;</code></p></li></ul>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>StringBuilder和StringBuffer</title>
+      <link href="/2022/09/25/StringBuilder%E5%92%8CStringBuffer/"/>
+      <url>/2022/09/25/StringBuilder%E5%92%8CStringBuffer/</url>
+      
+        <content type="html"><![CDATA[<ul><li>当对字符串进行修改的时候，需要使用 StringBuffer 和 StringBuilder 类。</li><li>和 String 类不同的是，StringBuffer 和 StringBuilder类的对象能够被多次的修改，并且不产生新的未使用对象。</li><li>StringBuilder 类在 Java 5 中被提出，它和 StringBuffer 之间的最大不同在于 StringBuilder 的方法不是线程安全的（不能同步访问）。</li><li>由于 StringBuilder 相较于 StringBuffer 有速度优势，多数情况下建议使用 StringBuilder类。然而在应用程序要求线程安全的情况下，则必须使用 StringBuffer 类。</li></ul>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>maven</title>
       <link href="/2022/09/20/maven/"/>
       <url>/2022/09/20/maven/</url>
@@ -177,6 +229,32 @@
       <url>/2022/05/04/%E5%9C%A8WSL2%E4%B8%8A%E5%AE%89%E8%A3%85mysql/</url>
       
         <content type="html"><![CDATA[<h2 id="系统版本"><a href="#系统版本" class="headerlink" title="系统版本"></a>系统版本</h2><p>Ubuntu 20.04.4 LTS</p><h2 id="mysql版本"><a href="#mysql版本" class="headerlink" title="mysql版本"></a>mysql版本</h2><p>8.0.29-0ubuntu0.20.04.2 (Ubuntu)</p><h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><h3 id="更新-APT-存储库中的包信息："><a href="#更新-APT-存储库中的包信息：" class="headerlink" title="更新 APT 存储库中的包信息："></a>更新 APT 存储库中的包信息：</h3><p>执行语句  <code>sudo apt update</code></p><h3 id="使用-APT-安装-MySQL："><a href="#使用-APT-安装-MySQL：" class="headerlink" title="使用 APT 安装 MySQL："></a>使用 APT 安装 MySQL：</h3><p>执行语句  <code>sudo apt install mysql-server</code></p><h3 id="启动MySQL服务："><a href="#启动MySQL服务：" class="headerlink" title="启动MySQL服务："></a>启动MySQL服务：</h3><p>执行语句  <code>sudo service mysql start</code></p><p>注意，此处有大坑：</p><ol><li><p>这里不能使用一般linux下的命令<code>sudo systemctl start</code>，会导致以下错误：</p><p><img src="/2022/05/04/%E5%9C%A8WSL2%E4%B8%8A%E5%AE%89%E8%A3%85mysql/1.png"></p></li></ol><p>具体原因解释可以查看 <a href="https://linuxhandbook.com/system-has-not-been-booted-with-systemd/">此处</a></p><ol start="2"><li><p>必须使用<code>sudo</code>，否则服务无法启动</p><p><img src="/2022/05/04/%E5%9C%A8WSL2%E4%B8%8A%E5%AE%89%E8%A3%85mysql/2.png"></p></li></ol><h3 id="登录MySQL"><a href="#登录MySQL" class="headerlink" title="登录MySQL"></a>登录MySQL</h3><p>执行语句  <code>mysql -u root -p</code></p><p>这就是问题最大的地方了，我们在安装的时候，并没有提示让我们设置root用户的密码，按理说这里密码填空直接就可以进入，但是却会出现<code>ERROR 1698 (28000): Access denied for user ‘root’@‘localhost’</code></p><p>下面我们说说如何解决这个问题：</p><ol><li><p>执行命令   <code>sudo cat /etc/mysql/debian.cnf</code>，可以看到如下信息</p><p><img src="/2022/05/04/%E5%9C%A8WSL2%E4%B8%8A%E5%AE%89%E8%A3%85mysql/3.png"></p><p>其中debian-sys-maint账户是安装mysql时系统自动生成的mysql用户，对应的密码就是该用户的密码。</p></li><li><p>登录账户debian-sys-maint：<code>mysql -u debian-sys-maint -p</code> </p><p><img src="/2022/05/04/%E5%9C%A8WSL2%E4%B8%8A%E5%AE%89%E8%A3%85mysql/4.png"></p><p>成功登录</p></li><li><p>修改root密码：</p><p><code>alter user &#39;root&#39;@&#39;localhost&#39; identified by &#39;YOUR_PASSWORD&#39;;</code></p><p><code>flush privileges;</code></p></li><li><p>接下来就可以成功登录了</p><p><img src="/2022/05/04/%E5%9C%A8WSL2%E4%B8%8A%E5%AE%89%E8%A3%85mysql/5.png"></p></li><li><p>若无法连接可以尝试加上<code>sudo</code></p><p><img src="/2022/05/04/%E5%9C%A8WSL2%E4%B8%8A%E5%AE%89%E8%A3%85mysql/6.png"></p></li></ol><h2 id="在windows本地连接wsl的数据库"><a href="#在windows本地连接wsl的数据库" class="headerlink" title="在windows本地连接wsl的数据库"></a>在windows本地连接wsl的数据库</h2><p>wsl和windows是共享端口的，也就是说可以主机直接通过localhost:3306来访问wsl的mysql</p><p>直接尝试连接 <code>mysql -uroot -p</code> ，问题又来了</p><p><img src="/2022/05/04/%E5%9C%A8WSL2%E4%B8%8A%E5%AE%89%E8%A3%85mysql/7.png"></p><p>解决办法：</p><p>再次使用debian-sys-maint登录，执行如下语句</p><p><code>alter user &#39;root&#39;@&#39;localhost&#39; identified with mysql_native_password by &#39;root&#39;;</code></p><p><code>flush privileges;</code></p><p>再次尝试</p><p><img src="/2022/05/04/%E5%9C%A8WSL2%E4%B8%8A%E5%AE%89%E8%A3%85mysql/8.png"></p><p>成功登录，同时我们也发现，在wsl中，可以在不使用<code>sudo</code>的情况下直接<code>mysql -uroot -p</code>登录</p><p><img src="/2022/05/04/%E5%9C%A8WSL2%E4%B8%8A%E5%AE%89%E8%A3%85mysql/9.png"></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>spring异常处理</title>
+      <link href="/2022/05/01/spring%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/"/>
+      <url>/2022/05/01/spring%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/</url>
+      
+        <content type="html"><![CDATA[<ol><li>使用<code>@RestControllerAdvice</code>定义SpringMVC异常处理器来处理异常</li><li>异常处理器必须被扫描加载</li></ol><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token annotation punctuation">@RestControllerAdvice</span><span class="token annotation punctuation">@Slf4j</span><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">GlobalExceptionHandler</span> <span class="token punctuation">&#123;</span>    <span class="token annotation punctuation">@ExceptionHandler</span><span class="token punctuation">(</span><span class="token class-name">CustomException</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span>    <span class="token keyword">public</span> <span class="token class-name">R</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">></span></span> <span class="token class-name">ExceptionHandler</span><span class="token punctuation">(</span><span class="token class-name">CustomException</span> ex<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>        <span class="token keyword">return</span> <span class="token class-name">R</span><span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span>ex<span class="token punctuation">.</span><span class="token function">getMessage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token punctuation">&#125;</span>    <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Springboot读取yaml数据</title>
+      <link href="/2022/05/01/Springboot%E8%AF%BB%E5%8F%96yaml%E6%95%B0%E6%8D%AE/"/>
+      <url>/2022/05/01/Springboot%E8%AF%BB%E5%8F%96yaml%E6%95%B0%E6%8D%AE/</url>
+      
+        <content type="html"><![CDATA[<h3 id="读取单一数据"><a href="#读取单一数据" class="headerlink" title="读取单一数据"></a>读取单一数据</h3><ol><li>使用<code>@value</code>配合SpEL读取单个数据</li><li>如果数据存在多层级，依次书写层级名称即可</li></ol><pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">users</span><span class="token punctuation">:</span>  <span class="token key atrule">name</span><span class="token punctuation">:</span> zhangsan  <span class="token key atrule">age</span><span class="token punctuation">:</span> <span class="token number">18</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token annotation punctuation">@Value</span><span class="token punctuation">(</span><span class="token string">"$&#123;user.name&#125;"</span><span class="token punctuation">)</span><span class="token keyword">private</span> <span class="token class-name">String</span> name<span class="token punctuation">;</span><span class="token annotation punctuation">@Value</span><span class="token punctuation">(</span><span class="token string">"$&#123;user.age&#125;"</span><span class="token punctuation">)</span><span class="token keyword">private</span> <span class="token keyword">int</span> age<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre><h3 id="读取全部属性数据"><a href="#读取全部属性数据" class="headerlink" title="读取全部属性数据"></a>读取全部属性数据</h3><ol><li>使用<code>Environment</code>对象封装全部配置信息</li><li>使用<code>@Autowired</code>自动装配数据到<code>Environment</code>对象中</li><li>调用<code>getProperty()</code>获取数据</li></ol><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token annotation punctuation">@AutoWired</span> <span class="token keyword">private</span> <span class="token class-name">Enviroment</span> env<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><h3 id="自定义对象封装指定数据"><a href="#自定义对象封装指定数据" class="headerlink" title="自定义对象封装指定数据"></a>自定义对象封装指定数据</h3><ol><li><p>准备数据 <code>application.yaml</code></p><pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">datasource</span><span class="token punctuation">:</span>  <span class="token key atrule">driver</span><span class="token punctuation">:</span> com.mysql.jdbc.Driver  <span class="token key atrule">url</span><span class="token punctuation">:</span> jdbc<span class="token punctuation">:</span>mysql<span class="token punctuation">:</span>//localhost/springboot_db  <span class="token key atrule">username</span><span class="token punctuation">:</span> root  <span class="token key atrule">password</span><span class="token punctuation">:</span> root<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></li><li><p>定义Java Bean</p><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">// 定义数据类型封装yamnl文件中的数据</span><span class="token comment">// 定义为Spring管控的Bean</span><span class="token annotation punctuation">@Component</span><span class="token comment">// 指定加载的数据</span><span class="token annotation punctuation">@ConfigurationProperties</span><span class="token punctuation">(</span>prefix <span class="token operator">=</span> <span class="token string">"datasource"</span><span class="token punctuation">)</span><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MyDataSource</span><span class="token punctuation">&#123;</span>    <span class="token keyword">private</span> <span class="token class-name">String</span> driver<span class="token punctuation">;</span>    <span class="token keyword">private</span> <span class="token class-name">String</span> url<span class="token punctuation">;</span>    <span class="token keyword">private</span> <span class="token class-name">String</span> username<span class="token punctuation">;</span>    <span class="token keyword">private</span> <span class="token class-name">String</span> password<span class="token punctuation">;</span>        <span class="token comment">// Getter/Setter...</span><span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li></ol>]]></content>
       
       
       
