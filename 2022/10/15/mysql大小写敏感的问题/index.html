@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="IO流, java">
+    <meta name="keywords" content="mysql大小写敏感的问题, java">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>IO流 | 伍玖</title>
+    <title>mysql大小写敏感的问题 | 伍玖</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -260,12 +260,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/76.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/26.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">IO流</h1>
+                    <h1 class="description center-align post-title">mysql大小写敏感的问题</h1>
                 </div>
             </div>
         </div>
@@ -393,7 +393,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-10-10
+                    2022-10-15
                 </div>
                 
 
@@ -417,40 +417,51 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="字节输出流"><a href="#字节输出流" class="headerlink" title="字节输出流"></a>字节输出流</h1><p><code>java.io.OutputStream</code> </p>
-<p>  此抽象类是表示输出字节流的所有类的超类，定义了一些子类共有的成员方法：</p>
-<p>  <code>public void close()</code> : 关闭此输出流并释放与此流相关联的任何系统资源</p>
-<p>  <code>public void flush()</code> : 刷新此输出流并强制任何缓冲的输出字节被写出</p>
-<p>  <code>public void write(byte[] b)</code> : 将b.length字节从指定的字节数组写入此输出流</p>
-<p>  <code>public void write(byte[] b, int off, int len)</code> : 从指定的字节数组写入 len字节，从偏移量 off开始输出到此输出流</p>
-<p>  <code>public abstract void write(int b)</code> : 将指定的字节输出流</p>
-<h2 id="文件输出流"><a href="#文件输出流" class="headerlink" title="文件输出流"></a>文件输出流</h2><p><code>java.io.FileOutputStream extends OutputStream</code></p>
-<p>  用于将数据写出到文件</p>
-<h3 id="构造方法："><a href="#构造方法：" class="headerlink" title="构造方法："></a>构造方法：</h3><ul>
-<li><p><code>FileOutputStream(String name)</code>创建一个向具有指定名称的文件中写入数据的输出文件流。</p>
-</li>
-<li><p><code>FileOutputStream(File file)</code> 创建一个向指定 File 对象表示的文件中写入数据的文件输出流。</p>
-<p>参数:写入数据的目的</p>
-<ul>
-<li><p><code>String name</code> : 目的地是一个文件的路径</p>
-</li>
-<li><p><code>File file</code> : 目的地是一个文件</p>
-</li>
-</ul>
-<p>作用:</p>
+                <h1 id="一、MySQL是大小写敏感的吗"><a href="#一、MySQL是大小写敏感的吗" class="headerlink" title="一、MySQL是大小写敏感的吗"></a>一、MySQL是大小写敏感的吗</h1><p>MySQL 在 Windows 下不区分大小写，但在 Linux 下默认是区分大小写。如果你稍加不注意就会出现在本机开发的程序运行一切正常，发布到服务器行就出现表名找不到的问题，一头雾水。</p>
+<p>由于这个原因，在阿里巴巴规约中这样要求：</p>
+<blockquote>
+<p>【强制】表名、字段名必须使用小写字母或数字 ， 禁止出现数字开头，禁止两个下划线中间只 出现数字。数据库字段名的修改代价很大，因为无法进行预发布，所以字段名称需要慎重考虑。</p>
+</blockquote>
+<p>因此，数据库名、 表名、字段名，都不允许出现任何大写字母，避免引起不必要的麻烦。</p>
+<h1 id="二、MySQL的大小写敏感是由参数控制的"><a href="#二、MySQL的大小写敏感是由参数控制的" class="headerlink" title="二、MySQL的大小写敏感是由参数控制的"></a>二、MySQL的大小写敏感是由参数控制的</h1><p>mysql大小写敏感配置相关的两个参数，lower_case_file_system 和 lower_case_table_names。</p>
+<p>查看当前mysql的大小写敏感配置，可以使用如下语句</p>
+<pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">show global variables like &#39;%lower_case%&#39;;
+
++------------------------+-------+
+| Variable_name          | Value |
++------------------------+-------+
+| lower_case_file_system | ON    |
+| lower_case_table_names | 0     |
++------------------------+-------+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>参数说明如下：</p>
 <ol>
-<li>创建一个<code>FileOutputStream</code>对象</li>
-<li>会根据构造方法中传递的文件&#x2F;文件路径,创建一个空的文件</li>
-<li>会把<code>FileOutputStream</code>对象指向创建好的文件</li>
-</ol>
-</li>
+<li>lower_case_file_system，代表当前系统文件是否大小写敏感，只读参数，无法修改。ON  大小写不敏感，OFF 大小写敏感。<ul>
+<li>此变量描述数据所在的操作系统的文件目录是否区分大小写。 OFF表示文件名区分大小写，ON表示它们不区分大小写。此变量是只读的，因为它反映了文件系统的属性，设置它对文件系统没有影响。</li>
 </ul>
-<h3 id="写入数据的原理-内存–-gt-硬盘"><a href="#写入数据的原理-内存–-gt-硬盘" class="headerlink" title="写入数据的原理(内存–&gt;硬盘)"></a>写入数据的原理(内存–&gt;硬盘)</h3><p>  java程序–&gt;JVM(java虚拟机)–&gt;OS(操作系统)–&gt;OS调用写数据的方法–&gt;把数据写入到文件中</p>
-<h3 id="字节输出流的使用步骤-重点"><a href="#字节输出流的使用步骤-重点" class="headerlink" title="字节输出流的使用步骤(重点):"></a>字节输出流的使用步骤(重点):</h3><ol>
-<li>创建一个<code>FileOutputStream</code>对象,构造方法中传递写入数据的目的地</li>
-<li>调用<code>FileOutputStream</code>对象中的方法write,把数据写入到文件中</li>
-<li>释放资源(流使用会占用一定的内存,使用完毕要把内存清空,提高程序的效率)</li>
+</li>
+<li>lower_case_table_names，代表表名是否大小写敏感，可以修改，参数有0、1、2三种。<ul>
+<li>0 大小写敏感。（Unix，Linux默认） 创建的库表将原样保存在磁盘上。如create database TeSt;将会创建一个TeSt的目录，create table AbCCC …将会原样生成AbCCC.frm文件，SQL语句也会原样解析。</li>
+<li>1 大小写不敏感。（Windows默认） 创建的库表时，MySQL将所有的库表名转换成小写存储在磁盘上。 SQL语句同样会将库表名转换成小写。 如需要查询以前创建的Testtable（生成Testtable.frm文件），即便执行select * from Testtable，也会被转换成select * from testtable，致使报错表不存在。</li>
+<li>2 大小写不敏感（OS X默认） 创建的库表将原样保存在磁盘上， 但SQL语句将库表名转换成小写。</li>
+</ul>
+</li>
 </ol>
+<h1 id="三、MySQL大小写敏感如何设置"><a href="#三、MySQL大小写敏感如何设置" class="headerlink" title="三、MySQL大小写敏感如何设置"></a>三、MySQL大小写敏感如何设置</h1><p>在Linux系统中修改my.cnf文件，在Windows下修改my.ini文件，新增或修改以下内容。</p>
+<pre class="line-numbers language-undefined" data-language="undefined"><code class="language-undefined">lower_case_table_names &#x3D; 0 或 lower_case_table_names &#x3D; 1<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>然后重启MySQL服务才可以生效。</p>
+<h1 id="四、开发注意事项"><a href="#四、开发注意事项" class="headerlink" title="四、开发注意事项"></a>四、开发注意事项</h1><ol>
+<li>如果要将lower_case_table_names从0（敏感）修改为1（不敏感）时，必须先对旧数据表的表名进行处理，把所有数据库的表名先改为小写，最后再设置lower_case_table_names为1，否则依然会出现无法找到表名的问题。</li>
+<li>在Windows上lower_case_table_names默认值为1（不敏感），在macOS上默认值为2（不敏感）。在Linux上不支持值2，服务器强制该值为0（敏感）。</li>
+<li>并且MySQL官方也提示说：如果在数据目录驻留在不区分大小写的文件系统（例如Windows或macOS）上，则不应将lower_case_table_names设置为0。</li>
+<li>否则将出现MySQL服务无法启动的问题。</li>
+</ol>
+<h1 id="五、总结"><a href="#五、总结" class="headerlink" title="五、总结"></a>五、总结</h1><p>由于操作系统不同导致大小写敏感的默认设置不一致，我们在开发时一定要注意，应该养成严格的意识，SQL语句一律采用小写字母，避免无意义的踩坑。</p>
+<p>MySQL是日常工作中使用最对的数据库之一，所以必须要要较为深入和全面的掌握，对于高阶人员还要掌握分布式事务、各种数据库锁、传播机制等。</p>
+<blockquote>
+<p>作者：尹洪亮<br>链接：<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/f2eabcef6577">https://www.jianshu.com/p/f2eabcef6577</a><br>来源：简书</p>
+</blockquote>
 
                 
             </div>
@@ -477,7 +488,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://wujiu0.github.io/2022/10/10/IO%E6%B5%81/">http://wujiu0.github.io/2022/10/10/IO%E6%B5%81/</a>
+                    <a href="http://wujiu0.github.io/2022/10/15/mysql%E5%A4%A7%E5%B0%8F%E5%86%99%E6%95%8F%E6%84%9F%E7%9A%84%E9%97%AE%E9%A2%98/">http://wujiu0.github.io/2022/10/15/mysql%E5%A4%A7%E5%B0%8F%E5%86%99%E6%95%8F%E6%84%9F%E7%9A%84%E9%97%AE%E9%A2%98/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -684,9 +695,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2022/10/15/mysql%E5%A4%A7%E5%B0%8F%E5%86%99%E6%95%8F%E6%84%9F%E7%9A%84%E9%97%AE%E9%A2%98/">
                     <div class="card-image">
@@ -704,9 +716,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-10-15
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-10-15
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -715,6 +727,7 @@
                         </span>
                     </div>
                 </div>
+
                 
             </div>
         </div>
@@ -725,13 +738,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/10/06/File%E7%B1%BB%E7%9A%84getPath/">
+                <a href="/2022/10/10/IO%E6%B5%81/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/96.jpg" class="responsive-img" alt="File类的getPath()方法的一个问题">
+                        <img src="/medias/featureimages/76.jpg" class="responsive-img" alt="IO流">
                         
-                        <span class="card-title">File类的getPath()方法的一个问题</span>
+                        <span class="card-title">IO流</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -742,7 +755,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-10-06
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-10-10
                             </span>
                         <span class="publish-author">
                             
