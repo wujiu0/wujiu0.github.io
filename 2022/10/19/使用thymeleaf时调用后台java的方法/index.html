@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="maven中pluginManagement, java">
+    <meta name="keywords" content="使用thymeleaf时调用后台java的方法, java">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>maven中pluginManagement | 伍玖</title>
+    <title>使用thymeleaf时调用后台java的方法 | 伍玖</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -260,12 +260,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/32.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/63.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">maven中pluginManagement</h1>
+                    <h1 class="description center-align post-title">使用thymeleaf时调用后台java的方法</h1>
                 </div>
             </div>
         </div>
@@ -393,7 +393,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-03-18
+                    2022-10-19
                 </div>
                 
 
@@ -417,8 +417,16 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>pluginManagement是表示插件声明，Maven不会加载其中的插件</p>
-<p>一般是用来在父POM中定义，提供给子POM使用，子模块中直接应用groupId和artifactId，而不用指定版本，同时也方便统一管理；</p>
+                <ol>
+<li><p>首先需要将需要调用方法的对象交由spring容器管理</p>
+<p>这样<img src="/image-20221019202537221.png" alt="image-20221019202537221"></p>
+<p>或者这样</p>
+<p><img src="/image-20221019202619953.png" alt="image-20221019202619953"></p>
+</li>
+<li><p>接下来在需要调用该方法的地方，使用<code>@xxx.method()</code>即可</p>
+<p><img src="/image-20221019202721596.png" alt="image-20221019202721596"></p>
+</li>
+</ol>
 
                 
             </div>
@@ -445,7 +453,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://wujiu0.github.io/2022/03/18/maven%E4%B8%ADpluginManagement/">http://wujiu0.github.io/2022/03/18/maven%E4%B8%ADpluginManagement/</a>
+                    <a href="http://wujiu0.github.io/2022/10/19/%E4%BD%BF%E7%94%A8thymeleaf%E6%97%B6%E8%B0%83%E7%94%A8%E5%90%8E%E5%8F%B0java%E7%9A%84%E6%96%B9%E6%B3%95/">http://wujiu0.github.io/2022/10/19/%E4%BD%BF%E7%94%A8thymeleaf%E6%97%B6%E8%B0%83%E7%94%A8%E5%90%8E%E5%8F%B0java%E7%9A%84%E6%96%B9%E6%B3%95/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -652,54 +660,18 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2022/03/18/Could-not-load-properties-nested-exception-is-java-io-FileNotFoundException/">
+                <a href="/2022/10/19/%E4%BD%BF%E7%94%A8thymeleaf%E6%97%B6%E8%B0%83%E7%94%A8%E5%90%8E%E5%8F%B0java%E7%9A%84%E6%96%B9%E6%B3%95/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/62.jpg" class="responsive-img" alt="Could not load properties; nested exception is java.io.FileNotFoundException">
+                        <img src="/medias/featureimages/63.jpg" class="responsive-img" alt="使用thymeleaf时调用后台java的方法">
                         
-                        <span class="card-title">Could not load properties; nested exception is java.io.FileNotFoundException</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-03-18
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-user fa-fw"></i>
-                            Wujiu
-                            
-                        </span>
-                    </div>
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2022/03/15/spring/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/47.jpg" class="responsive-img" alt="spring">
-                        
-                        <span class="card-title">spring</span>
+                        <span class="card-title">使用thymeleaf时调用后台java的方法</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -710,7 +682,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-15
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-10-19
                             </span>
                         <span class="publish-author">
                             
@@ -720,17 +692,43 @@
                         </span>
                     </div>
                 </div>
+
                 
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E6%A1%86%E6%9E%B6/">
-                        <span class="chip bg-color">框架</span>
-                    </a>
-                    
-                    <a href="/tags/spring/">
-                        <span class="chip bg-color">spring</span>
-                    </a>
-                    
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2022/10/15/mysql%E5%A4%A7%E5%B0%8F%E5%86%99%E6%95%8F%E6%84%9F%E7%9A%84%E9%97%AE%E9%A2%98/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="mysql大小写敏感的问题">
+                        
+                        <span class="card-title">mysql大小写敏感的问题</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-10-15
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Wujiu
+                            
+                        </span>
+                    </div>
                 </div>
                 
             </div>
