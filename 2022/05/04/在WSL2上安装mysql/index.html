@@ -417,7 +417,17 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="系统版本"><a href="#系统版本" class="headerlink" title="系统版本"></a>系统版本</h2><p>Ubuntu 20.04.4 LTS</p>
+                <h2 id="可能遇到的问题"><a href="#可能遇到的问题" class="headerlink" title="可能遇到的问题"></a>可能遇到的问题</h2><ul>
+<li><p><code>ERROR 2002 (HY000): Can&#39;t connect to local MySQL server through socket &#39;/var/run/mysqld/mysqld.sock&#39; </code></p>
+<p>解决方案：使用sudo 启动</p>
+</li>
+<li><p>发现可以不使用密码登录root用户<br>这其实是mysql的一种验证机制， <code>auth_socket</code>，这里只会验证当前操作系统登陆的用户和数据库是否一致，不会检测密码<br>只能用 UNIX 的 socket 方式登陆，这就保证了只能本地登陆，用户在使用这种登陆方式时已经通过了操作系统的安全验证 </p>
+<p>解决方案：可以通过修改mysql.user表中的plugin字段为<code>caching_sha2_password</code></p>
+</li>
+<li><p>修改密码<br> <code> alter user &#39;USERNAME&#39;@&#39;localhost&#39; identified by &#39;YOUR_PASSWORD&#39;;</code></p>
+</li>
+</ul>
+<h2 id="系统版本"><a href="#系统版本" class="headerlink" title="系统版本"></a>系统版本</h2><p>Ubuntu 20.04.4 LTS</p>
 <h2 id="mysql版本"><a href="#mysql版本" class="headerlink" title="mysql版本"></a>mysql版本</h2><p>8.0.29-0ubuntu0.20.04.2 (Ubuntu)</p>
 <h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><h3 id="更新-APT-存储库中的包信息："><a href="#更新-APT-存储库中的包信息：" class="headerlink" title="更新 APT 存储库中的包信息："></a>更新 APT 存储库中的包信息：</h3><p>执行语句  <code>sudo apt update</code></p>
 <h3 id="使用-APT-安装-MySQL："><a href="#使用-APT-安装-MySQL：" class="headerlink" title="使用 APT 安装 MySQL："></a>使用 APT 安装 MySQL：</h3><p>执行语句  <code>sudo apt install mysql-server</code></p>
@@ -467,7 +477,7 @@
 <p>再次尝试</p>
 <p><img src="/2022/05/04/%E5%9C%A8WSL2%E4%B8%8A%E5%AE%89%E8%A3%85mysql/8.png"></p>
 <p>成功登录，同时我们也发现，在wsl中，可以在不使用<code>sudo</code>的情况下直接<code>mysql -uroot -p</code>登录</p>
-<p><img src="/2022/05/04/%E5%9C%A8WSL2%E4%B8%8A%E5%AE%89%E8%A3%85mysql/9.png" alt="9"></p>
+<p>![9](..&#x2F;在WSL2上安装mysql&#x2F;9.png</p>
 
                 
             </div>
