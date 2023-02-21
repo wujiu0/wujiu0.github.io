@@ -417,7 +417,45 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <h2 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h2><p>使用const声明的变量</p>
+<p>注意：常量不允许重新赋值，声明的时候必须赋值（初始化）</p>
+<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><h3 id="基本数据类型"><a href="#基本数据类型" class="headerlink" title="基本数据类型"></a>基本数据类型</h3><ul>
+<li><p>number 数字型</p>
+<p>js中的所有数字统称为数字类型</p>
+<p>NaN  表示一个计算错误，是一个不正确的或者一个未定义的数学操作所得到的结果</p>
+<blockquote>
+<p>NaN是粘性的，任何对NaN的操作都会返回NaN</p>
+</blockquote>
+</li>
+<li><p>string 字符串型</p>
+<pre class="line-numbers language-none"><code class="language-none">使用单引号&#39;&#39;,双引号&quot;&quot;，反引号&#96;&#96;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>模板字符串，可以使拼接字符串更简便：用反引号包含数据，用${}使用变量</p>
+<pre class="line-numbers language-none"><code class="language-none">&#96;我今年$&#123;age&#125;岁了&#96;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+</li>
+<li><p>boolean 布尔型</p>
+</li>
+<li><p>undefined 未定义型</p>
+</li>
+<li><p>null 空类型</p>
+</li>
+</ul>
+<h3 id="引用类型"><a href="#引用类型" class="headerlink" title="引用类型"></a>引用类型</h3><ul>
+<li>object 对象</li>
+</ul>
+<h3 id="检测数据类型"><a href="#检测数据类型" class="headerlink" title="检测数据类型"></a>检测数据类型</h3><p>typeof 运算符可以返回被检测的数据类型。</p>
+<ol>
+<li><p>作为运算符   typeof x （常用）</p>
+</li>
+<li><p>作为函数    typeof(x) </p>
+<blockquote>
+<p>结果是相同的</p>
+</blockquote>
+</li>
+</ol>
+
                 
             </div>
             <hr/>
@@ -918,7 +956,7 @@
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">2019-2022</span>
+                <span id="year">2019-2023</span>
             
             <span id="year">2019</span>
             <a href="/about" target="_blank">Wujiu</a>
