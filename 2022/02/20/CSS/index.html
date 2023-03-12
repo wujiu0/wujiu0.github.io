@@ -517,25 +517,72 @@ color:green;
 <li><p>并集选择器:<code>选择器1,选择器2&#123;&#125;</code></p>
 </li>
 <li><p>交集选择器:<code>选择器1选择器2&#123;&#125;</code>，</p>
-<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup">选择带有box类的p标签
-p.box &#123;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">选择带有box类的p标签
+p.box</span> <span class="token punctuation">&#123;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
 <blockquote>
 <p>如果含有标签选择器，必须放在前面</p>
 </blockquote>
 </li>
 <li><p>属性选择器: <code>元素名称[属性名=&quot;属性值&quot;]&#123;&#125;</code>选择元素名称,属性名&#x3D;属性值的元素</p>
-</li>
-<li><p>b伪类选择器:<code>元素:状态&#123;&#125;</code></p>
-<p>例如:</p>
-<pre class="line-numbers language-none"><code class="language-none">a:link&#123;&#125;      未访问链接
-a:visited&#123;&#125;   已访问链接 
-a:hover&#123;&#125;     鼠标移动到链接上 
-a:active&#123;&#125;    鼠标点击时 
+<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">E[attr]</span><span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>  <span class="token selector">选择具有attr属性的E元素
+E[attr="val"]</span><span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>   选择具有attr属性且属性值等于val的E元素<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
-a:hover 必须跟在 a:link 和 a:visited后面
-a:active 必须跟在 a:hover后面<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+
+</li>
+<li><p>伪类选择器:<code>元素:状态&#123;&#125;</code></p>
+<p>例如:</p>
+<p>链接伪类选择器</p>
+<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">a:link</span><span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>      <span class="token selector">未访问链接
+a:visited</span><span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>   <span class="token selector">已访问链接 
+a:hover</span><span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>     <span class="token selector">鼠标移动到链接上 
+a:active</span><span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>    鼠标点击时 
+
+<span class="token property">a</span><span class="token punctuation">:</span>hover 必须跟在 <span class="token property">a</span><span class="token punctuation">:</span>link 和 <span class="token property">a</span><span class="token punctuation">:</span>visited后面
+<span class="token property">a</span><span class="token punctuation">:</span>active 必须跟在 <span class="token property">a</span><span class="token punctuation">:</span>hover后面<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>焦点伪类选择器</p>
+<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">input:focus</span><span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+</li>
+<li><p>结构伪类选择器</p>
+<ul>
+<li>作用 ： 根据素在 HTM L 中的结构关系查找元素</li>
+<li>优势 ， 减少对于 HTM L 中类的依赖 ， 有利于保持代码整洁</li>
+<li>场景 ． 常用于查找某父级选择器中的子元素</li>
+</ul>
+<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">E:first-child</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span> <span class="token selector">匹配父元素中第一个子元素 ， 并且是 E 元素
+E:last-child</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span> <span class="token selector">匹配父元素中最后一个子元素 ， 并且是 E 元素
+E:nth-child(n)</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span> <span class="token selector">匹配父元素中第 n 个子元素 ， 并且是 E 元素
+E:nth-last-child(n)</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>  匹配父元素中倒数第 n 个子元素 ， 并且是 E 元素
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<blockquote>
+<p>n为0，1，2，3，4….</p>
+<p>可以组成常见公式：</p>
+<ul>
+<li>偶数：2n     even</li>
+<li>奇数：2n+1,   2n-1,   odd</li>
+<li>前五个：-n+5</li>
+<li>第五个往后：n+5</li>
+</ul>
+<p>注意：<code>an</code> 必须写在 <code>b</code> 的前面，不能写成 <code>b+an</code> 的形式。否则会不生效</p>
+</blockquote>
+</li>
+<li><p>伪元素：由 CSS 模拟出的标签效果</p>
+<p>一般页面中的非主体内容可以使用伪元素</p>
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup">:before  在父元素内容的最前添加一个伪元素
+:after  在父元素内容的最后添加一个伪元素<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<blockquote>
+<ul>
+<li>必须设置 content 属性才能生效</li>
+<li>伪元素默认是行内元素</li>
+</ul>
+</blockquote>
+</li>
 </ul>
 </li>
 </ul>
@@ -550,8 +597,8 @@ a:active 必须跟在 a:hover后面<span aria-hidden="true" class="line-numbers-
 </li>
 <li><p>font-weight:是否加粗</p>
 <ul>
-<li>normal</li>
-<li>bold</li>
+<li>normal 与400等值</li>
+<li>bold 与700等值</li>
 </ul>
 </li>
 <li><p>font-size:字体大小</p>
@@ -658,9 +705,13 @@ a:active 必须跟在 a:hover后面<span aria-hidden="true" class="line-numbers-
 </li>
 <li><p>边框</p>
 <ul>
-<li>border:设置边框,复合属性<code>border:1px solid red;</code></li>
-<li>border-collapse:collapse;合并边框</li>
-<li>border-radius:25px;圆角边框</li>
+<li><p>border:设置边框,复合属性<code>border:1px solid red;</code></p>
+</li>
+<li><p>border-collapse:collapse;合并边框</p>
+</li>
+<li><p>border-radius: 数字+px&#x2F; 百分比</p>
+<p><img src="/./CSS/image-20230313014318124.png" alt="image-20230313014318124"></p>
+</li>
 </ul>
 </li>
 <li><p>尺寸</p>
@@ -674,7 +725,43 @@ a:active 必须跟在 a:hover后面<span aria-hidden="true" class="line-numbers-
 <li>list-style:none  去掉列表符号</li>
 </ul>
 </li>
+<li><p>图片</p>
+<ul>
+<li>vertical-align: middle; 调节图片垂直对齐方式</li>
+</ul>
+</li>
+<li><p>光标类型</p>
+<ul>
+<li>cursor：设置鼠标光标在元素上时显示的样式<ul>
+<li>default：默认指针，通常是箭头。</li>
+<li>pointer：悬浮于链接上时，通常为手</li>
+<li>text：指示文字可被选中</li>
+<li>move：被悬浮的物体可被移动</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>边框圆角</p>
+</li>
+<li><p>溢出部分显示效果</p>
+<p>overflow</p>
+<ul>
+<li>visible：默认值，溢出部分可见</li>
+<li>hidden：隐藏</li>
+<li>scroll：显示滚动条（无论是否溢出）</li>
+<li>auto：根据是否溢出，自动显示或隐藏滚动条</li>
+</ul>
+</li>
+<li><p>元素本身隐藏</p>
+<ul>
+<li>visibility: hidden  （占位置）</li>
+<li>display: none   （不占位置）</li>
+</ul>
+</li>
 </ol>
+<h2 id="TIPS"><a href="#TIPS" class="headerlink" title="TIPS"></a>TIPS</h2><ul>
+<li>1.5px的线没法直接画，浏览器无法识别，可以使用3px  然后缩放0.5来实现</li>
+</ul>
 <h2 id="元素显示模式"><a href="#元素显示模式" class="headerlink" title="元素显示模式"></a>元素显示模式</h2><h3 id="块级元素"><a href="#块级元素" class="headerlink" title="块级元素"></a>块级元素</h3><h4 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h4><ul>
 <li>独占一行</li>
 <li>宽度默认是父元素的宽度，高度默认由内容撑开</li>
@@ -690,6 +777,7 @@ a:active 必须跟在 a:hover后面<span aria-hidden="true" class="line-numbers-
 <h3 id="行内块元素"><a href="#行内块元素" class="headerlink" title="行内块元素"></a>行内块元素</h3><h4 id="特点-2"><a href="#特点-2" class="headerlink" title="特点"></a>特点</h4><ul>
 <li>一行可以显示多个</li>
 <li>可以设置宽高</li>
+<li>不设置宽时由内容撑开</li>
 </ul>
 <h4 id="标签"><a href="#标签" class="headerlink" title="标签"></a>标签</h4><p><code>input,textarea,button,select..</code></p>
 <h4 id="特殊情况"><a href="#特殊情况" class="headerlink" title="特殊情况"></a>特殊情况</h4><p>img标签有行内块元素特点，但是chrome调试工具显示为inline</p>
@@ -816,10 +904,245 @@ a:active 必须跟在 a:hover后面<span aria-hidden="true" class="line-numbers-
 </ul>
 </blockquote>
 </li>
-<li><p>float:浮动</p>
-<p>left</p>
-<p>right</p>
+</ul>
+<h2 id="浮动"><a href="#浮动" class="headerlink" title="浮动"></a>浮动</h2><p>用于布局，让垂直布局的盒子变成水平布局，如：一个在左，一个在右 </p>
+<h3 id="标准流"><a href="#标准流" class="headerlink" title="标准流"></a>标准流</h3><p>又称文档流 ， 是浏览器在渲染显示网页内容时默认采用的一套排版规则， 规定了应该以何种方式排列元素</p>
+<p>常见标准流排版规则：</p>
+<ol>
+<li>块级元素 ： 从上往下 ， 垂直布局 ， 独占一行</li>
+<li>行内元素或行内块元素 ： 从左往右 ， 水平布局 ， 空间不够自动折行</li>
+</ol>
+<h3 id="属性-1"><a href="#属性-1" class="headerlink" title="属性"></a>属性</h3><p>float: </p>
+<ul>
+<li>left左浮动</li>
+<li>right右浮动</li>
+</ul>
+<h4 id="特点·"><a href="#特点·" class="headerlink" title="特点·"></a>特点·</h4><ol>
+<li><p>浮动元素会脱离标准流（简称：脱标），在标准流中不占位置 </p>
+<p>相当于从地面飘到了空中	z</p>
 </li>
+<li><p>浮动元素比标准流高半个级别，可以覆盖标准流中的元素 </p>
+</li>
+<li><p>浮动找浮动，下一个浮动元素会在上一个浮动元素后面左右浮动 </p>
+</li>
+<li><p>浮动元素有特殊的显示效果 </p>
+<ul>
+<li>一行可以显示多个 </li>
+<li>可以设置宽高</li>
+</ul>
+</li>
+</ol>
+<blockquote>
+<p>浮动的元素不能通过<code>text-align:center</code>或者<code>margin:0 auto</code> 居中</p>
+</blockquote>
+<h3 id="清除浮动"><a href="#清除浮动" class="headerlink" title="清除浮动"></a>清除浮动</h3><h4 id="浮动带来的影响"><a href="#浮动带来的影响" class="headerlink" title="浮动带来的影响"></a>浮动带来的影响</h4><p>如果子元素浮动了，此时子元素不能撑开标准流的块级父元素</p>
+<h4 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h4><p>子元素浮动后脱离标准流–&gt;不占位置</p>
+<h4 id="目的"><a href="#目的" class="headerlink" title="目的"></a>目的</h4><p>需要父元素有高度，从而不影响其他网页元素的布局</p>
+<h4 id="途径"><a href="#途径" class="headerlink" title="途径"></a>途径</h4><ul>
+<li><p>直接设置父元素高度</p>
+<p>优点：简单粗暴，方便</p>
+<p>缺点；有些布局中不适合固定父元素高度</p>
+</li>
+<li><p>额外标签法</p>
+<p>操作：</p>
+<ol>
+<li>在父元素内容的最后添加一个块级元素</li>
+<li>给添加的块级元素设置clear:both</li>
+</ol>
+<p>缺点：会在页面中添加额外的标签，让页面的html结构变得复杂</p>
+</li>
+<li><p>单伪元素清楚法</p>
+<p>操作：</p>
+<ol>
+<li><p>基本写法：</p>
+<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">.clearfix::after</span> <span class="token punctuation">&#123;</span>
+    <span class="token property">content</span><span class="token punctuation">:</span> <span class="token string">''</span><span class="token punctuation">;</span>
+    <span class="token property">display</span><span class="token punctuation">:</span> block<span class="token punctuation">;</span>
+    <span class="token property">clear</span><span class="token punctuation">:</span> both<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p>补充写法</p>
+<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">.clearfix::after</span> <span class="token punctuation">&#123;</span>
+    <span class="token property">content</span><span class="token punctuation">:</span> <span class="token string">''</span><span class="token punctuation">;</span>
+    <span class="token property">display</span><span class="token punctuation">:</span> block<span class="token punctuation">;</span>
+    <span class="token property">clear</span><span class="token punctuation">:</span> both<span class="token punctuation">;</span>
+    <span class="token comment">/* 补充代码：在网页中看不到伪元素*/</span>
+    <span class="token property">height</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+    <span class="token property">visibility</span><span class="token punctuation">:</span> hidden<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ol>
+<p>特点：直接给标签加类即可清除浮动</p>
+</li>
+<li><p>双伪元素清除法</p>
+<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">.clearfix::before,
+.clearfix::after</span> <span class="token punctuation">&#123;</span>
+    <span class="token property">content</span><span class="token punctuation">:</span> <span class="token string">''</span><span class="token punctuation">;</span>
+    <span class="token property">display</span><span class="token punctuation">:</span> table<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token selector">.clearfix::after</span> <span class="token punctuation">&#123;</span>
+    <span class="token property">clear</span><span class="token punctuation">:</span> both<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p>给父元素设置overflow : hidden</p>
+</li>
+</ul>
+<h2 id="定位"><a href="#定位" class="headerlink" title="定位"></a>定位</h2><h3 id="使用步骤"><a href="#使用步骤" class="headerlink" title="使用步骤"></a>使用步骤</h3><ol>
+<li><p>设置定位方式</p>
+<p>position: 属性值 ;</p>
+<p>  常见属性值：</p>
+<table>
+<thead>
+<tr>
+<th>定位方式</th>
+<th>属性值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>静态定位</td>
+<td>static</td>
+</tr>
+<tr>
+<td>相对定位</td>
+<td>relative</td>
+</tr>
+<tr>
+<td>绝对定位</td>
+<td>absolute</td>
+</tr>
+<tr>
+<td>固定定位</td>
+<td>fixed</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>设置偏移值</p>
+<p>水平+垂直就近各取一个</p>
+<table>
+<thead>
+<tr>
+<th>方向</th>
+<th>属性名</th>
+<th>属性值</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>水平</td>
+<td>left</td>
+<td>数字+px</td>
+<td>距离左边的距离</td>
+</tr>
+<tr>
+<td>水平</td>
+<td>right</td>
+<td>数字+px</td>
+<td>距离右边的距离</td>
+</tr>
+<tr>
+<td>垂直</td>
+<td>top</td>
+<td>数字+px</td>
+<td>距离上边的距离</td>
+</tr>
+<tr>
+<td>垂直</td>
+<td>bottom</td>
+<td>数字+px</td>
+<td>距离下边的距离</td>
+</tr>
+</tbody></table>
+</li>
+</ol>
+<h3 id="静态定位"><a href="#静态定位" class="headerlink" title="静态定位"></a>静态定位</h3><p>默认值，就是标准流</p>
+<h4 id="方式"><a href="#方式" class="headerlink" title="方式"></a>方式</h4><p><code>position: static;</code></p>
+<h4 id="注意点"><a href="#注意点" class="headerlink" title="注意点"></a>注意点</h4><p>静态定位就是之前标准流，不能通过方位属性进行移动</p>
+<h3 id="相对定位"><a href="#相对定位" class="headerlink" title="相对定位"></a>相对定位</h3><p>相对于自己之前的位置进行移动</p>
+<h4 id="方式-1"><a href="#方式-1" class="headerlink" title="方式"></a>方式</h4><p><code>position: relative</code></p>
+<h4 id="特点-3"><a href="#特点-3" class="headerlink" title="特点"></a>特点</h4><ol>
+<li>需要配合方位属性实现移动</li>
+<li>相对于自己原来位置进行移动</li>
+<li>在页面中占位置 –&gt; 没有脱标</li>
+</ol>
+<h3 id="绝对定位"><a href="#绝对定位" class="headerlink" title="绝对定位"></a>绝对定位</h3><p>相对于非静态定位的父元素进行定位移动</p>
+<h4 id="方式-2"><a href="#方式-2" class="headerlink" title="方式"></a>方式</h4><p><code>position: absolute</code></p>
+<h4 id="特点-4"><a href="#特点-4" class="headerlink" title="特点"></a>特点</h4><ol>
+<li>需要配合方位属性实现移动</li>
+<li>默认相对于浏览器可视区域进行移动</li>
+<li>在页面中不占位置 → 已经脱标</li>
+</ol>
+<blockquote>
+<p>配合绝对定位的父元素一起使用（子绝父相）</p>
+</blockquote>
+<h4 id="绝对定位相对于谁进行偏移"><a href="#绝对定位相对于谁进行偏移" class="headerlink" title="绝对定位相对于谁进行偏移"></a>绝对定位相对于谁进行偏移</h4><ol>
+<li>祖先元素中没有定位 –&gt; 默认相对于浏览器进行移动</li>
+<li>祖先元素中有定位 –&gt; 相对于 最近的 有定位 的祖先元素进行移动</li>
+</ol>
+<h3 id="固定定位"><a href="#固定定位" class="headerlink" title="固定定位"></a>固定定位</h3><p>相对于浏览器进行定位移动</p>
+<h4 id="方式-3"><a href="#方式-3" class="headerlink" title="方式"></a>方式</h4><p><code>position: fixed</code></p>
+<h4 id="特点-5"><a href="#特点-5" class="headerlink" title="特点"></a>特点</h4><ol>
+<li>需要配合方位属性实现移动</li>
+<li>相对于浏览器可视区域进行移动</li>
+<li>在页面中不占位置 → 已经脱标</li>
+</ol>
+<h4 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h4><p>让盒子固定在屏幕中的某个位置</p>
+<table>
+<thead>
+<tr>
+<th>定位方式</th>
+<th>属性值</th>
+<th>相对于谁移动</th>
+<th>是否占位置</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>静态</td>
+<td>static</td>
+<td>无法通过方位属性移动</td>
+<td>占位置</td>
+</tr>
+<tr>
+<td>相对</td>
+<td>relative</td>
+<td>相对于自己原来的位置</td>
+<td>是</td>
+</tr>
+<tr>
+<td>绝对</td>
+<td>absolute</td>
+<td>相对于最近的且有定位的祖先元素</td>
+<td>否（脱标）</td>
+</tr>
+<tr>
+<td>固定</td>
+<td>fixed</td>
+<td>相对于浏览器可视区域</td>
+<td>否（脱标）</td>
+</tr>
+</tbody></table>
+<h3 id="元素层级关系"><a href="#元素层级关系" class="headerlink" title="元素层级关系"></a>元素层级关系</h3><h4 id="不同布局方式"><a href="#不同布局方式" class="headerlink" title="不同布局方式"></a>不同布局方式</h4><p>标准流 &lt; 浮动 &lt; 定位</p>
+<h4 id="不同定位"><a href="#不同定位" class="headerlink" title="不同定位"></a>不同定位</h4><p>相对，绝对，固定定位默认层级相同</p>
+<p>此时HTML中写在下面的元素层级更高，会覆盖上面的元素</p>
+<h4 id="更改定位元素的层级"><a href="#更改定位元素的层级" class="headerlink" title="更改定位元素的层级"></a>更改定位元素的层级</h4><p>属性名：<code>z-index</code></p>
+<p>属性值：数字</p>
+<blockquote>
+<p>数字越大，层级越高</p>
+</blockquote>
+<h2 id="装饰"><a href="#装饰" class="headerlink" title="装饰"></a>装饰</h2><h3 id="基线"><a href="#基线" class="headerlink" title="基线"></a>基线</h3><p>浏览器文字类型元素排版中存在用于对齐的基线（baseline），一般是指字母<code>x</code>的下边沿</p>
+<h3 id="垂直对齐方式"><a href="#垂直对齐方式" class="headerlink" title="垂直对齐方式"></a>垂直对齐方式</h3><p>属性名：<code>vertical-align</code></p>
+<p>属性值：</p>
+<ul>
+<li>baseline：基线对齐（默认）</li>
+<li>top：</li>
+<li>middle</li>
+<li>bottom</li>
+</ul>
+<h3 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h3><p>解决行内&#x2F;行内块元素垂直对齐问题</p>
+<ul>
+<li>文本框和表单按钮无法对齐问题</li>
+<li>input和img无法对齐问题</li>
+<li>div中的文本框，文本框无法贴顶问题</li>
+<li>div不设高度由img标签撑开，此时img标签下面会存在额外间隙问题</li>
+<li>使用line-height让img标签垂直居中问题</li>
 </ul>
 
                 
