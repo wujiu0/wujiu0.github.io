@@ -425,7 +425,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="关于使用Java-Scanner类进行输入时，换行符的问题"><a href="#关于使用Java-Scanner类进行输入时，换行符的问题" class="headerlink" title="关于使用Java Scanner类进行输入时，换行符的问题"></a>关于使用Java Scanner类进行输入时，换行符的问题</h3><p><strong>问题：</strong>在使用<code>Scanner.nextInt()</code>或<code>Scanner.next()</code>时，会读取到”\n”之前结束，这个”\n”会被下一个扫描器接收，如<code>Scanner.nextLine ()</code>，导致直接跳过此步；</p>
+                <h3 id="关于使用-Java-Scanner-类进行输入时，换行符的问题"><a href="#关于使用-Java-Scanner-类进行输入时，换行符的问题" class="headerlink" title="关于使用 Java Scanner 类进行输入时，换行符的问题"></a>关于使用 Java Scanner 类进行输入时，换行符的问题</h3><p><strong>问题：</strong>在使用<code>Scanner.nextInt()</code>或<code>Scanner.next()</code>时，会读取到”\n”之前结束，这个”\n”会被下一个扫描器接收，如<code>Scanner.nextLine ()</code>，导致直接跳过此步；</p>
 <p><strong>解决办法：</strong>在下一步输入之前使用<code>Scanner.nextLine();</code>吸收多余的”\n”</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">int</span> num1 <span class="token operator">=</span> sc<span class="token punctuation">.</span><span class="token function">nextInt</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token keyword">int</span> num2 <span class="token operator">=</span> sc<span class="token punctuation">.</span><span class="token function">nextInt</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//正确</span>
@@ -435,7 +435,7 @@
 <span class="token class-name">String</span> str <span class="token operator">=</span> sc<span class="token punctuation">.</span><span class="token function">nextLine</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//出错</span>
 <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
-<p>以上述代码为例，nextInt()输入num值，之后用户输入换行符想要结束，可是nextInt()方法并不会读取换行符，因此换行符被读取放到了下一个nextLine()中，nextLine()读取换行符，直接输入结束，因此str获得的值就是空<code>“”</code></p>
+<p>以上述代码为例，nextInt()输入 num 值，之后用户输入换行符想要结束，可是 nextInt()方法并不会读取换行符，因此换行符被读取放到了下一个 nextLine()中，nextLine()读取换行符，直接输入结束，因此 str 获得的值就是空<code>“”</code></p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">int</span> num <span class="token operator">=</span> sc<span class="token punctuation">.</span><span class="token function">nextInt</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token class-name">String</span> str <span class="token operator">=</span> sc<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//正确</span>
 <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
@@ -448,10 +448,10 @@
 <span class="token class-name">String</span> str2 <span class="token operator">=</span> sc<span class="token punctuation">.</span><span class="token function">nextLine</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//正确</span>
 <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>str2<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
-<p><strong>附：next()与nextLine()的区别</strong></p>
+<p><strong>附：next()与 nextLine()的区别</strong></p>
 <ul>
-<li>next()方法在读取内容时，会过滤掉有效字符前面的无效字符，对输入有效字符之前遇到的空格键、Tab键或Enter键等结束符，next()方法会自动将其过滤掉；只有在读取到有效字符之后，next()方法才将其后的空格键、Tab键或Enter键等视为结束符；所以next()方法不能得到带空格的字符串。</li>
-<li><code>nextLine()</code>方法字面上有扫描一整行的意思，它的结束符只能是Enter键，即nextLine()方法返回的是Enter键之前没有被读取的所有字符，它是可以得到带空格的字符串的。</li>
+<li>next()方法在读取内容时，会过滤掉有效字符前面的无效字符，对输入有效字符之前遇到的空格键、Tab 键或 Enter 键等结束符，next()方法会自动将其过滤掉；只有在读取到有效字符之后，next()方法才将其后的空格键、Tab 键或 Enter 键等视为结束符；所以 next()方法不能得到带空格的字符串。</li>
+<li><code>nextLine()</code>方法字面上有扫描一整行的意思，它的结束符只能是 Enter 键，即 nextLine()方法返回的是 Enter 键之前没有被读取的所有字符，它是可以得到带空格的字符串的。</li>
 </ul>
 
                 

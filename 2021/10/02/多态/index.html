@@ -506,16 +506,16 @@ f<span class="token punctuation">.</span><span class="token function">method</sp
         <span class="token comment">//向上转型</span>
         <span class="token class-name">Animal</span> a <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Cat</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         a<span class="token punctuation">.</span><span class="token function">eat</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//调用的是Cat的eat</span>
-        
+
         <span class="token comment">//向下转型</span>
         <span class="token class-name">Dog</span> d <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token class-name">Dog</span><span class="token punctuation">)</span> a<span class="token punctuation">;</span>
         d<span class="token punctuation">.</span><span class="token function">watchHouse</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//调用的是Dog的watchHouse【运行报错】</span>
     <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>这段代码可以通过编译，但是运行时会<code>ClassCastException </code>,类型转换异常，这是因为创建的Cat类型对象无法转换成Dog类型的对象</p>
-<p>为避免这样的问题，java提供了<code>instanceof</code>关键字，给引用变量做类型的检验</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">变量名 <span class="token keyword">instanceof</span> 数据类型 
+<p>这段代码可以通过编译，但是运行时会<code>ClassCastException </code>,类型转换异常，这是因为创建的 Cat 类型对象无法转换成 Dog 类型的对象</p>
+<p>为避免这样的问题，java 提供了<code>instanceof</code>关键字，给引用变量做类型的检验</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">变量名 <span class="token keyword">instanceof</span> 数据类型
     如果变量属于该数据类型，返回<span class="token boolean">true</span>。
     如果变量不属于该数据类型，返回<span class="token boolean">false</span>。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
@@ -534,7 +534,6 @@ f<span class="token punctuation">.</span><span class="token function">method</sp
         <span class="token punctuation">&#125;</span>
     <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 
                 
             </div>

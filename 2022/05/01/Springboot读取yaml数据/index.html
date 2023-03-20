@@ -418,7 +418,7 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h3 id="读取单一数据"><a href="#读取单一数据" class="headerlink" title="读取单一数据"></a>读取单一数据</h3><ol>
-<li>使用<code>@value</code>配合SpEL读取单个数据</li>
+<li>使用<code>@value</code>配合 SpEL 读取单个数据</li>
 <li>如果数据存在多层级，依次书写层级名称即可</li>
 </ol>
 <pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">users</span><span class="token punctuation">:</span>
@@ -430,17 +430,13 @@
 <span class="token annotation punctuation">@Value</span><span class="token punctuation">(</span><span class="token string">"$&#123;user.age&#125;"</span><span class="token punctuation">)</span>
 <span class="token keyword">private</span> <span class="token keyword">int</span> age<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
-
-
 <h3 id="读取全部属性数据"><a href="#读取全部属性数据" class="headerlink" title="读取全部属性数据"></a>读取全部属性数据</h3><ol>
 <li>使用<code>Environment</code>对象封装全部配置信息</li>
 <li>使用<code>@Autowired</code>自动装配数据到<code>Environment</code>对象中</li>
 <li>调用<code>getProperty()</code>获取数据</li>
 </ol>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token annotation punctuation">@AutoWired</span> 
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token annotation punctuation">@AutoWired</span>
 <span class="token keyword">private</span> <span class="token class-name">Enviroment</span> env<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-
 
 <h3 id="自定义对象封装指定数据"><a href="#自定义对象封装指定数据" class="headerlink" title="自定义对象封装指定数据"></a>自定义对象封装指定数据</h3><ol>
 <li><p>准备数据 <code>application.yaml</code></p>
@@ -450,7 +446,7 @@
   <span class="token key atrule">username</span><span class="token punctuation">:</span> root
   <span class="token key atrule">password</span><span class="token punctuation">:</span> root<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
-<li><p>定义Java Bean</p>
+<li><p>定义 Java Bean</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">// 定义数据类型封装yamnl文件中的数据</span>
 <span class="token comment">// 定义为Spring管控的Bean</span>
 <span class="token annotation punctuation">@Component</span>
@@ -461,7 +457,7 @@
     <span class="token keyword">private</span> <span class="token class-name">String</span> url<span class="token punctuation">;</span>
     <span class="token keyword">private</span> <span class="token class-name">String</span> username<span class="token punctuation">;</span>
     <span class="token keyword">private</span> <span class="token class-name">String</span> password<span class="token punctuation">;</span>
-    
+
     <span class="token comment">// Getter/Setter...</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 </ol>

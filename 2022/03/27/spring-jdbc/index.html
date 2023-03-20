@@ -425,7 +425,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>它是spring框架中提供的一个对象，是对原始繁琐的Jdbc API对象的简单封装。spring框架为我们提供了很多的操作模板类。例如：操作关系型数据的JdbcTemplate和HibernateTemplate，操作nosql数据库的RedisTemplate，操作消息队列的JmsTemplate等等。</p>
+                <h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>它是 spring 框架中提供的一个对象，是对原始繁琐的 Jdbc API 对象的简单封装。spring 框架为我们提供了很多的操作模板类。例如：操作关系型数据的 JdbcTemplate 和 HibernateTemplate，操作 nosql 数据库的 RedisTemplate，操作消息队列的 JmsTemplate 等等。</p>
 <h2 id="开发步骤"><a href="#开发步骤" class="headerlink" title="开发步骤"></a>开发步骤</h2><ol>
 <li><p>导入<code>spring-jdbc</code>和<code>spring-tx</code>坐标</p>
 <pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
@@ -442,7 +442,7 @@
 </li>
 <li><p>创建数据库表和实体</p>
 </li>
-<li><p>创建JdbcTemplate对象</p>
+<li><p>创建 JdbcTemplate 对象</p>
 </li>
 <li><p>执行数据库操作</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">//1、创建数据源对象</span>
@@ -458,7 +458,7 @@ jdbcTemplate<span class="token punctuation">.</span><span class="token function"
 <span class="token comment">//4、执行操作</span>
 jdbcTemplate<span class="token punctuation">.</span><span class="token function">update</span><span class="token punctuation">(</span><span class="token string">"insert into account values(?,?)"</span><span class="token punctuation">,</span><span class="token string">"tom"</span><span class="token punctuation">,</span><span class="token number">5000</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>我们可以将JdbcTemplate的创建权交给Spring，将数据源DataSource的创建权也交给Spring，在Spring容器内部将数据源DataSource注入到JdbcTemplate模版对象中，配置如下：</p>
+<p>我们可以将 JdbcTemplate 的创建权交给 Spring，将数据源 DataSource 的创建权也交给 Spring，在 Spring 容器内部将数据源 DataSource 注入到 JdbcTemplate 模版对象中，配置如下：</p>
 <pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token comment">&lt;!--数据源DataSource--></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>bean</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>dataSource<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>com.mchange.v2.c3p0.ComboPooledDataSource<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>driverClass<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>com.mysql.jdbc.Driver<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
@@ -471,19 +471,19 @@ jdbcTemplate<span class="token punctuation">.</span><span class="token function"
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>dataSource<span class="token punctuation">"</span></span> <span class="token attr-name">ref</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>dataSource<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>bean</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>从容器中获得JdbcTemplate进行添加操作</p>
+<p>从容器中获得 JdbcTemplate 进行添加操作</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token annotation punctuation">@Test</span>
 <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">testSpringJdbcTemplate</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">PropertyVetoException</span> <span class="token punctuation">&#123;</span>
-    <span class="token class-name">ApplicationContext</span> applicationContext <span class="token operator">=</span> <span class="token keyword">new</span> 
+    <span class="token class-name">ApplicationContext</span> applicationContext <span class="token operator">=</span> <span class="token keyword">new</span>
     <span class="token class-name">ClassPathXmlApplicationContext</span><span class="token punctuation">(</span><span class="token string">"applicationContext.xml"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token class-name">JdbcTemplate</span> jdbcTemplate <span class="token operator">=</span> applicationContext<span class="token punctuation">.</span><span class="token function">getBean</span><span class="token punctuation">(</span><span class="token class-name">JdbcTemplate</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     jdbcTemplate<span class="token punctuation">.</span><span class="token function">update</span><span class="token punctuation">(</span><span class="token string">"insert into account values(?,?)"</span><span class="token punctuation">,</span><span class="token string">"lucy"</span><span class="token punctuation">,</span><span class="token number">5000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 </ol>
 <h2 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h2><ul>
-<li><p>update()：执行DML语句。增删改。</p>
+<li><p>update()：执行 DML 语句。增删改。</p>
 </li>
-<li><p>queryForMap()：查询结果，将结果集封装为Map集合，将列名作为key，值作为value</p>
+<li><p>queryForMap()：查询结果，将结果集封装为 Map 集合，将列名作为 key，值作为 value</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">test</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
     <span class="token class-name">String</span> sql <span class="token operator">=</span> <span class="token string">"select * from emp where id = ? or id = ?"</span><span class="token punctuation">;</span>
     <span class="token class-name">Map</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">,</span> <span class="token class-name">Object</span><span class="token punctuation">></span></span> map <span class="token operator">=</span> template<span class="token punctuation">.</span><span class="token function">queryForMap</span><span class="token punctuation">(</span>sql<span class="token punctuation">,</span> <span class="token number">1001</span><span class="token punctuation">,</span><span class="token number">1002</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -491,10 +491,10 @@ jdbcTemplate<span class="token punctuation">.</span><span class="token function"
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <blockquote>
-<p>这个方法查询的结果集长度只能是1</p>
+<p>这个方法查询的结果集长度只能是 1</p>
 </blockquote>
 </li>
-<li><p>queryForList()：查询结果，将结果集封装为一个list集合</p>
+<li><p>queryForList()：查询结果，将结果集封装为一个 list 集合</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">test</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
     <span class="token class-name">String</span> sql <span class="token operator">=</span> <span class="token string">"select * from emp"</span><span class="token punctuation">;</span>
     <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Map</span><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">,</span> <span class="token class-name">Object</span><span class="token punctuation">></span><span class="token punctuation">></span></span> list <span class="token operator">=</span> template<span class="token punctuation">.</span><span class="token function">queryForList</span><span class="token punctuation">(</span>sql<span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -505,13 +505,13 @@ jdbcTemplate<span class="token punctuation">.</span><span class="token function"
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <blockquote>
-<p>将每一条记录封装为一个Map集合，再将Map集合装载到List集合中</p>
+<p>将每一条记录封装为一个 Map 集合，再将 Map 集合装载到 List 集合中</p>
 </blockquote>
 </li>
-<li><p>query()：查询结果，将结果集封装为JavaBean对象</p>
+<li><p>query()：查询结果，将结果集封装为 JavaBean 对象</p>
 <p>参数：<code>RowMapper</code></p>
 <ul>
-<li>一般我们使用<code>BeanPropertyRowMapper</code>实现类，可以完成数据到JavaBean的自动封装</li>
+<li>一般我们使用<code>BeanPropertyRowMapper</code>实现类，可以完成数据到 JavaBean 的自动封装</li>
 </ul>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">test</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
     <span class="token class-name">String</span> sql <span class="token operator">=</span> <span class="token string">"select * from emp"</span><span class="token punctuation">;</span>

@@ -433,9 +433,9 @@
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>$&#123;spring.version&#125;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
-<li><p>创建Bean</p>
+<li><p>创建 Bean</p>
 </li>
-<li><p>创建applicationContext.xml</p>
+<li><p>创建 applicationContext.xml</p>
 <pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token prolog">&lt;?xml version="1.0" encoding="UTF-8" ?></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>beans</span> <span class="token attr-name">xmlns</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://www.springframework.org/schema/beans<span class="token punctuation">"</span></span>
 		<span class="token attr-name"><span class="token namespace">xmlns:</span>xsi</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://www.w3.org/2001/XMLSchema-instance<span class="token punctuation">"</span></span>
@@ -447,18 +447,18 @@
 <li><p>创建<code>ApplicationContext</code>对象，调用<code>getBean()</code>方法</p>
 </li>
 </ol>
-<h2 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h2><h3 id="bean标签配置"><a href="#bean标签配置" class="headerlink" title="bean标签配置"></a>bean标签配置</h3><p>用于配置对象交由Spring来创建</p>
+<h2 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h2><h3 id="bean-标签配置"><a href="#bean-标签配置" class="headerlink" title="bean 标签配置"></a>bean 标签配置</h3><p>用于配置对象交由 Spring 来创建</p>
 <p>默认情况下它调用的是类中的无参构造器，如果没有无参构造则无法创建成功</p>
 <h4 id="基本属性"><a href="#基本属性" class="headerlink" title="基本属性"></a>基本属性</h4><ul>
-<li><p>id：bean实例在Spring容器中的唯一标识</p>
+<li><p>id：bean 实例在 Spring 容器中的唯一标识</p>
 </li>
-<li><p>class：bean的全限定名称</p>
+<li><p>class：bean 的全限定名称</p>
 </li>
 <li><p>scope：对象的作用范围，</p>
 <ul>
 <li><p>singleton（默认）：单例的</p>
-<p>实例化个数：1个</p>
-<p>实例化时机：Spring核心文件被加载时，实例化配置的Bean实例</p>
+<p>实例化个数：1 个</p>
+<p>实例化时机：Spring 核心文件被加载时，实例化配置的 Bean 实例</p>
 <p>生命周期：</p>
 <ul>
 <li>对象创建：当应用加载，创建容器时，对象就被创建了</li>
@@ -468,19 +468,19 @@
 </li>
 <li><p>prototype：多例的</p>
 <p>实例化个数：多个</p>
-<p>实例化时机：调用getBean()方法时</p>
+<p>实例化时机：调用 getBean()方法时</p>
 <p>生命周期：</p>
 <ul>
 <li>对象创建：使用对象时，创建新的对象实例</li>
 <li>对象运行 ：只要对象在使用中，就一直存活</li>
-<li>对象销毁：当对象长时间不用时，被java的垃圾回收器回收</li>
+<li>对象销毁：当对象长时间不用时，被 java 的垃圾回收器回收</li>
 </ul>
 </li>
-<li><p>request：WEB 项目中，Spring  创建一个 Bean  的对象，将对象存入到 request  域中</p>
+<li><p>request：WEB 项目中，Spring 创建一个 Bean 的对象，将对象存入到 request 域中</p>
 </li>
-<li><p>session：WEB 项目中，Spring  创建一个 Bean  的对象，将对象存入到 request  域中</p>
+<li><p>session：WEB 项目中，Spring 创建一个 Bean 的对象，将对象存入到 request 域中</p>
 </li>
-<li><p>global session：WEB 项目中，应用在 Portlet 环境，如果没有 Portlet 环境那么globalSession 相当于 session</p>
+<li><p>global session：WEB 项目中，应用在 Portlet 环境，如果没有 Portlet 环境那么 globalSession 相当于 session</p>
 </li>
 </ul>
 </li>
@@ -490,9 +490,9 @@
 </li>
 <li><p>子标签<code>&lt;prorerty&gt;</code>：属性注入</p>
 <ul>
-<li>name属性：属性名称</li>
-<li>value属性：注入普通属性值</li>
-<li>ref属性：注入对象引用值</li>
+<li>name 属性：属性名称</li>
+<li>value 属性：注入普通属性值</li>
+<li>ref 属性：注入对象引用值</li>
 <li><code>&lt;list&gt;</code></li>
 <li><code>&lt;map&gt;</code></li>
 <li><code>&lt;properties&gt;</code></li>
@@ -500,9 +500,9 @@
 </ul>
 </li>
 </ul>
-<h4 id="bean实例化三种方式"><a href="#bean实例化三种方式" class="headerlink" title="bean实例化三种方式"></a>bean实例化三种方式</h4><ul>
+<h4 id="bean-实例化三种方式"><a href="#bean-实例化三种方式" class="headerlink" title="bean 实例化三种方式"></a>bean 实例化三种方式</h4><ul>
 <li><p>无参构造方法实例化</p>
-<p>它会根据默认无参构造方法来创建了类对象，如果bean中没有默认无参构造，将会创建失败</p>
+<p>它会根据默认无参构造方法来创建了类对象，如果 bean 中没有默认无参构造，将会创建失败</p>
 <pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>bean</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>userDao<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>com.example.dao.impl.UserDaoImpl<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 </li>
 <li><p>工厂静态方法实例化</p>
@@ -524,22 +524,22 @@
 &lt;bean id&#x3D;&quot;factoryBean&quot; class&#x3D;&quot;com.example.factory.DynamicFactoryBean&quot;&#x2F;&gt;
 &lt;bean id&#x3D;&quot;userDao&quot; factory-bean&#x3D;&quot;factoryBean&quot; factory-method&#x3D;&quot;createUserDao&quot;&#x2F;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 </ul>
-<h4 id="bean的依赖注入"><a href="#bean的依赖注入" class="headerlink" title="bean的依赖注入"></a>bean的依赖注入</h4><p><strong>依赖注入（Dependency Injection）</strong>：它是Spring框架核心IOC的具体实现</p>
-<p>在编写程序时，通过控制反转，把对象的创建交给了Spring，但是代码中不可能出现没有依赖的情况。<br>IOC解耦只是降低他们的依赖关系，但不会消除。<br>例如：业务层仍会调用持久层的方法。<br>那这种业务层和持久层的依赖关系，在使用 Spring 之后，就让 Spring 来维护了。<br>简单的说，就是坐等框架把持久层对象传入业务层，而不用我们自己去获取。</p>
+<h4 id="bean-的依赖注入"><a href="#bean-的依赖注入" class="headerlink" title="bean 的依赖注入"></a>bean 的依赖注入</h4><p><strong>依赖注入（Dependency Injection）</strong>：它是 Spring 框架核心 IOC 的具体实现</p>
+<p>在编写程序时，通过控制反转，把对象的创建交给了 Spring，但是代码中不可能出现没有依赖的情况。<br>IOC 解耦只是降低他们的依赖关系，但不会消除。<br>例如：业务层仍会调用持久层的方法。<br>那这种业务层和持久层的依赖关系，在使用 Spring 之后，就让 Spring 来维护了。<br>简单的说，就是坐等框架把持久层对象传入业务层，而不用我们自己去获取。</p>
 <h5 id="注入方式"><a href="#注入方式" class="headerlink" title="注入方式"></a>注入方式</h5><ul>
-<li><p><strong>set方法注入（*）</strong></p>
+<li><p><strong>set 方法注入（*）</strong></p>
 <ol>
-<li><p>首先需要有setXXX()方法</p>
+<li><p>首先需要有 setXXX()方法</p>
 </li>
-<li><p>配置Spring容器调用set方法进行注入</p>
+<li><p>配置 Spring 容器调用 set 方法进行注入</p>
 <pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>bean</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>userDao<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>com.example.dao.impl.UserDaoImpl<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>bean</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>userService<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>com.example.service.impl.UserServiceImpl<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
 	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>userDao<span class="token punctuation">"</span></span> <span class="token attr-name">ref</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>userDao<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>bean</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></li>
 </ol>
-<p>或者可以使用P命名空间引入，本质上也是set方法引入，但是更加方便</p>
+<p>或者可以使用 P 命名空间引入，本质上也是 set 方法引入，但是更加方便</p>
 <ol>
-<li><p>引入P命名空间</p>
+<li><p>引入 P 命名空间</p>
 <p><code>xmlns:p=&quot;http://www.springframework.org/schema/p&quot;</code></p>
 </li>
 <li><p>修改注入方式</p>
@@ -550,7 +550,7 @@
 <ol>
 <li><p>提供有参构造</p>
 </li>
-<li><p>配置xml</p>
+<li><p>配置 xml</p>
 <pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>bean</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>userDao<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>com.example.dao.impl.UserDaoImpl<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>bean</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>userService<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>com.example.service.impl.UserServiceImpl<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>constructor-arg</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>userDao<span class="token punctuation">"</span></span> <span class="token attr-name">ref</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>userDao<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>constructor-arg</span><span class="token punctuation">></span></span>
@@ -568,9 +568,9 @@
 </li>
 <li><p>集合数据类型</p>
 <ul>
-<li><p>List的注入</p>
+<li><p>List 的注入</p>
 <pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>bean</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>userDao<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>com.example.dao.impl.UserDaoImpl<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-<span class="token comment">&lt;!-- String类型的元素--></span>    
+<span class="token comment">&lt;!-- String类型的元素--></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>strList<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>list</span><span class="token punctuation">></span></span>
             <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>aaa<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
@@ -609,19 +609,15 @@
 </ul>
 </li>
 </ul>
-<h3 id="引入其他配置文件"><a href="#引入其他配置文件" class="headerlink" title="引入其他配置文件"></a>引入其他配置文件</h3><p>实际开发中，Spring的配置内容非常多，这就导致Spring配置很繁杂且体积很大，所以，可以将部分配置拆解到其他配置文件中，而在Spring主配置文件通过import标签进行加载</p>
+<h3 id="引入其他配置文件"><a href="#引入其他配置文件" class="headerlink" title="引入其他配置文件"></a>引入其他配置文件</h3><p>实际开发中，Spring 的配置内容非常多，这就导致 Spring 配置很繁杂且体积很大，所以，可以将部分配置拆解到其他配置文件中，而在 Spring 主配置文件通过 import 标签进行加载</p>
 <pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>import</span> <span class="token attr-name">resource</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>applicationContext-xxx.xml<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-
-
-<h3 id="加载properties配置文件"><a href="#加载properties配置文件" class="headerlink" title="加载properties配置文件"></a>加载properties配置文件</h3><pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">context:</span>property-placeholder</span> <span class="token attr-name">location</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>xx.properties<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
+<h3 id="加载-properties-配置文件"><a href="#加载-properties-配置文件" class="headerlink" title="加载 properties 配置文件"></a>加载 properties 配置文件</h3><pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">context:</span>property-placeholder</span> <span class="token attr-name">location</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>xx.properties<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
 
 
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>$&#123;key&#125;<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
-
-
-<h3 id="相关API"><a href="#相关API" class="headerlink" title="相关API"></a>相关API</h3><ul>
+<h3 id="相关-API"><a href="#相关-API" class="headerlink" title="相关 API"></a>相关 API</h3><ul>
 <li><p>源码</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token class-name">Object</span> <span class="token function">getBean</span><span class="token punctuation">(</span><span class="token class-name">String</span> name<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">BeansException</span> <span class="token punctuation">&#123;</span>
     <span class="token function">assertBeanFactoryActive</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -632,7 +628,7 @@
     <span class="token keyword">return</span> <span class="token function">getBeanFactory</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getBean</span><span class="token punctuation">(</span>requiredType<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>其中，当参数的数据类型是字符串时，表示根据Bean的id从容器中获得Bean实例，返回是Object，需要强转。<br>当参数的数据类型是Class类型时，表示根据类型从容器中匹配Bean实例，当容器中相同类型的Bean有多个时，<br>则此方法会报错。</p>
+<p>其中，当参数的数据类型是字符串时，表示根据 Bean 的 id 从容器中获得 Bean 实例，返回是 Object，需要强转。<br>当参数的数据类型是 Class 类型时，表示根据类型从容器中匹配 Bean 实例，当容器中相同类型的 Bean 有多个时，<br>则此方法会报错。</p>
 </li>
 <li><p>使用</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">ApplicationContext</span> app <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ClasspathXmlApplicationContext</span><span class="token punctuation">(</span><span class="token string">"xml文件"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>

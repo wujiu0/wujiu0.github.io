@@ -417,19 +417,19 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>若创建的File对象是一个目录，那么它的getPath()方法的返回值会默认去掉末尾的&#x2F;，这点在路径拼接时可能会导致出错。</p>
+                <p>若创建的 File 对象是一个目录，那么它的 getPath()方法的返回值会默认去掉末尾的&#x2F;，这点在路径拼接时可能会导致出错。</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">File</span> <span class="token keyword">implements</span> <span class="token class-name">Serializable</span><span class="token punctuation">,</span> <span class="token class-name">Comparable</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">File</span><span class="token punctuation">></span></span> <span class="token punctuation">&#123;</span>
 
     <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
         <span class="token keyword">return</span> <span class="token function">getPath</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">&#125;</span>
-    
+
     <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">getPath</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
         <span class="token keyword">return</span> path<span class="token punctuation">;</span>
     <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>若是要创建新的File文件对象的话，可以使用<code>public File(File parent, String child)</code>这个构造方法</p>
+<p>若是要创建新的 File 文件对象的话，可以使用<code>public File(File parent, String child)</code>这个构造方法</p>
 
                 
             </div>
@@ -667,13 +667,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2022/10/10/IO%E6%B5%81/">
+                <a href="/2022/10/10/File%E7%B1%BB/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/85.jpg" class="responsive-img" alt="IO流">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="File 类">
                         
-                        <span class="card-title">IO流</span>
+                        <span class="card-title">File 类</span>
                     </div>
                 </a>
                 <div class="card-content article-content">

@@ -421,8 +421,8 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><p>异常指的是程序在执行过程中，出现的非正常的情况，最终会导致jvm的非正常停止</p>
-<p>在java等面向对象的编程语言中，异常本身是一个类，产生异常对象并抛出了一个异常对象，java处理异常的方式是中断处理</p>
+                <h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><p>异常指的是程序在执行过程中，出现的非正常的情况，最终会导致 jvm 的非正常停止</p>
+<p>在 java 等面向对象的编程语言中，异常本身是一个类，产生异常对象并抛出了一个异常对象，java 处理异常的方式是中断处理</p>
 <blockquote>
 <p>异常指的并不是语法错误，语法错了，编译不通过，不会产生字节码文件，根本不能运行</p>
 </blockquote>
@@ -431,7 +431,7 @@
 <li><strong>Error</strong>：严重错误，必须修改源代码，程序才能继续执行</li>
 <li><strong>Exception</strong>：表示异常，异常产生后程序员可以通过代码的方式纠正，使程序继续运行</li>
 </ul>
-<h4 id="Throwable中的常用方法："><a href="#Throwable中的常用方法：" class="headerlink" title="Throwable中的常用方法："></a>Throwable中的常用方法：</h4><ul>
+<h4 id="Throwable-中的常用方法："><a href="#Throwable-中的常用方法：" class="headerlink" title="Throwable 中的常用方法："></a>Throwable 中的常用方法：</h4><ul>
 <li><p><code>public void printStackTrace()</code>：打印异常的详细信息</p>
 <p>包含了异常的类型，异常的原因，还包括异常出现的位置，在开发和调试阶段，都得使用<code>printStackTrace()</code></p>
 </li>
@@ -442,11 +442,11 @@
 </li>
 </ul>
 <h3 id="异常分类"><a href="#异常分类" class="headerlink" title="异常分类"></a>异常分类</h3><ul>
-<li>编译时期异常（checked异常）在编译时期，就会检查，如果没有处理异常，则编译失败</li>
-<li>运行时期异常（runtime异常）在运行时期，检查异常。在编译时期，<code>RuntimeException</code>编译器不会检测</li>
+<li>编译时期异常（checked 异常）在编译时期，就会检查，如果没有处理异常，则编译失败</li>
+<li>运行时期异常（runtime 异常）在运行时期，检查异常。在编译时期，<code>RuntimeException</code>编译器不会检测</li>
 </ul>
 <h3 id="异常的处理"><a href="#异常的处理" class="headerlink" title="异常的处理"></a>异常的处理</h3><p>五个关键字：throw，throws，try，catch，finally</p>
-<h4 id="抛出异常throw（必须写在方法的内部）"><a href="#抛出异常throw（必须写在方法的内部）" class="headerlink" title="抛出异常throw（必须写在方法的内部）"></a>抛出异常throw（必须写在方法的内部）</h4><p>在编写程序时，我们必须要考虑程序出现问题的情况，比如，在定义方法时，方法需要接收参数。那么，当调用方法使用接收到的参数时，首先需要对参数数据进行合法的判断，数据若不合法，就应该告诉调用者，传递合法的数据进来，这时就需要使用抛出异常的方式来告诉调用者。</p>
+<h4 id="抛出异常-throw（必须写在方法的内部）"><a href="#抛出异常-throw（必须写在方法的内部）" class="headerlink" title="抛出异常 throw（必须写在方法的内部）"></a>抛出异常 throw（必须写在方法的内部）</h4><p>在编写程序时，我们必须要考虑程序出现问题的情况，比如，在定义方法时，方法需要接收参数。那么，当调用方法使用接收到的参数时，首先需要对参数数据进行合法的判断，数据若不合法，就应该告诉调用者，传递合法的数据进来，这时就需要使用抛出异常的方式来告诉调用者。</p>
 <h5 id="使用格式"><a href="#使用格式" class="headerlink" title="使用格式"></a>使用格式</h5><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">throw</span> <span class="token keyword">new</span> 异常类名<span class="token punctuation">(</span>参数<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token comment">/*
 	1.创建一个异常对象，封装一些提示信息
@@ -454,25 +454,25 @@
 */</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <blockquote>
-<p>如果产生了异常，我们将异常对象throw给方法的调用者，对于调用者来说，一种是进行捕获处理，另一种就是继续将对象使用throws声明抛出出去</p>
+<p>如果产生了异常，我们将异常对象 throw 给方法的调用者，对于调用者来说，一种是进行捕获处理，另一种就是继续将对象使用 throws 声明抛出出去</p>
 </blockquote>
-<h4 id="声明异常throws（必须写在方法声明处）"><a href="#声明异常throws（必须写在方法声明处）" class="headerlink" title="声明异常throws（必须写在方法声明处）"></a>声明异常throws（必须写在方法声明处）</h4><p>声明异常：将问题标识出来，报告给调用者，如果方法内通过throw抛出了编译期异常，而没有进行捕获处理，那么必须通过throws进行声明，让调用者处理</p>
+<h4 id="声明异常-throws（必须写在方法声明处）"><a href="#声明异常-throws（必须写在方法声明处）" class="headerlink" title="声明异常 throws（必须写在方法声明处）"></a>声明异常 throws（必须写在方法声明处）</h4><p>声明异常：将问题标识出来，报告给调用者，如果方法内通过 throw 抛出了编译期异常，而没有进行捕获处理，那么必须通过 throws 进行声明，让调用者处理</p>
 <h5 id="使用格式-1"><a href="#使用格式-1" class="headerlink" title="使用格式"></a>使用格式</h5><pre class="line-numbers language-java" data-language="java"><code class="language-java">修饰符 返回值类型 方法名<span class="token punctuation">(</span>参数<span class="token punctuation">)</span> <span class="token keyword">throws</span> 异常类名<span class="token number">1</span><span class="token punctuation">,</span>异常类名<span class="token number">2.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">&#123;</span>
-    
+
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
-<h4 id="捕获异常try…catch"><a href="#捕获异常try…catch" class="headerlink" title="捕获异常try…catch"></a>捕获异常try…catch</h4><p>try…catch的方式就是捕获异常</p>
+<h4 id="捕获异常-try…catch"><a href="#捕获异常-try…catch" class="headerlink" title="捕获异常 try…catch"></a>捕获异常 try…catch</h4><p>try…catch 的方式就是捕获异常</p>
 <h5 id="使用格式-2"><a href="#使用格式-2" class="headerlink" title="使用格式"></a>使用格式</h5><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">try</span><span class="token punctuation">&#123;</span>
     <span class="token comment">// 可能出现异常的代码</span>
 <span class="token punctuation">&#125;</span><span class="token keyword">catch</span><span class="token punctuation">(</span>异常类型 e<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
     <span class="token comment">// 记录日志、打印异常信息，继续抛出异常</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h4 id="finally代码块"><a href="#finally代码块" class="headerlink" title="finally代码块"></a>finally代码块</h4><p>有一些特定的代码无论异常是否发生，都需要执行。另外，因为异常会引发程序跳转，导致有些语句执行不到，放在<code>finally</code>代码块中的代码都是一定会被执行的</p>
+<h4 id="finally-代码块"><a href="#finally-代码块" class="headerlink" title="finally 代码块"></a>finally 代码块</h4><p>有一些特定的代码无论异常是否发生，都需要执行。另外，因为异常会引发程序跳转，导致有些语句执行不到，放在<code>finally</code>代码块中的代码都是一定会被执行的</p>
 <p>例如：</p>
-<p>​	当我们在try语句块中打开了一些物理资源(磁盘文件&#x2F;网络连接&#x2F;数据库连接等),我们都得在使用完之后,最终关闭打开的资源。</p>
+<p>​ 当我们在 try 语句块中打开了一些物理资源(磁盘文件&#x2F;网络连接&#x2F;数据库连接等),我们都得在使用完之后,最终关闭打开的资源。</p>
 <blockquote>
-<p>finally不能单独使用</p>
+<p>finally 不能单独使用</p>
 </blockquote>
 <h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><ul>
 <li><p>多个异常使用捕获该如何处理</p>
@@ -491,12 +491,12 @@
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <blockquote>
-<p>这种异常处理方式，要求多个catch中的异常不能相同，并且若catch中的多个异常之间有子父类关系，那么子类异常要求在上面的catch处理，父类异常在下面的catch处理</p>
+<p>这种异常处理方式，要求多个 catch 中的异常不能相同，并且若 catch 中的多个异常之间有子父类关系，那么子类异常要求在上面的 catch 处理，父类异常在下面的 catch 处理</p>
 </blockquote>
 </li>
-<li><p>运行时异常被抛出可以不处理，即不捕获也不声明抛出，默认交给JVM处理(打印异常对象,中断程序)</p>
+<li><p>运行时异常被抛出可以不处理，即不捕获也不声明抛出，默认交给 JVM 处理(打印异常对象,中断程序)</p>
 </li>
-<li><p>如果finally有return语句，会永远返回finally中的结果，避免这种情况</p>
+<li><p>如果 finally 有 return 语句，会永远返回 finally 中的结果，避免这种情况</p>
 </li>
 <li><p>如果父类抛出了多个异常，子类重写父类方法时，抛出和父类相同的异常，或者父类异常的子类，或者不抛出异常</p>
 </li>

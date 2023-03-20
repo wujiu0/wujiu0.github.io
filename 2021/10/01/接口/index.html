@@ -421,23 +421,23 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><p>接口，是Java语言中一种引用类型，是方法的集合，是一种规范</p>
-<p>定义接口与定义类方式相似，但是使用<code>interface</code>关键字。它也会被编译成.class文件，但一定要明确它并不是类，而是另外一种引用数据类型。</p>
+                <h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><p>接口，是 Java 语言中一种引用类型，是方法的集合，是一种规范</p>
+<p>定义接口与定义类方式相似，但是使用<code>interface</code>关键字。它也会被编译成.class 文件，但一定要明确它并不是类，而是另外一种引用数据类型。</p>
 <blockquote>
 <p>引用数据类型：数组，类，接口。</p>
 </blockquote>
 <p>接口的使用，它不能创建对象，但是可以被实现（<code>implements</code>，类似于被继承）。一个实现接口的类（可以看做是接口的子类），需要实现接口中所有的抽象方法，创建该类对象，就可以调用方法了。</p>
 <h3 id="定义格式"><a href="#定义格式" class="headerlink" title="定义格式"></a>定义格式</h3><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">interface</span> 接口名称<span class="token punctuation">&#123;</span>
- 
+
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h3><p>在java 9+版本中，接口内容可以有： </p>
+<h3 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h3><p>在 java 9+版本中，接口内容可以有：</p>
 <ol>
 <li><strong>成员变量</strong>（其实是常量），格式：</li>
 </ol>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token punctuation">[</span><span class="token keyword">public</span><span class="token punctuation">]</span> <span class="token punctuation">[</span><span class="token keyword">static</span><span class="token punctuation">]</span> <span class="token punctuation">[</span><span class="token keyword">final</span><span class="token punctuation">]</span> 数据类型 常量名称 <span class="token operator">=</span> 数据值<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<p>   注意：</p>
+<p>注意：</p>
 <ul>
 <li>常量必须进行赋值，而且一旦赋值不能改变</li>
 <li>常量名称完全大写，用下划线进行分隔</li>
@@ -447,31 +447,31 @@
 </ol>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token punctuation">[</span><span class="token keyword">public</span><span class="token punctuation">]</span> <span class="token punctuation">[</span><span class="token keyword">abstract</span><span class="token punctuation">]</span> 返回值类型 方法名称<span class="token punctuation">(</span>参数列表<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<p>   注意：</p>
+<p>注意：</p>
 <ul>
 <li>没有方法体，该方法供子类实现使用</li>
 <li>实现类必须覆盖重写接口中所有的抽象方法，除非实现类是抽象类</li>
 </ul>
 <ol start="3">
-<li><strong>默认方法</strong>（从java 8 开始）</li>
+<li><strong>默认方法</strong>（从 java 8 开始）</li>
 </ol>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token punctuation">[</span><span class="token keyword">public</span><span class="token punctuation">]</span> <span class="token keyword">default</span> 返回值类型 方法名称<span class="token punctuation">(</span>参数列表<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>方法体<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<p>   注意：</p>
+<p>注意：</p>
 <ul>
 <li>默认方法也可以被覆盖重写</li>
 </ul>
 <ol start="4">
-<li><strong>静态方法</strong>(从java 8 开始)</li>
+<li><strong>静态方法</strong>(从 java 8 开始)</li>
 </ol>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token punctuation">[</span><span class="token keyword">public</span><span class="token punctuation">]</span> <span class="token keyword">static</span> 返回值类型 方法名称<span class="token punctuation">(</span>参数列表<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>方法体<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<p>   注意：</p>
+<p>注意：</p>
 <ul>
 <li>应该<strong>通过接口名称进行调用</strong>，不能通过实现类对象进调用接口静态方法</li>
 </ul>
 <ol start="5">
-<li><strong>私有方法</strong>(java 9开始)</li>
+<li><strong>私有方法</strong>(java 9 开始)</li>
 </ol>
 <ul>
 <li>普通私有方法（解决多个默认方法之间重复代码问题）</li>
@@ -483,9 +483,9 @@
 </ul>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">private</span> <span class="token keyword">static</span> 返回值类型 方法名称<span class="token punctuation">(</span>参数列表<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>方法体<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<p>   注意：</p>
+<p>注意：</p>
 <ul>
-<li>private的方法只有接口自己才能调用，不能被实现类或者别人使用</li>
+<li>private 的方法只有接口自己才能调用，不能被实现类或者别人使用</li>
 </ul>
 <ol start="6">
 <li><strong>接口中没有构造方法，不能创建对象</strong></li>
@@ -522,8 +522,8 @@
 <h4 id="优先级"><a href="#优先级" class="headerlink" title="优先级"></a>优先级</h4><p>当一个类，既继承一个父类，又实现若干个接口时，父类中的成员方法与接口中的默认方法重名，子类就近选择执行父类的成员方法。</p>
 <h3 id="接口的多继承"><a href="#接口的多继承" class="headerlink" title="接口的多继承"></a>接口的多继承</h3><p>一个接口能继承另一个或者多个接口，这和类之间的继承比较相似。接口的继承使用<code>extends</code>关键字，子接口继承父接口的方法。如果父接口中的默认方法有重名的，那么子接口需要重写一次。</p>
 <blockquote>
-<p>子接口重写默认方法时，default关键字可以保留。</p>
-<p>子类重写默认方法时，default关键字不可以保留。</p>
+<p>子接口重写默认方法时，default 关键字可以保留。</p>
+<p>子类重写默认方法时，default 关键字不可以保留。</p>
 </blockquote>
 
                 

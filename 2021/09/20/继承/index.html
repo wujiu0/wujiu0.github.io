@@ -424,7 +424,7 @@
                 <h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><p>多个类中存在相同属性和行为时，将这些内容抽取到单独一个类中，那么多个类无需再定义这些属性和行为，只要继承那一个类即可。</p>
 <p>其中，多个类可以称为子类，单独那一个类称为父类、超类或者基类。继承描述的是事物之间的所属关系，这种关系是：<strong>is-a</strong>的关系。父类更通用，子类更具体。我们通过继承，可以使多种事物之间形成一种关系体系。</p>
 <blockquote>
-<p> 子类继承父类的<strong>属性</strong>和<strong>行为</strong>，使得子类对象具有与父类相同的属性、相同的行为。子类可以直接访问父类中的<strong>非私有</strong>的属性和行为。</p>
+<p>子类继承父类的<strong>属性</strong>和<strong>行为</strong>，使得子类对象具有与父类相同的属性、相同的行为。子类可以直接访问父类中的<strong>非私有</strong>的属性和行为。</p>
 </blockquote>
 <h3 id="好处"><a href="#好处" class="headerlink" title="好处"></a>好处</h3><ul>
 <li>提高代码复用性</li>
@@ -439,15 +439,13 @@
     <span class="token comment">// ...</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-
-
 <h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><ul>
-<li><p>java只支持单继承，不支持多继承</p>
+<li><p>java 只支持单继承，不支持多继承</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">//一个类只能有一个父类，不可以有多个父类。</span>
-<span class="token keyword">class</span> <span class="token class-name">C</span> <span class="token keyword">extends</span> <span class="token class-name">A</span><span class="token punctuation">&#123;</span> <span class="token punctuation">&#125;</span><span class="token comment">// ok </span>
+<span class="token keyword">class</span> <span class="token class-name">C</span> <span class="token keyword">extends</span> <span class="token class-name">A</span><span class="token punctuation">&#123;</span> <span class="token punctuation">&#125;</span><span class="token comment">// ok</span>
 <span class="token keyword">class</span> <span class="token class-name">C</span> <span class="token keyword">extends</span> <span class="token class-name">A</span>，<span class="token class-name">B</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token comment">//error</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 </li>
-<li><p>java支持多层继承</p>
+<li><p>java 支持多层继承</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">A</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>
 <span class="token keyword">class</span> <span class="token class-name">B</span> <span class="token keyword">extends</span> <span class="token class-name">A</span><span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>
 <span class="token keyword">class</span> <span class="token class-name">C</span> <span class="token keyword">extends</span> <span class="token class-name">B</span><span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>
@@ -459,13 +457,13 @@
 <h3 id="继承后的特点"><a href="#继承后的特点" class="headerlink" title="继承后的特点"></a>继承后的特点</h3><h4 id="成员变量"><a href="#成员变量" class="headerlink" title="成员变量"></a>成员变量</h4><ul>
 <li><p>成员变量不重名时，访问不受影响，子类可以访问父类中的非私有成员变量</p>
 </li>
-<li><p>成员变量重名，需要使用<code>super</code>关键字，来访问被隐藏的父类成员变量（类似于this）</p>
+<li><p>成员变量重名，需要使用<code>super</code>关键字，来访问被隐藏的父类成员变量（类似于 this）</p>
 <p>格式：</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">super</span><span class="token punctuation">.</span>父类成员变量名<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
 </ul>
 <blockquote>
-<p>通常编码时，我们遵循封装的原则，使用private修饰成员变量，那么如何访问父类的私有成员变量呢？</p>
-<p>可以通过父类中提供的公共的getXxx()和setXxx()方法</p>
+<p>通常编码时，我们遵循封装的原则，使用 private 修饰成员变量，那么如何访问父类的私有成员变量呢？</p>
+<p>可以通过父类中提供的公共的 getXxx()和 setXxx()方法</p>
 </blockquote>
 <h4 id="成员方法"><a href="#成员方法" class="headerlink" title="成员方法"></a>成员方法</h4><ul>
 <li><p>成员方法不重名，若子类中存在就执行子类中的方法，没有则向上调用父类中的方法</p>
@@ -499,7 +497,7 @@
 <li><p>构造方法的作用是初始化成员变量的。所以子类的初始化过程中，必须先执行父类的初始化动作。子类的构造方法中默认有一个<code>super()</code>，表示调用父类的构造方法，父类成员变量初始化后，才可以给子类使用。</p>
 <blockquote>
 <p>子类构造必须调用父类构造方法，不写则默认赠送<code>super()</code></p>
-<p>super只能有一个，且必须在方法第一行</p>
+<p>super 只能有一个，且必须在方法第一行</p>
 </blockquote>
 </li>
 </ul>

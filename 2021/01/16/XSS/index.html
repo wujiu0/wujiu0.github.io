@@ -425,16 +425,16 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="XSS"><a href="#XSS" class="headerlink" title="XSS"></a>XSS</h2><p>跨站脚本攻击,<br>网页内嵌入HTML,CSS,js代码</p>
+                <h2 id="XSS"><a href="#XSS" class="headerlink" title="XSS"></a>XSS</h2><p>跨站脚本攻击,<br>网页内嵌入 HTML,CSS,js 代码</p>
 <h2 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h2><ul>
 <li>反射型–前端-&gt;后端-&gt;前端</li>
 <li>存储型–前端-&gt;后端-&gt;数据库-&gt;前端</li>
-<li>DOM型–前端</li>
+<li>DOM 型–前端</li>
 </ul>
-<p>构造如下payload</p>
+<p>构造如下 payload</p>
 <pre class="line-numbers language-jsp" data-language="jsp"><code class="language-jsp">&lt;script&gt;alert(1)&lt;&#x2F;script&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">onclick<span class="token operator">=</span><span class="token function">alert</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">onclick <span class="token operator">=</span> <span class="token function">alert</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <pre class="line-numbers language-none"><code class="language-none">&lt;a href&#x3D;&quot;javascript:alert()&quot;&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 

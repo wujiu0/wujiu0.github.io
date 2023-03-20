@@ -426,7 +426,7 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <ol>
-<li><p>导入spring集成junit的坐标</p>
+<li><p>导入 spring 集成 junit 的坐标</p>
 <pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token comment">&lt;!--此处需要注意的是，spring5  及以上版本要求 junit 的版本必须是 4.12 及以上--></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.springframework<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
@@ -440,9 +440,9 @@
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>scope</span><span class="token punctuation">></span></span>test<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>scope</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
-<li><p>使用@Runwith注解替换原来的运行期</p>
+<li><p>使用@Runwith 注解替换原来的运行期</p>
 </li>
-<li><p>使用@ContextConfiguration指定配置文件或配置类</p>
+<li><p>使用@ContextConfiguration 指定配置文件或配置类</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token annotation punctuation">@RunWith</span><span class="token punctuation">(</span><span class="token class-name">SpringJUnit4ClassRunner</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span>
 <span class="token comment">//加载spring核心配置文件</span>
 <span class="token comment">//@ContextConfiguration(value = &#123;"classpath:applicationContext.xml"&#125;)</span>
@@ -452,7 +452,7 @@
     <span class="token comment">//...</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
-<li><p>使用@AutoWired注入需要测试的对象</p>
+<li><p>使用@AutoWired 注入需要测试的对象</p>
 </li>
 <li><p>创建测试方法进行测试</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token annotation punctuation">@Autowired</span>

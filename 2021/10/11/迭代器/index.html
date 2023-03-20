@@ -421,17 +421,17 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Iterator迭代器"><a href="#Iterator迭代器" class="headerlink" title="Iterator迭代器"></a>Iterator迭代器</h1><h2 id="Iterator接口"><a href="#Iterator接口" class="headerlink" title="Iterator接口"></a>Iterator接口</h2><p>在程序开发中，经常需要遍历集合中的所有元素。针对这种需求，JDK专门提供了一个接口<br><code>java.util.Iterator</code> 。<code>Iterator</code> 接口也是Java集合中的一员，但它与<code>Collection</code> 、<code>Map</code> 接口有所<br>不同，<code>Collection</code> 接口与<code>Map</code> 接口主要用于存储元素，而<code>Iterator</code> 主要用于迭代访问（即遍历）<br>Collection 中的元素，因此Iterator 对象也被称为迭代器。</p>
-<h3 id="获取方式"><a href="#获取方式" class="headerlink" title="获取方式"></a>获取方式</h3><p>Iterator迭代器，是一个接口，我们无法直接使用，需要使用Iterator接口的实现类对象，获取实现类的方式比较特殊</p>
-<p>Collection接口中有一个方法，<code>iterator()</code>，返回的就是迭代器的实现类对象</p>
-<p>  <code>Iterator&lt;E&gt; iterator()</code> 返回在此collection的元素上进行迭代的迭代器对象</p>
+                <h1 id="Iterator-迭代器"><a href="#Iterator-迭代器" class="headerlink" title="Iterator 迭代器"></a>Iterator 迭代器</h1><h2 id="Iterator-接口"><a href="#Iterator-接口" class="headerlink" title="Iterator 接口"></a>Iterator 接口</h2><p>在程序开发中，经常需要遍历集合中的所有元素。针对这种需求，JDK 专门提供了一个接口<br><code>java.util.Iterator</code> 。<code>Iterator</code> 接口也是 Java 集合中的一员，但它与<code>Collection</code> 、<code>Map</code> 接口有所<br>不同，<code>Collection</code> 接口与<code>Map</code> 接口主要用于存储元素，而<code>Iterator</code> 主要用于迭代访问（即遍历）<br>Collection 中的元素，因此 Iterator 对象也被称为迭代器。</p>
+<h3 id="获取方式"><a href="#获取方式" class="headerlink" title="获取方式"></a>获取方式</h3><p>Iterator 迭代器，是一个接口，我们无法直接使用，需要使用 Iterator 接口的实现类对象，获取实现类的方式比较特殊</p>
+<p>Collection 接口中有一个方法，<code>iterator()</code>，返回的就是迭代器的实现类对象</p>
+<p><code>Iterator&lt;E&gt; iterator()</code> 返回在此 collection 的元素上进行迭代的迭代器对象</p>
 <h3 id="常用方法："><a href="#常用方法：" class="headerlink" title="常用方法："></a>常用方法：</h3><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">boolean</span> <span class="token function">hasNext</span><span class="token punctuation">(</span><span class="token punctuation">)</span> 如果仍有元素可以迭代，返回<span class="token boolean">true</span>
 
 <span class="token keyword">public</span> <span class="token class-name">E</span> <span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span> 返回迭代的下一个元素<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="使用步骤："><a href="#使用步骤：" class="headerlink" title="使用步骤："></a>使用步骤：</h3><p>  1.使用集合中的方法iterator()获取迭代器的实现类对象,使用Iterator接口接收(多态)</p>
-<p>  2.使用Iterator接口中的方法hasNext判断还有没有下一个元素</p>
-<p>  3.使用Iterator接口中的方法next取出集合中的下一个元素</p>
+<h3 id="使用步骤："><a href="#使用步骤：" class="headerlink" title="使用步骤："></a>使用步骤：</h3><p>1.使用集合中的方法 iterator()获取迭代器的实现类对象,使用 Iterator 接口接收(多态)</p>
+<p>2.使用 Iterator 接口中的方法 hasNext 判断还有没有下一个元素</p>
+<p>3.使用 Iterator 接口中的方法 next 取出集合中的下一个元素</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">IteratorTest</span> <span class="token punctuation">&#123;</span>
     <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
         <span class="token class-name">Collection</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">></span></span> coll <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -452,8 +452,8 @@
     <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2 id="增强for"><a href="#增强for" class="headerlink" title="增强for"></a>增强for</h2><p>增强for循环(也称for each循环)是JDK1.5以后出来的一个高级for循环，专门用来遍历数组和集合的。它<br>的内部原理其实是个Iterator迭代器，所以在遍历的过程中，不能对集合中的元素进行增删操作。</p>
-<h3 id="格式："><a href="#格式：" class="headerlink" title="格式："></a>格式：</h3><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">for</span><span class="token punctuation">(</span>元素的数据类型  变量 <span class="token operator">:</span> <span class="token class-name">Collection</span>集合or数组<span class="token punctuation">)</span><span class="token punctuation">&#123;</span> 
+<h2 id="增强-for"><a href="#增强-for" class="headerlink" title="增强 for"></a>增强 for</h2><p>增强 for 循环(也称 for each 循环)是 JDK1.5 以后出来的一个高级 for 循环，专门用来遍历数组和集合的。它<br>的内部原理其实是个 Iterator 迭代器，所以在遍历的过程中，不能对集合中的元素进行增删操作。</p>
+<h3 id="格式："><a href="#格式：" class="headerlink" title="格式："></a>格式：</h3><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">for</span><span class="token punctuation">(</span>元素的数据类型  变量 <span class="token operator">:</span> <span class="token class-name">Collection</span>集合or数组<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
     <span class="token comment">//写操作代码</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
@@ -476,7 +476,7 @@
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <blockquote>
-<p>增强for必须有被遍历的目标，目标只能是Collection或者是数组</p>
+<p>增强 for 必须有被遍历的目标，目标只能是 Collection 或者是数组</p>
 <p>一般仅仅作为遍历操作出现</p>
 </blockquote>
 

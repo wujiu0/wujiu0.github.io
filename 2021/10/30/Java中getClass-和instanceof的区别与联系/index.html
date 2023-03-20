@@ -423,15 +423,15 @@
             <div id="articleContent">
                 <p>在比较两个类时，常见有两种做法，一种是<code>x.getClass() == y</code>; 一种是<code>x instanceof y</code>，通过下面代码来看一下二者有什么区别</p>
 <blockquote>
-<p> <code>getClass()</code>返回一个对象所属的类</p>
+<p><code>getClass()</code>返回一个对象所属的类</p>
 <p><code>instanceof</code>比较一个对象是否是该类的实例</p>
 </blockquote>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">Fu</span> <span class="token punctuation">&#123;</span>
-    
+
 <span class="token punctuation">&#125;</span>
 
 <span class="token keyword">class</span> <span class="token class-name">Zi</span> <span class="token keyword">extends</span> <span class="token class-name">Fu</span> <span class="token punctuation">&#123;</span>
-   
+
 <span class="token punctuation">&#125;</span>
 
 <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Test</span> <span class="token punctuation">&#123;</span>
@@ -447,7 +447,7 @@
         <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>obj<span class="token punctuation">.</span><span class="token function">getClass</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> fu<span class="token punctuation">.</span><span class="token function">getClass</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">// false</span>
         <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>obj <span class="token keyword">instanceof</span> <span class="token class-name">Zi</span><span class="token punctuation">)</span><span class="token punctuation">;</span>              <span class="token comment">// true</span>
         <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>obj<span class="token punctuation">.</span><span class="token function">getClass</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> zi<span class="token punctuation">.</span><span class="token function">getClass</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">// true</span>
-        
+
         <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"==================="</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>zi <span class="token keyword">instanceof</span> <span class="token class-name">Fu</span><span class="token punctuation">)</span><span class="token punctuation">;</span>               <span class="token comment">// true</span>
         <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>zi<span class="token punctuation">.</span><span class="token function">getClass</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> fu<span class="token punctuation">.</span><span class="token function">getClass</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// false</span>
@@ -455,9 +455,7 @@
 
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-
-
-<p>可以看到，<code>getClass</code>返回的是一个类名，也就是说只会在类名相同时返回true，不会判断子类与父类的继承关系。<code>instanceof</code>会判断继承关系，<code>子对象 instanceof 父类</code> 会返回true，<code>父对象 instanceof 子类</code>会返回 false。</p>
+<p>可以看到，<code>getClass</code>返回的是一个类名，也就是说只会在类名相同时返回 true，不会判断子类与父类的继承关系。<code>instanceof</code>会判断继承关系，<code>子对象 instanceof 父类</code> 会返回 true，<code>父对象 instanceof 子类</code>会返回 false。</p>
 <p><strong>即<code>instanceof</code>进行类型检查规则是：你属于该类吗？或者你属于该类的派生类吗？而通过<code>getClass()</code>获得类型信息采用<code>==</code>来进行检查是否相等的操作，是严格的判断，不会存在继承方面的考虑。</strong></p>
 
                 

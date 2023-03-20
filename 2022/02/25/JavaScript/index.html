@@ -417,18 +417,18 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h2><p>使用const声明的变量</p>
+                <h2 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h2><p>使用 const 声明的变量</p>
 <p>注意：常量不允许重新赋值，声明的时候必须赋值（初始化）</p>
 <h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><h3 id="基本数据类型"><a href="#基本数据类型" class="headerlink" title="基本数据类型"></a>基本数据类型</h3><p>值类型&#x2F;简单数据类型&#x2F;基本数据类型，在存储时变量中存储的是值本身，因此叫做值类型</p>
 <ul>
 <li><p>number 数字型</p>
-<p>js中的所有数字统称为数字类型</p>
-<p>NaN  表示一个计算错误，是一个不正确的或者一个未定义的数学操作所得到的结果</p>
+<p>js 中的所有数字统称为数字类型</p>
+<p>NaN 表示一个计算错误，是一个不正确的或者一个未定义的数学操作所得到的结果</p>
 <blockquote>
-<p>NaN是粘性的，任何对NaN的操作都会返回NaN</p>
+<p>NaN 是粘性的，任何对 NaN 的操作都会返回 NaN</p>
 <p>减法 - （像大多数数学运算一样）只能用于数字，它会使空字符串 “” 转换为 0</p>
-<p>undefined 经过数字转换之后会变为 NaN </p>
-<p>null 经过数字转换之后会变为 0 </p>
+<p>undefined 经过数字转换之后会变为 NaN</p>
+<p>null 经过数字转换之后会变为 0</p>
 </blockquote>
 </li>
 <li><p>string 字符串型</p>
@@ -443,7 +443,7 @@
 </li>
 <li><p>boolean 布尔型</p>
 <blockquote>
-<p>空字符串’’、数字0、undefined、null、false、NaN 转换为布尔值后都是false, 其余则为 true</p>
+<p>空字符串’’、数字 0、undefined、null、false、NaN 转换为布尔值后都是 false, 其余则为 true</p>
 </blockquote>
 </li>
 <li><p>undefined 未定义型</p>
@@ -455,10 +455,10 @@
 <li><p>转换为数字型：</p>
 <ul>
 <li><p>Number(数据)：转成数字类型</p>
-<p>如果字符串内容里有非数字，转换失败，结果为NaN</p>
+<p>如果字符串内容里有非数字，转换失败，结果为 NaN</p>
 </li>
 <li><p>parseInt(数据)：只保留整数</p>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token function">parseInt</span><span class="token punctuation">(</span><span class="token string">'2a'</span><span class="token punctuation">)</span>   <span class="token comment">// 2</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token function">parseInt</span><span class="token punctuation">(</span><span class="token string">'2a'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 2</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 </li>
 <li><p>parseFloat(数据)：保留小数</p>
 </li>
@@ -474,12 +474,12 @@
 </li>
 </ul>
 <h3 id="引用类型"><a href="#引用类型" class="headerlink" title="引用类型"></a>引用类型</h3><p>复杂数据类型，在存储时变量中存储的仅仅是地址（引用），因此叫做引用数据类型</p>
-<p>通过 new 关键字创建的对象（系统对象、自定义对象），如 Object、Array、Date等</p>
+<p>通过 new 关键字创建的对象（系统对象、自定义对象），如 Object、Array、Date 等</p>
 <h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><h4 id="声明："><a href="#声明：" class="headerlink" title="声明："></a>声明：</h4><p><code>let arr = [elem1, elem2]</code></p>
 <h4 id="APIs"><a href="#APIs" class="headerlink" title="APIs:"></a>APIs:</h4><ul>
-<li><p>push(元素1, …, 元素n); &#x2F;&#x2F; 将一个或多个元素添加到数组末尾，并返回该数组的新长度</p>
+<li><p>push(元素 1, …, 元素 n); &#x2F;&#x2F; 将一个或多个元素添加到数组末尾，并返回该数组的新长度</p>
 </li>
-<li><p>unshift(元素1, …, 元素n); &#x2F;&#x2F; 将一个或多个元素添加到数组的开头，并返回该数组的新长度</p>
+<li><p>unshift(元素 1, …, 元素 n); &#x2F;&#x2F; 将一个或多个元素添加到数组的开头，并返回该数组的新长度</p>
 </li>
 <li><p>pop(); &#x2F;&#x2F; 从数组中删除最后一个元素，并返回该元素的值</p>
 </li>
@@ -487,7 +487,7 @@
 </li>
 <li><p>splice(start, deleteCount); &#x2F;&#x2F; 从指定位置开始删除指定个数元素</p>
 <ul>
-<li><p>start:指定修改的开始位置（从0计数）</p>
+<li><p>start:指定修改的开始位置（从 0 计数）</p>
 </li>
 <li><p>deleteCount：表示要移除的数组元素的个数<br>可选的。 如果省略则默认从指定的起始位置删<br>除到最后</p>
 </li>
@@ -506,11 +506,11 @@ arr<span class="token punctuation">.</span><span class="token function">sort</sp
 </ul>
 <h3 id="对象："><a href="#对象：" class="headerlink" title="对象："></a>对象：</h3><p>对象由属性和方法组成。</p>
 <h4 id="声明：-1"><a href="#声明：-1" class="headerlink" title="声明："></a>声明：</h4><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">let</span> obj <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
-    <span class="token literal-property property">key</span><span class="token operator">:</span> value<span class="token punctuation">,</span>
-    <span class="token function-variable function">f</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-        <span class="token comment">// 方法体</span>
-    <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+  <span class="token literal-property property">key</span><span class="token operator">:</span> value<span class="token punctuation">,</span>
+  <span class="token function-variable function">f</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token comment">// 方法体</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <blockquote>
 <p>属性和值用: 隔开</p>
@@ -531,53 +531,54 @@ arr<span class="token punctuation">.</span><span class="token function">sort</sp
 <li><p>删除：<code>delete 对象名.属性名</code></p>
 </li>
 </ul>
-<h4 id="遍历对象-for-in"><a href="#遍历对象-for-in" class="headerlink" title="遍历对象(for in)"></a>遍历对象(for in)</h4><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> key <span class="token keyword">in</span> object<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<h4 id="遍历对象-for-in"><a href="#遍历对象-for-in" class="headerlink" title="遍历对象(for in)"></a>遍历对象(for in)</h4><p><strong><code>for...in</code></strong> <strong>语句</strong>以任意顺序迭代一个对象的除<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Symbol">Symbol</a>以外的<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Enumerability_and_ownership_of_properties">可枚举</a>属性，包括继承的可枚举属性。</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> key <span class="token keyword">in</span> object<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="内置对象"><a href="#内置对象" class="headerlink" title="内置对象"></a>内置对象</h3><p>JavaScript内部提供的对象，包含各种属性和方法给开发者调用</p>
-<h5 id="Math"><a href="#Math" class="headerlink" title="Math"></a>Math</h5><p>Math对象是JavaScript提供的一个“数学”对象，提供了一系列做数学运算的方法</p>
+<h3 id="内置对象"><a href="#内置对象" class="headerlink" title="内置对象"></a>内置对象</h3><p>JavaScript 内部提供的对象，包含各种属性和方法给开发者调用</p>
+<h5 id="Math"><a href="#Math" class="headerlink" title="Math"></a>Math</h5><p>Math 对象是 JavaScript 提供的一个“数学”对象，提供了一系列做数学运算的方法</p>
 <ul>
-<li>random()：生成0-1之间的随机数（包含0不包括1） </li>
-<li>ceil()：向上取整 </li>
-<li>floor()：向下取整 </li>
-<li>max()：找最大数 </li>
-<li>min()：找最小数 </li>
-<li>pow()：幂运算 </li>
+<li>random()：生成 0-1 之间的随机数（包含 0 不包括 1）</li>
+<li>ceil()：向上取整</li>
+<li>floor()：向下取整</li>
+<li>max()：找最大数</li>
+<li>min()：找最小数</li>
+<li>pow()：幂运算</li>
 <li>abs()：绝对值</li>
 </ul>
-<h6 id="如何生成N-M之间的随机数"><a href="#如何生成N-M之间的随机数" class="headerlink" title="如何生成N-M之间的随机数"></a>如何生成N-M之间的随机数</h6><p><code>Math.floor(Math.random() * (M - N + 1)) +N</code></p>
+<h6 id="如何生成-N-M-之间的随机数"><a href="#如何生成-N-M-之间的随机数" class="headerlink" title="如何生成 N-M 之间的随机数"></a>如何生成 N-M 之间的随机数</h6><p><code>Math.floor(Math.random() * (M - N + 1)) +N</code></p>
 <h3 id="检测数据类型"><a href="#检测数据类型" class="headerlink" title="检测数据类型"></a>检测数据类型</h3><p>typeof 运算符可以返回被检测的数据类型。</p>
 <ol>
-<li><p>作为运算符   typeof x （常用）</p>
+<li><p>作为运算符 typeof x （常用）</p>
 </li>
-<li><p>作为函数    typeof(x) </p>
+<li><p>作为函数 typeof(x)</p>
 <blockquote>
 <p>结果是相同的</p>
 </blockquote>
 </li>
 </ol>
 <h2 id="运算符优先级"><a href="#运算符优先级" class="headerlink" title="运算符优先级"></a>运算符优先级</h2><p><img src="/./JavaScript/image-20230228175105792.png" alt="image-20230228175105792"></p>
-<h2 id="函数（function）"><a href="#函数（function）" class="headerlink" title="函数（function）"></a>函数（function）</h2><h3 id="声明"><a href="#声明" class="headerlink" title="声明"></a>声明</h3><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">函数名</span><span class="token punctuation">(</span><span class="token parameter">参数<span class="token number">1</span><span class="token punctuation">,</span> 参数n</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-	<span class="token comment">// 函数体</span>
-    <span class="token keyword">return</span> xxx<span class="token punctuation">;</span> <span class="token comment">// 可选</span>
+<h2 id="函数（function）"><a href="#函数（function）" class="headerlink" title="函数（function）"></a>函数（function）</h2><h3 id="声明"><a href="#声明" class="headerlink" title="声明"></a>声明</h3><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">函数名</span><span class="token punctuation">(</span><span class="token parameter">参数<span class="token number">1</span><span class="token punctuation">,</span> 参数n</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token comment">// 函数体</span>
+  <span class="token keyword">return</span> xxx<span class="token punctuation">;</span> <span class="token comment">// 可选</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
 <blockquote>
 <ul>
 <li>命名规范：和变量命名基本一致，小驼峰</li>
 <li>实参的个数和形参的个数可以不一致<ul>
-<li>如果形参过多 会自动填上undefined</li>
+<li>如果形参过多 会自动填上 undefined</li>
 <li>如果实参过多 那么多余的实参会被忽略</li>
 </ul>
 </li>
-<li>若不指定返回值，函数默认返回值为undefined</li>
+<li>若不指定返回值，函数默认返回值为 undefined</li>
 </ul>
 </blockquote>
-<p>  可以手动指定参数的默认值</p>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">函数名</span><span class="token punctuation">(</span><span class="token parameter">参数<span class="token number">1</span> <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> 参数n <span class="token operator">=</span> <span class="token number">0</span></span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-	<span class="token comment">// 函数体</span>
+<p>可以手动指定参数的默认值</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">函数名</span><span class="token punctuation">(</span><span class="token parameter">参数<span class="token number">1</span> <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> 参数n <span class="token operator">=</span> <span class="token number">0</span></span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token comment">// 函数体</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
 <h3 id="调用"><a href="#调用" class="headerlink" title="调用"></a>调用</h3><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token function">函数名</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
@@ -587,19 +588,19 @@ arr<span class="token punctuation">.</span><span class="token function">sort</sp
 <li><p>函数表达式</p>
 <p>将匿名函数赋值给一个变量，并且通过变量名称进行调用 我们将这个称为函数表达式</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">let</span> <span class="token function-variable function">fn</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span> b</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-  <span class="token comment">// 函数体  </span>
+  <span class="token comment">// 函数体</span>
 <span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
 
 <span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 调用</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 <li><p>立即执行函数</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    <span class="token comment">// 函数体</span>
+  <span class="token comment">// 函数体</span>
 <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-<span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-    <span class="token comment">// 函数体</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token comment">// 函数体</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <blockquote>
 <p>该方式可以防止变量污染</p>
@@ -607,8 +608,39 @@ arr<span class="token punctuation">.</span><span class="token function">sort</sp
 </blockquote>
 </li>
 </ul>
+<h3 id="动态参数"><a href="#动态参数" class="headerlink" title="动态参数"></a>动态参数</h3><p>arguments 是函数内部内置的伪数组变量，它包含了调用函数时传入的所有实参</p>
+<p>注：</p>
+<ol>
+<li>arguments 是一个伪数组，只存在于函数中</li>
+<li>arguments 的作用是动态获取函数的实参</li>
+<li>可以通过 for 循环依次得到传递过来的实参</li>
+</ol>
+<h3 id="剩余参数"><a href="#剩余参数" class="headerlink" title="剩余参数"></a>剩余参数</h3><p>剩余参数允许我们将一个不定数量的参数表示为一个数组</p>
+<ol>
+<li><p><code>...</code> 是语法符号，置于最末函数形参之前，用于获取多余的实参</p>
+</li>
+<li><p>借助 <code>...</code> 获取的剩余实参，是个真数组</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">getSum</span><span class="token punctuation">(</span><span class="token parameter"><span class="token operator">...</span>other</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>other<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token comment">// 得到[1, 2, 3]</span>
+<span class="token punctuation">&#125;</span>
+<span class="token function">getSum</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ol>
+<h3 id="展开运算符"><a href="#展开运算符" class="headerlink" title="展开运算符"></a>展开运算符</h3><p><code>...</code>, 能将一个数组进行展开(不会修改原数组)</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">var</span> arr1 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> arr2 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token comment">// 将 arr2 中的元素插入到 arr1 的开头</span>
+<span class="token class-name">Array</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function">unshift</span><span class="token punctuation">.</span><span class="token function">apply</span><span class="token punctuation">(</span>arr1<span class="token punctuation">,</span> arr2<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// arr1 现在是 [3, 4, 5, 0, 1, 2]</span>
+
+<span class="token keyword">var</span> arr1 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> arr2 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+arr1 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token operator">...</span>arr2<span class="token punctuation">,</span> <span class="token operator">...</span>arr1<span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// arr1 现在为 [3, 4, 5, 0, 1, 2]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<blockquote>
+<p>注意:这里使用展开语法创建了一个新的 <code>arr1</code> 数组，<code>Array.unshift</code> 方法则是修改了原本存在的 <code>arr1</code> 数组</p>
+</blockquote>
 <h2 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h2><ul>
-<li><p>全局作用域：<code>&lt;script&gt;</code> 标签和 <code>.js</code> 文件的 〖 最外层 〗 就是所谓的全局作用域 </p>
+<li><p>全局作用域：<code>&lt;script&gt;</code> 标签和 <code>.js</code> 文件的 〖 最外层 〗 就是所谓的全局作用域</p>
 <blockquote>
 <p>全局作用域中声明的变量 ， 任何其它作用域都可以被访问</p>
 <p>为 window 对象动态添加的属性默认也是全局的 ， 不推荐 ！<br>函数中未使用任何关键字声明的变量为全局变量 ， 不推荐 ！ ！ ！<br>尽可能少的声明全局变量 ， 防止全局变量被污染</p>
@@ -646,6 +678,86 @@ arr<span class="token punctuation">.</span><span class="token function">sort</sp
 </blockquote>
 </li>
 </ul>
+<h2 id="变量提升"><a href="#变量提升" class="headerlink" title="变量提升"></a>变量提升</h2><p>注意：</p>
+<ol>
+<li><p>变量在未声明即被访问时会报语法错误</p>
+</li>
+<li><p>变量在 var 声明之前即被访问，变量的值为 undefined</p>
+</li>
+<li><p>let&#x2F;const 声明的变量不存在变量提升</p>
+</li>
+<li><p>变量提升出现在相同作用域当中</p>
+<blockquote>
+<p>实际开发中推荐先声明再访问变量</p>
+</blockquote>
+</li>
+</ol>
+<h2 id="函数提升"><a href="#函数提升" class="headerlink" title="函数提升"></a>函数提升</h2><p>函数提升与变量提升比较类似，是指函数在声明之前即可被调用</p>
+<p>注意：</p>
+<ol>
+<li>函数提升能够使函数的声明调用更灵活</li>
+<li>函数表达式不存在提升的现象</li>
+<li>函数提升出现在相同作用域当中</li>
+</ol>
+<h2 id="垃圾回收机制"><a href="#垃圾回收机制" class="headerlink" title="垃圾回收机制"></a>垃圾回收机制</h2><p>垃圾回收机制(Garbage Collection) 简称 GC</p>
+<h3 id="内存的生命周期"><a href="#内存的生命周期" class="headerlink" title="内存的生命周期"></a>内存的生命周期</h3><ol>
+<li>内存分配：当我们声明变量、函数、对象的时候，系统会自动为他们分配内存</li>
+<li>内存使用：即读写内存，也就是使用变量、函数等</li>
+<li>内存回收：使用完毕，由垃圾回收自动回收不再使用的内存</li>
+<li>说明：<ul>
+<li>全局变量一般不会回收(关闭页面回收)；</li>
+<li>一般情况下局部变量的值, 不用了会被自动回收掉</li>
+</ul>
+</li>
+</ol>
+<h3 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h3><h4 id="引用计数"><a href="#引用计数" class="headerlink" title="引用计数"></a>引用计数</h4><p>引用计数算法, 定义“内存不再使用”，就是看一个对象是否有指向它的引用，没有引用了就回收对象</p>
+<ol>
+<li>跟踪记录被引用的次数</li>
+<li>如果被引用了一次，那么就记录次数 1,多次引用会累加 ++</li>
+<li>如果减少一个引用就减 1 –</li>
+<li>如果引用次数是 0 ，则释放内存</li>
+</ol>
+<blockquote>
+<p>引用计数算法存在一个致命的问题：嵌套引用（循环引用）<br>如果两个对象相互引用，尽管他们已不再使用，垃圾回收器不会进行回收，导致内存泄露。<br>因为他们的引用次数永远不会是 0。这样的相互引用如果说很大量的存在就会导致大量的内存泄露</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">let</span> o1 <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+  <span class="token keyword">let</span> o2 <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+  o1<span class="token punctuation">.</span>a <span class="token operator">=</span> o2<span class="token punctuation">;</span>
+  o2<span class="token punctuation">.</span>a <span class="token operator">=</span> o1<span class="token punctuation">;</span>
+  <span class="token keyword">return</span> <span class="token string">'引用计数无法回收'</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</blockquote>
+<h4 id="标记清除法"><a href="#标记清除法" class="headerlink" title="标记清除法"></a>标记清除法</h4><p>现代浏览器通用的大多是基于标记清除算法的某些改进算法，总体思想都是一致的。</p>
+<ol>
+<li>标记清除算法将“不再使用的对象”定义为“无法达到的对象”。</li>
+<li>就是从根部（在 JS 中就是全局对象）出发定时扫描内存中的对象。 凡是能从根部到达的对象，都是还需要使用的。</li>
+<li>那些无法由根部出发触及到的对象被标记为不再使用，稍后进行回收。</li>
+</ol>
+<p><img src="/./JavaScript/image-20230316142927773.png" alt="image-20230316142927773"></p>
+<h2 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h2><p>一个函数对周围状态的引用捆绑在一起，内层函数中访问到其外层函数的作用域<br>简单理解：闭包 &#x3D; 内层函数 + 外层函数的变量</p>
+<h3 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h3><p>封闭数据，提供操作，外部也可以访问函数内部的变量<br>闭包的基本格式:</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">makeFunc</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">let</span> name <span class="token operator">=</span> <span class="token string">"Mozilla"</span><span class="token punctuation">;</span>
+    <span class="token keyword">function</span> <span class="token function">displayName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token function">alert</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">return</span> displayName<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">var</span> myFunc <span class="token operator">=</span> <span class="token function">makeFunc</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">myFunc</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 简约写法</span>
+<span class="token keyword">function</span> <span class="token function">makeFunc</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">let</span> name <span class="token operator">=</span> <span class="token string">"Mozilla"</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token function">displayName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token function">alert</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token keyword">const</span> myFunc <span class="token operator">=</span> <span class="token function">makeFunc</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">myFunc</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
                 
             </div>

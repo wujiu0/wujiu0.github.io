@@ -421,7 +421,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="集合概述"><a href="#集合概述" class="headerlink" title="集合概述"></a>集合概述</h1><p>集合是java中提供的一种容器，可以用来存储多个数据</p>
+                <h1 id="集合概述"><a href="#集合概述" class="headerlink" title="集合概述"></a>集合概述</h1><p>集合是 java 中提供的一种容器，可以用来存储多个数据</p>
 <blockquote>
 <ul>
 <li><p>数组的长度是固定的，集合的长度是可变的</p>
@@ -432,11 +432,11 @@
 </blockquote>
 <h1 id="集合框架"><a href="#集合框架" class="headerlink" title="集合框架"></a>集合框架</h1><p>集合按照其存储结构可以分为两大类，分别是单列集合<code>java.util.Collection</code>和双列集合<code>java.util.Map</code></p>
 <ul>
-<li><strong>Collection</strong>：单列集合类的根接口，用于存储一系列符合某种规则的元素，它有两个重要的子接口，分别是<code>java.util.List</code>和<code>java.util.Set</code>。其中，<code>List</code>的特点是元素有序、元素可重复。<code>Set</code>的特点是元素无序，而且不可重复。<code>List</code>接口的主要实现类有<code>java.util.ArrayList</code>和<code>java.util.LinkedList</code>，Set接口的主要实现类有<code>java.util.HashSet</code>和<code>java.util.TreeSet</code>。</li>
+<li><strong>Collection</strong>：单列集合类的根接口，用于存储一系列符合某种规则的元素，它有两个重要的子接口，分别是<code>java.util.List</code>和<code>java.util.Set</code>。其中，<code>List</code>的特点是元素有序、元素可重复。<code>Set</code>的特点是元素无序，而且不可重复。<code>List</code>接口的主要实现类有<code>java.util.ArrayList</code>和<code>java.util.LinkedList</code>，Set 接口的主要实现类有<code>java.util.HashSet</code>和<code>java.util.TreeSet</code>。</li>
 <li><strong>Map</strong>：</li>
 </ul>
-<h2 id="Collection集合"><a href="#Collection集合" class="headerlink" title="Collection集合"></a>Collection集合</h2><p><code>java.util.Collection</code>接口</p>
-<p>  <em>所有单列集合（List、Set）的最顶层的接口，里面定义了所有单列集合共性的方法，任意的单列集合都可以使用Collection接口中的方法</em></p>
+<h2 id="Collection-集合"><a href="#Collection-集合" class="headerlink" title="Collection 集合"></a>Collection 集合</h2><p><code>java.util.Collection</code>接口</p>
+<p><em>所有单列集合（List、Set）的最顶层的接口，里面定义了所有单列集合共性的方法，任意的单列集合都可以使用 Collection 接口中的方法</em></p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">boolean</span> <span class="token function">add</span><span class="token punctuation">(</span><span class="token class-name">E</span> e<span class="token punctuation">)</span> <span class="token comment">//把给定的对象添加到当前集合中 。</span>
 
 <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">clear</span><span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment">// 清空集合中所有的元素。</span>
@@ -451,7 +451,7 @@
 
 <span class="token keyword">public</span> <span class="token class-name">Object</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token function">toArray</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// 把集合中的元素，存储到数组中。</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="List接口"><a href="#List接口" class="headerlink" title="List接口"></a>List接口</h3><p><code>java.util.List</code> 接口继承自 <code>Collection</code> 接口，是单列集合的一个重要分支，习惯性地会将实现了 List 接口的对<br>象称为List集合。在List集合中允许出现重复的元素，所有的元素是以一种线性方式进行存储的，在程序中可以通过<br>索引来访问集合中的指定元素。另外，List集合还有一个特点就是元素有序，即元素的存入顺序和取出顺序一致。</p>
+<h3 id="List-接口"><a href="#List-接口" class="headerlink" title="List 接口"></a>List 接口</h3><p><code>java.util.List</code> 接口继承自 <code>Collection</code> 接口，是单列集合的一个重要分支，习惯性地会将实现了 List 接口的对<br>象称为 List 集合。在 List 集合中允许出现重复的元素，所有的元素是以一种线性方式进行存储的，在程序中可以通过<br>索引来访问集合中的指定元素。另外，List 集合还有一个特点就是元素有序，即元素的存入顺序和取出顺序一致。</p>
 <ul>
 <li>特点</li>
 </ul>
@@ -464,64 +464,64 @@
 <li>常用方法</li>
 </ul>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">int</span> index<span class="token punctuation">,</span><span class="token class-name">E</span> element<span class="token punctuation">)</span> <span class="token comment">//将指定的元素，添加到该集合中的指定位置</span>
-    
+
 <span class="token keyword">public</span> <span class="token class-name">E</span> <span class="token function">get</span><span class="token punctuation">(</span><span class="token keyword">int</span> index<span class="token punctuation">)</span> <span class="token comment">//返回集合中指定位置的元素</span>
-    
+
 <span class="token keyword">public</span> <span class="token class-name">E</span> <span class="token function">remove</span><span class="token punctuation">(</span><span class="token keyword">int</span> index<span class="token punctuation">)</span> <span class="token comment">//移除列表中指定位置的元素，返回被移除的元素</span>
 
 <span class="token keyword">public</span> <span class="token class-name">E</span> <span class="token function">set</span><span class="token punctuation">(</span><span class="token keyword">int</span> index<span class="token punctuation">,</span><span class="token class-name">E</span> element<span class="token punctuation">)</span> <span class="token comment">//用指定元素替换集合中指定位置的元素，返回更新前的元素</span>
-    
+
 <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment">//返回此集合中的元素数。遍历集合时，可以控制索引范围，防止越界</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h4 id="ArrayList集合"><a href="#ArrayList集合" class="headerlink" title="ArrayList集合"></a>ArrayList集合</h4><p><code>java.util.ArrayList</code> 集合数据存储的结构是数组结构。元素增删慢，查找快，由于日常开发中使用最多的功能为<br>查询数据、遍历数据，所以 ArrayList 是最常用的集合。<br>许多程序员开发时非常随意地使用ArrayList完成任何需求，并不严谨，这种用法是不提倡的</p>
+<h4 id="ArrayList-集合"><a href="#ArrayList-集合" class="headerlink" title="ArrayList 集合"></a>ArrayList 集合</h4><p><code>java.util.ArrayList</code> 集合数据存储的结构是数组结构。元素增删慢，查找快，由于日常开发中使用最多的功能为<br>查询数据、遍历数据，所以 ArrayList 是最常用的集合。<br>许多程序员开发时非常随意地使用 ArrayList 完成任何需求，并不严谨，这种用法是不提倡的</p>
 <ul>
 <li>常用方法</li>
 </ul>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">boolean</span> <span class="token function">add</span><span class="token punctuation">(</span><span class="token class-name">E</span> e<span class="token punctuation">)</span> <span class="token comment">//将指定的元素添加到此集合的尾部。 </span>
-    
-<span class="token keyword">public</span> <span class="token class-name">E</span> <span class="token function">remove</span><span class="token punctuation">(</span><span class="token keyword">int</span> index<span class="token punctuation">)</span> <span class="token comment">//移除此集合中指定位置上的元素。返回被删除的元素。 </span>
-    
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">boolean</span> <span class="token function">add</span><span class="token punctuation">(</span><span class="token class-name">E</span> e<span class="token punctuation">)</span> <span class="token comment">//将指定的元素添加到此集合的尾部。</span>
+
+<span class="token keyword">public</span> <span class="token class-name">E</span> <span class="token function">remove</span><span class="token punctuation">(</span><span class="token keyword">int</span> index<span class="token punctuation">)</span> <span class="token comment">//移除此集合中指定位置上的元素。返回被删除的元素。</span>
+
 <span class="token keyword">public</span> <span class="token class-name">E</span> <span class="token function">get</span><span class="token punctuation">(</span><span class="token keyword">int</span> index<span class="token punctuation">)</span> <span class="token comment">//返回此集合中指定位置上的元素。返回获取的元素。</span>
-    
+
 <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment">//返回此集合中的元素数。遍历集合时，可以控制索引范围，防止越界</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h4 id="LinkedList集合"><a href="#LinkedList集合" class="headerlink" title="LinkedList集合"></a>LinkedList集合</h4><p><code>java.util.LinkedList</code> 集合数据存储的结构是链表结构。方便元素添加、删除的集合。</p>
+<h4 id="LinkedList-集合"><a href="#LinkedList-集合" class="headerlink" title="LinkedList 集合"></a>LinkedList 集合</h4><p><code>java.util.LinkedList</code> 集合数据存储的结构是链表结构。方便元素添加、删除的集合。</p>
 <blockquote>
-<p>LinkedList是一个双向链表</p>
+<p>LinkedList 是一个双向链表</p>
 </blockquote>
 <ul>
 <li>常用方法</li>
 </ul>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">addFirst</span><span class="token punctuation">(</span><span class="token class-name">E</span> e<span class="token punctuation">)</span> <span class="token comment">//将指定元素插入此列表的开头。</span>
-    
+
 <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">addLast</span><span class="token punctuation">(</span><span class="token class-name">E</span> e<span class="token punctuation">)</span> <span class="token comment">//将指定元素添加到此列表的结尾。</span>
-    
+
 <span class="token keyword">public</span> <span class="token class-name">E</span> <span class="token function">getFirst</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">//返回此列表的第一个元素。</span>
-    
+
 <span class="token keyword">public</span> <span class="token class-name">E</span> <span class="token function">getLast</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">//返回此列表的最后一个元素。</span>
-    
+
 <span class="token keyword">public</span> <span class="token class-name">E</span> <span class="token function">removeFirst</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">//移除并返回此列表的第一个元素。</span>
-    
+
 <span class="token keyword">public</span> <span class="token class-name">E</span> <span class="token function">removeLast</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">//移除并返回此列表的最后一个元素。</span>
-    
+
 <span class="token keyword">public</span> <span class="token class-name">E</span> <span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">//从此列表所表示的堆栈处弹出一个元素。</span>
-    
+
 <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">push</span><span class="token punctuation">(</span><span class="token class-name">E</span> e<span class="token punctuation">)</span> <span class="token comment">//将元素推入此列表所表示的堆栈。</span>
-    
+
 <span class="token keyword">public</span> <span class="token keyword">boolean</span> <span class="token function">isEmpty</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">//如果列表不包含元素，则返回true。</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="Set接口"><a href="#Set接口" class="headerlink" title="Set接口"></a>Set接口</h3><p><code>java.util.Set</code> 接口和 <code>java.util.List</code> 接口一样，同样继承自 <code>Collection</code> 接口，它与 <code>Collection</code> 接口中的方<br>法基本一致，并没有对 <code>Collection</code> 接口进行功能上的扩充，只是比 <code>Collection</code> 接口更加严格了。与 <code>List</code> 接口不<br>同的是， <code>Set</code> 接口中元素无序，并且都会以某种规则保证存入的元素不出现重复。</p>
+<h3 id="Set-接口"><a href="#Set-接口" class="headerlink" title="Set 接口"></a>Set 接口</h3><p><code>java.util.Set</code> 接口和 <code>java.util.List</code> 接口一样，同样继承自 <code>Collection</code> 接口，它与 <code>Collection</code> 接口中的方<br>法基本一致，并没有对 <code>Collection</code> 接口进行功能上的扩充，只是比 <code>Collection</code> 接口更加严格了。与 <code>List</code> 接口不<br>同的是， <code>Set</code> 接口中元素无序，并且都会以某种规则保证存入的元素不出现重复。</p>
 <blockquote>
-<p>tips:Set集合取出元素的方式可以采用：迭代器、增强for</p>
+<p>tips:Set 集合取出元素的方式可以采用：迭代器、增强 for</p>
 </blockquote>
 <ul>
 <li>特点<ol>
 <li>不允许存储重复的元素</li>
-<li>没有索引，没有带索引的方法，不能使用普通的for循环遍历</li>
+<li>没有索引，没有带索引的方法，不能使用普通的 for 循环遍历</li>
 </ol>
 </li>
 </ul>
-<h4 id="HashSet集合"><a href="#HashSet集合" class="headerlink" title="HashSet集合"></a>HashSet集合</h4><p><code>java.util.HashSet</code> 是 <code>Set</code> 接口的一个实现类，它所存储的元素是不可重复的，并且元素都是无序的(即存取顺序<br>不一致)。 <code>java.util.HashSet</code> 底层的实现其实是一个 <code>java.util.HashMap</code> 支持.</p>
+<h4 id="HashSet-集合"><a href="#HashSet-集合" class="headerlink" title="HashSet 集合"></a>HashSet 集合</h4><p><code>java.util.HashSet</code> 是 <code>Set</code> 接口的一个实现类，它所存储的元素是不可重复的，并且元素都是无序的(即存取顺序<br>不一致)。 <code>java.util.HashSet</code> 底层的实现其实是一个 <code>java.util.HashMap</code> 支持.</p>
 <ul>
 <li>特点<ol>
 <li>不允许存储重复的元素</li>
@@ -531,25 +531,25 @@
 </ol>
 </li>
 </ul>
-<h4 id="LinkedHashSet集合"><a href="#LinkedHashSet集合" class="headerlink" title="LinkedHashSet集合"></a>LinkedHashSet集合</h4><p>在HashSet下面有一个子类 <code>java.util.LinkedHashSet</code> ，它是链表和哈希表组合的一个数据存储结构。</p>
+<h4 id="LinkedHashSet-集合"><a href="#LinkedHashSet-集合" class="headerlink" title="LinkedHashSet 集合"></a>LinkedHashSet 集合</h4><p>在 HashSet 下面有一个子类 <code>java.util.LinkedHashSet</code> ，它是链表和哈希表组合的一个数据存储结构。</p>
 <ul>
 <li><p>特点</p>
 <p>底层是一个哈希表(数组+链表&#x2F;红黑树)+链表:多了一条链表(记录元素的存储顺序),保证元素有序</p>
 </li>
 </ul>
-<h3 id="Collections类"><a href="#Collections类" class="headerlink" title="Collections类"></a>Collections类</h3><p><code>java.utils.Collections</code> 是集合工具类，用来对集合进行操作。</p>
+<h3 id="Collections-类"><a href="#Collections-类" class="headerlink" title="Collections 类"></a>Collections 类</h3><p><code>java.utils.Collections</code> 是集合工具类，用来对集合进行操作。</p>
 <ul>
 <li>常用方法</li>
 </ul>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">T</span><span class="token punctuation">></span></span> <span class="token keyword">boolean</span> <span class="token function">addAll</span><span class="token punctuation">(</span><span class="token class-name">Collection</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">T</span><span class="token punctuation">></span></span> c<span class="token punctuation">,</span> <span class="token class-name">T</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> elements<span class="token punctuation">)</span> <span class="token comment">//往集合中添加一些元素。</span>
-    
+
 <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">shuffle</span><span class="token punctuation">(</span><span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token operator">?</span><span class="token punctuation">></span></span> list<span class="token punctuation">)</span> <span class="token comment">//打乱集合顺序。</span>
-    
+
 <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">T</span><span class="token punctuation">></span></span> <span class="token keyword">void</span> <span class="token function">sort</span><span class="token punctuation">(</span><span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">T</span><span class="token punctuation">></span></span> list<span class="token punctuation">)</span> <span class="token comment">//将集合中元素按照默认规则排序。</span>
-    
+
 <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">T</span><span class="token punctuation">></span></span> <span class="token keyword">void</span> <span class="token function">sort</span><span class="token punctuation">(</span><span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">T</span><span class="token punctuation">></span></span> list，<span class="token class-name">Comparator</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token operator">?</span> <span class="token keyword">super</span> <span class="token class-name">T</span><span class="token punctuation">></span></span> <span class="token punctuation">)</span> <span class="token comment">//将集合中元素按照指定规则排序。</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h4 id="Comparable接口"><a href="#Comparable接口" class="headerlink" title="Comparable接口"></a>Comparable接口</h4><p><code>public static &lt;T&gt; void sort(List&lt;T&gt; list)</code> :将集合中元素按照默认规则排序。</p>
+<h4 id="Comparable-接口"><a href="#Comparable-接口" class="headerlink" title="Comparable 接口"></a>Comparable 接口</h4><p><code>public static &lt;T&gt; void sort(List&lt;T&gt; list)</code> :将集合中元素按照默认规则排序。</p>
 <ul>
 <li><p>使用前提</p>
 <p>被排序的集合里面存储的元素，必须实现<code>Comparable</code>接口，重写<code>comparaTo()</code>定义排序的规则</p>
@@ -559,10 +559,10 @@
 </li>
 </ul>
 <blockquote>
-<p>两个对象比较的结果有三种：大于，等于，小于。<br>如果要按照升序排序， 则o1 小于o2，返回（负数），相等返回0，o1大于o2返回（正数） </p>
-<p>如果要按照降序排序 ，则o1 小于o2，返回（正数），相等返回0，01大于02返回（负数）</p>
+<p>两个对象比较的结果有三种：大于，等于，小于。<br>如果要按照升序排序， 则 o1 小于 o2，返回（负数），相等返回 0，o1 大于 o2 返回（正数）</p>
+<p>如果要按照降序排序 ，则 o1 小于 o2，返回（正数），相等返回 0，01 大于 02 返回（负数）</p>
 </blockquote>
-<h4 id="Comparator接口"><a href="#Comparator接口" class="headerlink" title="Comparator接口"></a>Comparator接口</h4><p><code>public static &lt;T&gt; void sort(List&lt;T&gt; list，Comparator&lt;? super T&gt; )</code>：将集合中元素按照指定规则排序</p>
+<h4 id="Comparator-接口"><a href="#Comparator-接口" class="headerlink" title="Comparator 接口"></a>Comparator 接口</h4><p><code>public static &lt;T&gt; void sort(List&lt;T&gt; list，Comparator&lt;? super T&gt; )</code>：将集合中元素按照指定规则排序</p>
 <p><code>Comparator</code>这个接口，位于位于<code>java.util</code>包下，排序是<code>comparator</code>能实现的功能之一,该接口代表一个比较器</p>
 <ul>
 <li>排序规则</li>
@@ -570,35 +570,35 @@
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">compare</span><span class="token punctuation">(</span><span class="token class-name">String</span> o1<span class="token punctuation">,</span> <span class="token class-name">String</span> o2<span class="token punctuation">)</span> <span class="token comment">//比较其两个参数的顺序。</span>
      <span class="token comment">// o1 - o2 ：升序</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
-<h4 id="Comparable和Comparator两个接口的区别"><a href="#Comparable和Comparator两个接口的区别" class="headerlink" title="Comparable和Comparator两个接口的区别"></a>Comparable和Comparator两个接口的区别</h4><p><code>Comparable</code>：强行对实现它的每个类的对象进行整体排序。这种排序被称为类的自然排序，类的<code>compareTo()</code>方法<br>被称为它的自然比较方法。只能在类中实现<code>compareTo()</code>一次，不能经常修改类的代码实现自己想要的排序。实现<br>此接口的对象列表（和数组）可以通过<code>Collections.sort</code>（和<code>Arrays.sort</code>）进行自动排序，对象可以用作有序映射中<br>的键或有序集合中的元素，无需指定比较器。<br><code>Comparator</code>强行对某个对象进行整体排序。可以将<code>Comparator</code> 传递给<code>sort</code>方法（如<code>Collections.sort</code>或<br><code>Arrays.sort</code>），从而允许在排序顺序上实现精确控制。还可以使用<code>Comparator</code>来控制某些数据结构（如有序<code>set</code>或<br>有序映射）的顺序，或者为那些没有自然顺序的对象<code>collection</code>提供排序。</p>
-<h2 id="Map集合"><a href="#Map集合" class="headerlink" title="Map集合"></a>Map集合</h2><ul>
+<h4 id="Comparable-和-Comparator-两个接口的区别"><a href="#Comparable-和-Comparator-两个接口的区别" class="headerlink" title="Comparable 和 Comparator 两个接口的区别"></a>Comparable 和 Comparator 两个接口的区别</h4><p><code>Comparable</code>：强行对实现它的每个类的对象进行整体排序。这种排序被称为类的自然排序，类的<code>compareTo()</code>方法<br>被称为它的自然比较方法。只能在类中实现<code>compareTo()</code>一次，不能经常修改类的代码实现自己想要的排序。实现<br>此接口的对象列表（和数组）可以通过<code>Collections.sort</code>（和<code>Arrays.sort</code>）进行自动排序，对象可以用作有序映射中<br>的键或有序集合中的元素，无需指定比较器。<br><code>Comparator</code>强行对某个对象进行整体排序。可以将<code>Comparator</code> 传递给<code>sort</code>方法（如<code>Collections.sort</code>或<br><code>Arrays.sort</code>），从而允许在排序顺序上实现精确控制。还可以使用<code>Comparator</code>来控制某些数据结构（如有序<code>set</code>或<br>有序映射）的顺序，或者为那些没有自然顺序的对象<code>collection</code>提供排序。</p>
+<h2 id="Map-集合"><a href="#Map-集合" class="headerlink" title="Map 集合"></a>Map 集合</h2><ul>
 <li><p>特点</p>
 <ol>
-<li>Map集合是一个双列集合，一格元素包含两个值（key,value）</li>
-<li>Map集合中的元素，key和value的数据类型可以相同，也可以不同</li>
-<li>Map集合中的元素，key是不允许重复的，value是可以重复的</li>
-<li>Map集合中的元素，key和value是一一对应的</li>
+<li>Map 集合是一个双列集合，一格元素包含两个值（key,value）</li>
+<li>Map 集合中的元素，key 和 value 的数据类型可以相同，也可以不同</li>
+<li>Map 集合中的元素，key 是不允许重复的，value 是可以重复的</li>
+<li>Map 集合中的元素，key 和 value 是一一对应的</li>
 </ol>
 </li>
 <li><p>常用方法</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token class-name">V</span> <span class="token function">put</span><span class="token punctuation">(</span><span class="token class-name">K</span> key<span class="token punctuation">,</span> <span class="token class-name">V</span> value<span class="token punctuation">)</span> <span class="token comment">// 把指定的键与指定的值添加到Map集合中。</span>
-    
+
 <span class="token keyword">public</span> <span class="token class-name">V</span> <span class="token function">remove</span><span class="token punctuation">(</span><span class="token class-name">Object</span> key<span class="token punctuation">)</span> <span class="token comment">// 把指定的键 所对应的键值对元素 在Map集合中删除，返回被删除元素的值。</span>
-    
+
 <span class="token keyword">public</span> <span class="token class-name">V</span> <span class="token function">get</span><span class="token punctuation">(</span><span class="token class-name">Object</span> key<span class="token punctuation">)</span> <span class="token comment">// 根据指定的键，在Map集合中获取对应的值。</span>
-    
+
 <span class="token keyword">public</span> <span class="token class-name">Set</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">K</span><span class="token punctuation">></span></span> <span class="token function">keySet</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// 获取Map集合中所有的键，存储到Set集合中。</span>
-    
+
 <span class="token keyword">public</span> <span class="token class-name">Set</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Map<span class="token punctuation">.</span>Entry</span><span class="token punctuation">&lt;</span><span class="token class-name">K</span><span class="token punctuation">,</span><span class="token class-name">V</span><span class="token punctuation">></span><span class="token punctuation">></span></span> <span class="token function">entrySet</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// 获取到Map集合中所有的键值对对象的集合(Set集合)。</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
-<li><p>遍历Map的方法</p>
+<li><p>遍历 Map 的方法</p>
 <ol>
 <li><p>键找值方式：即通过元素中的键，获取键所对应的值</p>
 <ul>
 <li><p>步骤：</p>
 <ol>
-<li>获取Map中所有的键，由于键是唯一的，所以返回一个Set集合存储所有的键。 <code>keyset()</code></li>
-<li>遍历键的Set集合，得到每一个键。</li>
+<li>获取 Map 中所有的键，由于键是唯一的，所以返回一个 Set 集合存储所有的键。 <code>keyset()</code></li>
+<li>遍历键的 Set 集合，得到每一个键。</li>
 <li>根据键，获取键所对应的值。<code>get(K key)</code></li>
 </ol>
 </li>
@@ -623,8 +623,8 @@
 <ul>
 <li><p>步骤</p>
 <ol>
-<li>使用<code>Map</code>集合中的方法<code>entrySet()</code>，把Map集合中多个<code>Entry</code>对象取出来，存储到一个<code>Set</code>集合中</li>
-<li>遍历<code>Set</code>集合，获取每一个Entry对象</li>
+<li>使用<code>Map</code>集合中的方法<code>entrySet()</code>，把 Map 集合中多个<code>Entry</code>对象取出来，存储到一个<code>Set</code>集合中</li>
+<li>遍历<code>Set</code>集合，获取每一个 Entry 对象</li>
 <li>使用<code>Entry</code>对象中的方法<code>getKey()</code>和<code>getValue()</code>获取键与值</li>
 </ol>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Test</span> <span class="token punctuation">&#123;</span>
@@ -647,9 +647,9 @@
 </ul>
 <h3 id="HashMap"><a href="#HashMap" class="headerlink" title="HashMap"></a>HashMap</h3><p><code>java.util.HashMap&lt;K,V&gt; implements Map&lt;K,V&gt;</code></p>
 <ul>
-<li>特点： <ol>
-<li>HashMap集合底层是哈希表：查询速度特别快<br>jdk1.8之前：数组+单向链表<br>jdk1.8之后，数组+单向链表|红黑树（链表的长度超过8）：提高查询速度</li>
-<li>HashMap集合是一个无序的集合，存储元素和取出元素的顺序有可能不一致</li>
+<li>特点：<ol>
+<li>HashMap 集合底层是哈希表：查询速度特别快<br>jdk1.8 之前：数组+单向链表<br>jdk1.8 之后，数组+单向链表|红黑树（链表的长度超过 8）：提高查询速度</li>
+<li>HashMap 集合是一个无序的集合，存储元素和取出元素的顺序有可能不一致</li>
 </ol>
 </li>
 </ul>

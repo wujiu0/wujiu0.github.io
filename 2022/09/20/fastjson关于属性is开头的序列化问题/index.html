@@ -439,20 +439,20 @@
 <span class="token punctuation">&#125;</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>如上面一个bean，get&#x2F;set方法均为idea自动生成的，Fastjson序列化后的结果为</p>
+<p>如上面一个 bean，get&#x2F;set 方法均为 idea 自动生成的，Fastjson 序列化后的结果为</p>
 <pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token punctuation">&#123;</span>
-    <span class="token property">"hot"</span><span class="token operator">:</span><span class="token boolean">true</span><span class="token punctuation">,</span>
-    <span class="token property">"quick"</span><span class="token operator">:</span><span class="token boolean">true</span>
+  <span class="token property">"hot"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  <span class="token property">"quick"</span><span class="token operator">:</span> <span class="token boolean">true</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>我们其实期望的是</p>
 <pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token punctuation">&#123;</span>
-    <span class="token property">"isHot"</span><span class="token operator">:</span><span class="token boolean">true</span><span class="token punctuation">,</span>
-    <span class="token property">"isQuick"</span><span class="token operator">:</span><span class="token boolean">true</span>
+  <span class="token property">"isHot"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  <span class="token property">"isQuick"</span><span class="token operator">:</span> <span class="token boolean">true</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><h3 id="方案一"><a href="#方案一" class="headerlink" title="方案一"></a>方案一</h3><p>修改get方法为<code>getIsXXX</code><br><code>public Boolean getHot()</code>-&gt;<code>public Boolean getIsHot()</code></p>
-<h3 id="方案二"><a href="#方案二" class="headerlink" title="方案二"></a>方案二</h3><p>不要以is开头，加入公司的代码规范，《Java开发手册（泰山版）》中也提到了</p>
+<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><h3 id="方案一"><a href="#方案一" class="headerlink" title="方案一"></a>方案一</h3><p>修改 get 方法为<code>getIsXXX</code><br><code>public Boolean getHot()</code>-&gt;<code>public Boolean getIsHot()</code></p>
+<h3 id="方案二"><a href="#方案二" class="headerlink" title="方案二"></a>方案二</h3><p>不要以 is 开头，加入公司的代码规范，《Java 开发手册（泰山版）》中也提到了</p>
 <p>【强制】POJO 类中的任何布尔类型的变量，都不要加 is 前缀，否则部分框架解析会引起序列 化错误。</p>
 
                 

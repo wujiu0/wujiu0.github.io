@@ -420,7 +420,7 @@
                 <h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>Hyper Text Transfer Protocol 超文本传输协议</p>
 <p>传输协议 ： 定义了客户端和服务器通信时，发送数据的格式</p>
 <h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><ol>
-<li>基于TCP&#x2F;IP的高级协议</li>
+<li>基于 TCP&#x2F;IP 的高级协议</li>
 <li>默认端口号：80</li>
 <li>基于请求&#x2F;响应模型的：一次请求对应一次响应</li>
 <li>无状态的：每次请求之间相互独立，不能交互数据</li>
@@ -432,23 +432,23 @@
 <h2 id="请求消息数据格式"><a href="#请求消息数据格式" class="headerlink" title="请求消息数据格式"></a>请求消息数据格式</h2><ol>
 <li><h3 id="请求行"><a href="#请求行" class="headerlink" title="请求行"></a><strong>请求行</strong></h3><ul>
 <li><p>格式：</p>
-<p>请求方式 请求url 请求协议&#x2F;版本</p>
+<p>请求方式 请求 url 请求协议&#x2F;版本</p>
 <pre class="line-numbers language-none"><code class="language-none">Get &#x2F;login.html HTTP&#x2F;1.1<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 </li>
 <li><p><em>请求方式：</em></p>
-<p>Http协议中有7种请求方式，常用的两种：</p>
+<p>Http 协议中有 7 种请求方式，常用的两种：</p>
 <ul>
 <li><p>GET：</p>
 <ol>
-<li>请求参数在请求行中，在url后</li>
-<li>请求的url长度有限制</li>
+<li>请求参数在请求行中，在 url 后</li>
+<li>请求的 url 长度有限制</li>
 <li>不太安全</li>
 </ol>
 </li>
 <li><p>POST：</p>
 <ol>
 <li>请求参数在请求体中</li>
-<li>请求的url长度没有限制</li>
+<li>请求的 url 长度没有限制</li>
 <li>相对安全</li>
 </ol>
 </li>
@@ -475,9 +475,9 @@
 </li>
 </ul>
 </li>
-<li><h3 id="请求空行"><a href="#请求空行" class="headerlink" title="请求空行"></a><strong>请求空行</strong></h3><p>空行，就是用于分割POST请求的请求头和请求体的</p>
+<li><h3 id="请求空行"><a href="#请求空行" class="headerlink" title="请求空行"></a><strong>请求空行</strong></h3><p>空行，就是用于分割 POST 请求的请求头和请求体的</p>
 </li>
-<li><h3 id="请求体（正文）"><a href="#请求体（正文）" class="headerlink" title="请求体（正文）"></a><strong>请求体（正文）</strong></h3><p>封装POST请求消息的请求参数</p>
+<li><h3 id="请求体（正文）"><a href="#请求体（正文）" class="headerlink" title="请求体（正文）"></a><strong>请求体（正文）</strong></h3><p>封装 POST 请求消息的请求参数</p>
 </li>
 </ol>
 <pre class="line-numbers language-none"><code class="language-none">POST &#x2F;login.html HTTP&#x2F;1.1
@@ -490,23 +490,21 @@ Referer: http:&#x2F;&#x2F;localhost&#x2F;login.html
 Connection: keep-alive
 Upgrade-Insecure-Requests: 1
 
-username&#x3D;zhangsan	<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
+username&#x3D;zhangsan<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h2 id="响应消息数据格式"><a href="#响应消息数据格式" class="headerlink" title="响应消息数据格式"></a>响应消息数据格式</h2><ol>
 <li><h3 id="响应行"><a href="#响应行" class="headerlink" title="响应行"></a>响应行</h3><ul>
 <li><p>格式：</p>
-<p>协议&#x2F;版本  响应状态码  状态码描述</p>
+<p>协议&#x2F;版本 响应状态码 状态码描述</p>
 </li>
 <li><p>响应状态码：服务器告诉客户端浏览器本次请求和响应的状态</p>
 <ol>
 <li>状态码都是三位数字</li>
 <li>分类：<ul>
-<li>1xx：服务器接收客户端消息，但是没有接收完成，等待一段时间后，发送1xx状态码</li>
+<li>1xx：服务器接收客户端消息，但是没有接收完成，等待一段时间后，发送 1xx 状态码</li>
 <li>2xx：成功。代表：200</li>
 <li>3xx：重定向。代表：302（重定向），304（访问缓存）</li>
-<li>4xx：客户端错误。代表：404（请求路径没有对应的资源），405（请求方式没有对应的doXxx()方法）</li>
+<li>4xx：客户端错误。代表：404（请求路径没有对应的资源），405（请求方式没有对应的 doXxx()方法）</li>
 <li>5xx：服务器错误。代表：500（服务器内部出现异常）</li>
 </ul>
 </li>
@@ -550,7 +548,6 @@ Date: Wed, 06 Jun 2018 07:08:42 GMT
 	hello , response
 	&lt;&#x2F;body&gt;
 &lt;&#x2F;html&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 
                 
             </div>

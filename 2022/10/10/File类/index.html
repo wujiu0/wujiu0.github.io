@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="final关键字, java">
+    <meta name="keywords" content="File 类, java">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>final关键字 | 伍玖</title>
+    <title>File 类 | 伍玖</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -260,12 +260,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/46.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">final关键字</h1>
+                    <h1 class="description center-align post-title">File 类</h1>
                 </div>
             </div>
         </div>
@@ -379,13 +379,9 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                    <div class="article-tag">
-                        
-                            <a href="/tags/java/">
-                                <span class="chip bg-color">java</span>
-                            </a>
-                        
-                    </div>
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -397,7 +393,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-10-08
+                    2022-10-10
                 </div>
                 
 
@@ -421,87 +417,108 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="final-关键字"><a href="#final-关键字" class="headerlink" title="final 关键字"></a>final 关键字</h1><h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><p>子类可以在父类的基础上改写父类内容，比如，方法重写。那么我们能不能随意的继承 API 中提供的类，改写其内容呢？显然这是不合适的。为了避免这种随意改写的情况，Java 提供了 final 关键字，用于修饰不可改变内容。</p>
+                <h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p><code>java.io.File</code> 类是文件和目录路径名的抽象表示，主要用于文件和目录的创建、查找和删除等操作。</p>
+<h2 id="构造方法"><a href="#构造方法" class="headerlink" title="构造方法"></a>构造方法</h2><ul>
+<li><p>File(String pathname) 通过将给定路径名字符串转换为抽象路径名来创建一个新 File 实例</p>
 <ul>
-<li>final：不可改变。可以用于修饰类、方法和变量。<ul>
-<li>类：被修饰的类，不能被继承。</li>
-<li>方法：被修饰的方法，不能被重写。</li>
-<li>变量：被修饰的变量，不能被重新赋值。</li>
+<li>参数：<br><code>String pathname</code>：字符串中的路径名称</li>
+<li>路径可以是以文件结尾，也可以是以文件夹结尾<br>路径可以是相对路径，也可以是绝对路径</li>
+<li>路径可以是存在，也可以是不存在<br>创建 File 对象，只是把字符串路径封装为 File 对象，不考虑路径的真假情况</li>
 </ul>
 </li>
-</ul>
-<h3 id="使用方式"><a href="#使用方式" class="headerlink" title="使用方式"></a>使用方式</h3><ol>
-<li><p>修饰类</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">final</span> <span class="token keyword">class</span> 类名 <span class="token punctuation">&#123;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-</li>
-<li><p>修饰方法</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">修饰符 <span class="token keyword">final</span> 返回值类型 方法名<span class="token punctuation">(</span>参数列表<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    <span class="token comment">//方法体</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-<p>重写被<code>final</code>修饰的方法，编译就会报错</p>
-</li>
-<li><p>修饰变量</p>
-<blockquote>
-<p>对于基本类型来说，不可变说的是变量当中的数据不可改变</p>
-<p>对于引用类型来说，不可变说的是变量当中的地址值不可改变</p>
-</blockquote>
+<li><p><code>File(String parent, String child)</code> 根据 parent 路径名字符串和 child 路径名字符串创建一个新 File 实例</p>
 <ul>
-<li><p>局部变量–基本类型</p>
-<p>基本类型的局部变量，被<code>final</code>修饰后，只能赋值一次，不能再更改</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Demo01Final</span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-	    <span class="token keyword">final</span> <span class="token keyword">int</span> num <span class="token operator">=</span> <span class="token number">200</span><span class="token punctuation">;</span>
-        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token comment">// num2 = 250;// 错误写法，不能重新赋值</span>
-    <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<li>参数：把路径分成了两部分<br><code>String parent</code>：父路径<br><code>String child</code>：子路径</li>
+<li>好处：<br>父路径和子路径，可以单独书写，使用起来非常灵活；父路径和子路径都可以变化</li>
+</ul>
 </li>
-<li><p>局部变量–引用类型</p>
-<p>引用类型的局部变量，被 final 修饰后，只能指向一个对象，地址不能再更改。但是不影响对象内部的成员变量值的修改，代码如下：</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Demo2Final</span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    	<span class="token comment">// 创建User对象</span>
-    	<span class="token keyword">final</span> <span class="token class-name">User</span> u <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">User</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-   		<span class="token comment">// 创建另一个User对象</span>
-    	<span class="token comment">// u = new User();// 报错，指向了新的对象，地址值改变。</span>
-    	<span class="token comment">// 调用setName方法</span>
-    	u<span class="token punctuation">.</span><span class="token function">setName</span><span class="token punctuation">(</span><span class="token string">"张三"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">// 可以修改</span>
-	<span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-</li>
-<li><p>成员变量</p>
-<p>成员变量涉及到初始化的问题，初始化方式有两种，只能二选一</p>
+<li><p><code>File(File parent, String child)</code> 根据父类抽象路径名和 child 路径名字符串创建一个新 File 实例</p>
 <ul>
-<li>显示初始化</li>
-</ul>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">User</span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">final</span> <span class="token class-name">String</span> USERNAME <span class="token operator">=</span> <span class="token string">"张三"</span><span class="token punctuation">;</span>
-    <span class="token keyword">private</span> <span class="token keyword">int</span> age<span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-<ul>
-<li>构造方法初始化</li>
-</ul>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">User</span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">final</span> <span class="token class-name">String</span> USERNAME<span class="token punctuation">;</span>
-    <span class="token keyword">private</span> <span class="token keyword">int</span> age<span class="token punctuation">;</span>
-
-    <span class="token keyword">public</span> <span class="token class-name">User</span><span class="token punctuation">(</span><span class="token class-name">String</span> username<span class="token punctuation">,</span><span class="token keyword">int</span> age<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token keyword">this</span><span class="token punctuation">.</span>USERNAME <span class="token operator">=</span> username<span class="token punctuation">;</span>
-        <span class="token keyword">this</span><span class="token punctuation">.</span>age <span class="token operator">=</span> age<span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li><p>参数：把路径分成了两部分</p>
+<p><code>String parent</code>：父路径</p>
+<p><code>String child</code>：子路径</p>
+</li>
+<li><p>好处：</p>
+<p>父路径和子路径，可以单独书写，使用起来非常灵活；父路径和子路径都可以变化</p>
+<p>父路径是 File 类型，可以使用 File 的方法对路径进行一些操作，再使用路径创建对象</p>
+</li>
 </ul>
 </li>
-</ol>
-<blockquote>
-<p>不能使用一个 final 类作为父类</p>
-<p>对于类和方法，abstract 关键字和 final 关键字不能同时使用</p>
-<p>被 final 修饰的常量名称，一般都有书写规范，所有字母都大写。</p>
-</blockquote>
+</ul>
+<h2 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h2><h2 id="获取功能的方法"><a href="#获取功能的方法" class="headerlink" title="获取功能的方法"></a>获取功能的方法</h2><ul>
+<li><p><code>public String getAbsolutePath()</code> ：返回此 File 的绝对路径名字符串。</p>
+</li>
+<li><p><code>public String getPath()</code> ：将此 File 转换为路径名字符串。</p>
+</li>
+<li><p><code>public String getName()</code> ：返回由此 File 表示的文件或目录的名称。</p>
+</li>
+<li><p><code>public long length()</code> ：返回由此 File 表示的文件的长度。</p>
+<p>获取的是构造方法指定的文件的大小，以字节为单位</p>
+<p>注意：</p>
+<ul>
+<li>文件夹是没有大小的概念的，不能获取文件夹的大小</li>
+<li>如果构造方法中给出的路径不存在，那么 length()方法返回 0</li>
+</ul>
+</li>
+</ul>
+<h2 id="判断功能的方法"><a href="#判断功能的方法" class="headerlink" title="判断功能的方法"></a>判断功能的方法</h2><ul>
+<li><code>public boolean exists()</code> : 此 File 表示的文件或目录是否实际存在</li>
+<li><code>public boolean isDirectory()</code> : 此 File 表示的是否为目录</li>
+<li><code>public boolean isFile()</code> : 此 File 表示的是否是文件</li>
+</ul>
+<h2 id="创建删除功能的方法"><a href="#创建删除功能的方法" class="headerlink" title="创建删除功能的方法"></a>创建删除功能的方法</h2><ul>
+<li><p><code>public boolean createNewFile()</code> ：当且仅当具有该名称的文件尚不存在时，创建一个新的空文件。</p>
+<p>返回值：</p>
+<ul>
+<li>true：文件不存在，创建文件，返回 true</li>
+<li>false：文件存在，不会创建，返回 false</li>
+</ul>
+<p>注意：</p>
+<ul>
+<li><p>此方法只能创建文件，不能创建文件夹</p>
+</li>
+<li><p>创建文件的路径必须存在，否则会抛出异常</p>
+</li>
+</ul>
+</li>
+<li><p>public boolean delete() ：删除由此 File 表示的文件或目录。</p>
+<p>返回值：</p>
+<ul>
+<li><p>true：文件&#x2F;文件夹删除成功</p>
+</li>
+<li><p>false：文件夹中有内容，不会删除返回 false；路径不存在，返回 false</p>
+</li>
+</ul>
+<p>注意：</p>
+<ul>
+<li>delete()方法是直接在硬盘删除文件&#x2F;文件夹，不走回收站</li>
+</ul>
+</li>
+<li><p><code>public boolean mkdir()</code> ：创建由此 File 表示的目录。</p>
+</li>
+<li><p><code>public boolean mkdirs()</code> ：创建由此 File 表示的目录，包括任何必需但不存在的父目录。</p>
+<p>返回值：</p>
+<ul>
+<li>true：文件夹不存在，创建文件夹返回 true</li>
+<li>false：文件夹存在，不会创建，返回 false</li>
+</ul>
+<p>注意：</p>
+<ul>
+<li>此方法只能创建文件夹，不能创建文件</li>
+</ul>
+</li>
+</ul>
+<h2 id="遍历（文件夹）目录功能"><a href="#遍历（文件夹）目录功能" class="headerlink" title="遍历（文件夹）目录功能"></a>遍历（文件夹）目录功能</h2><ul>
+<li><p><code>public String[] list()</code> : 返回一个 String 数组，表示该 File 目录中的所有子文件或目录</p>
+</li>
+<li><p><code>public File[] listFiles()</code> : 返回一个 File 数组，表示该 File 目录中的所有子文件或目录</p>
+<p>注意：</p>
+<p><code>list()</code>方法和<code>listFiles()</code>遍历的是构造方法中给出的目录</p>
+<p>如果构造方法中给出的目录路径不存在（或者不是一个目录），会抛出空指针异常</p>
+</li>
+</ul>
+<h2 id="文件过滤器"><a href="#文件过滤器" class="headerlink" title="文件过滤器"></a>文件过滤器</h2><p><code>java.io.FileFilter</code> 是一个接口，是 File 的过滤器。 该接口的对象可以传递给 File 类的 <code>listFiles(FileFilter)</code>作为参数。接口中只有一个方法：</p>
+<p><code>boolean accept(File pathname)</code> ：测试 pathname 是否应该包含在当前 File 目录中，符合则返回 true。</p>
 
                 
             </div>
@@ -528,7 +545,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://wujiu0.github.io/2021/10/08/final%E5%85%B3%E9%94%AE%E5%AD%97/">http://wujiu0.github.io/2021/10/08/final%E5%85%B3%E9%94%AE%E5%AD%97/</a>
+                    <a href="http://wujiu0.github.io/2022/10/10/File%E7%B1%BB/">http://wujiu0.github.io/2022/10/10/File%E7%B1%BB/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -565,11 +582,7 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            
-                                <a href="/tags/java/">
-                                    <span class="chip bg-color">java</span>
-                                </a>
-                            
+                            <span class="chip bg-color">无标签</span>
                         </div>
                     
                 </div>
@@ -743,13 +756,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/10/09/%E6%9D%83%E9%99%90%E4%BF%AE%E9%A5%B0%E7%AC%A6/">
+                <a href="/2022/10/10/IO%E6%B5%81/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/91.jpg" class="responsive-img" alt="权限修饰符">
+                        <img src="/medias/featureimages/85.jpg" class="responsive-img" alt="IO流">
                         
-                        <span class="card-title">权限修饰符</span>
+                        <span class="card-title">IO流</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -760,7 +773,7 @@
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-10-09
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-10-10
                         </span>
                         <span class="publish-author">
                             
@@ -769,14 +782,6 @@
                             
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/java/">
-                        <span class="chip bg-color">java</span>
-                    </a>
-                    
                 </div>
                 
             </div>
@@ -788,13 +793,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/10/02/%E5%A4%9A%E6%80%81/">
+                <a href="/2022/10/06/File%E7%B1%BB%E7%9A%84getPath/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/85.jpg" class="responsive-img" alt="多态">
+                        <img src="/medias/featureimages/87.jpg" class="responsive-img" alt="File类的getPath()方法的一个问题">
                         
-                        <span class="card-title">多态</span>
+                        <span class="card-title">File类的getPath()方法的一个问题</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -805,27 +810,15 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-10-02
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-10-06
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/java/" class="post-category">
-                                    java
-                                </a>
-                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Wujiu
                             
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/java/">
-                        <span class="chip bg-color">java</span>
-                    </a>
-                    
                 </div>
                 
             </div>

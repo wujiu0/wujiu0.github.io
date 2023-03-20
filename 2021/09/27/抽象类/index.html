@@ -421,7 +421,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="由来"><a href="#由来" class="headerlink" title="由来"></a>由来</h3><p>父类中的方法，被它的子类们重写，子类各自的实现都不尽相同。那么父类的方法声明和方法主体，只有声明还有意义，而方法主体则没有存在的意义了。我们把没有方法主体的方法称为抽象方法。Java语法规定，包含抽象方法的类就是抽象类。</p>
+                <h3 id="由来"><a href="#由来" class="headerlink" title="由来"></a>由来</h3><p>父类中的方法，被它的子类们重写，子类各自的实现都不尽相同。那么父类的方法声明和方法主体，只有声明还有意义，而方法主体则没有存在的意义了。我们把没有方法主体的方法称为抽象方法。Java 语法规定，包含抽象方法的类就是抽象类。</p>
 <h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><ul>
 <li>抽象方法：没有方法体的方法</li>
 <li>抽象类：包含抽象方法的类</li>
@@ -445,7 +445,7 @@
     <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">eat</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
         <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"猫吃鱼"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">&#125;</span>
-    
+
 <span class="token punctuation">&#125;</span>
 
 <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">CatTest</span> <span class="token punctuation">&#123;</span>
@@ -464,7 +464,7 @@
 </li>
 <li><p>抽象类中，可以有构造方法，是供子类创建对象时，初始化父类成员使用的。</p>
 <blockquote>
-<p>子类的构造方法中，有默认的super()，需要访问父类构造方法。</p>
+<p>子类的构造方法中，有默认的 super()，需要访问父类构造方法。</p>
 </blockquote>
 </li>
 <li><p>抽象类中，不一定包含抽象方法，但是有抽象方法的类必定是抽象类。</p>

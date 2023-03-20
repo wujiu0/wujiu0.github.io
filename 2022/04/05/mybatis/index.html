@@ -445,9 +445,9 @@
 </li>
 <li><p>创建表</p>
 </li>
-<li><p>编写javaBean</p>
+<li><p>编写 javaBean</p>
 </li>
-<li><p>编写Mapper映射文件</p>
+<li><p>编写 Mapper 映射文件</p>
 <pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token prolog">&lt;?xml  version="1.0" encoding="UTF-8" ?></span>
 <span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">mapper</span> <span class="token name">PUBLIC</span> <span class="token string">"-//mybatis.org//DTD Mapper 3.0//EN"</span> <span class="token string">"http://mybatis.org/dtd/mybatis-3-mapper.dtd"</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>mapper</span> <span class="token attr-name">namespace</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>userMapper<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
@@ -456,7 +456,7 @@
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>select</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>mapper</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
-<li><p>编写Mybatis核心配置文件</p>
+<li><p>编写 Mybatis 核心配置文件</p>
 <pre class="line-numbers language-markup" data-language="markup"><code class="language-markup">&lt;!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN“ "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>configuration</span><span class="token punctuation">></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>environments</span> <span class="token attr-name">default</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>development<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
@@ -472,11 +472,11 @@
         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>environments</span><span class="token punctuation">></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>mappers</span><span class="token punctuation">></span></span>
         <span class="token comment">&lt;!--加载sql映射文件--></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>mapper</span> <span class="token attr-name">resource</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>com\example\mapper\userMapper.xml<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span> 
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>mapper</span> <span class="token attr-name">resource</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>com\example\mapper\userMapper.xml<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>mappers</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>configuration</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
-<li><p>编写测试代码 </p>
+<li><p>编写测试代码</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">//加载核心配置文件</span>
 <span class="token class-name">InputStream</span> resourceAsStream <span class="token operator">=</span> <span class="token class-name">Resources</span><span class="token punctuation">.</span><span class="token function">getResourceAsStream</span><span class="token punctuation">(</span><span class="token string">"mybatis-config.xml"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token comment">//获得sqlSession工厂对象</span>
@@ -489,19 +489,19 @@
 <span class="token comment">//释放资源</span>
 sqlSession<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 </ol>
-<h2 id="Mapper代理开发"><a href="#Mapper代理开发" class="headerlink" title="Mapper代理开发"></a>Mapper代理开发</h2><p>采用 Mybatis 的代理开发方式实现 DAO 层的开发，这种方式是我们后面进入企业的主流。<br>Mapper 接口开发方法只需要程序员编写Mapper 接口（相当于Dao 接口），由Mybatis 框架根据接口定义创建接<br>口的动态代理对象，代理对象的方法体同上边Dao接口实现类方法</p>
+<h2 id="Mapper-代理开发"><a href="#Mapper-代理开发" class="headerlink" title="Mapper 代理开发"></a>Mapper 代理开发</h2><p>采用 Mybatis 的代理开发方式实现 DAO 层的开发，这种方式是我们后面进入企业的主流。<br>Mapper 接口开发方法只需要程序员编写 Mapper 接口（相当于 Dao 接口），由 Mybatis 框架根据接口定义创建接<br>口的动态代理对象，代理对象的方法体同上边 Dao 接口实现类方法</p>
 <h3 id="规范"><a href="#规范" class="headerlink" title="规范"></a>规范</h3><ul>
-<li>定义与SQL映射文件同名的Mapper接口，并且将Mapper接口和SQL映射文件放置在同一目录下</li>
-<li>设置Mapper.xml文件中的namespace为mapper接口的全限定名</li>
-<li>在 Mapper 接口中定义方法，方法名就是SQL映射文件中sql语句的id，并保持参数类型和返回值类型一致</li>
+<li>定义与 SQL 映射文件同名的 Mapper 接口，并且将 Mapper 接口和 SQL 映射文件放置在同一目录下</li>
+<li>设置 Mapper.xml 文件中的 namespace 为 mapper 接口的全限定名</li>
+<li>在 Mapper 接口中定义方法，方法名就是 SQL 映射文件中 sql 语句的 id，并保持参数类型和返回值类型一致</li>
 </ul>
 <h3 id="使用步骤"><a href="#使用步骤" class="headerlink" title="使用步骤"></a>使用步骤</h3><ol>
-<li><p>编写Mapper接口</p>
+<li><p>编写 Mapper 接口</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">UserMapper</span> <span class="token punctuation">&#123;</span>
     <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">User</span><span class="token punctuation">></span></span> <span class="token function">selectAll</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 </li>
-<li><p>编写Mapper.xml</p>
+<li><p>编写 Mapper.xml</p>
 <pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>mapper</span> <span class="token attr-name">namespace</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>com.example.mapper.UserMapper<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>select</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>selectAll<span class="token punctuation">"</span></span> <span class="token attr-name">resultType</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>user<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
         SELECT * FROM user;
@@ -514,7 +514,7 @@ sqlSession<span class="token punctuation">.</span><span class="token function">c
     <span class="token class-name">InputStream</span> inputStream <span class="token operator">=</span> <span class="token class-name">Resources</span><span class="token punctuation">.</span><span class="token function">getResourceAsStream</span><span class="token punctuation">(</span><span class="token string">"mybatis-config.xml"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token class-name">SqlSessionFactory</span> sqlSessionFactory <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SqlSessionFactoryBuilder</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">build</span><span class="token punctuation">(</span>inputStream<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token class-name">SqlSession</span> sqlSession <span class="token operator">=</span> sqlSessionFactory<span class="token punctuation">.</span><span class="token function">openSession</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    
+
 	<span class="token comment">// 获取Mapper对象</span>
     <span class="token class-name">UserMapper</span> userMapper <span class="token operator">=</span> sqlSession<span class="token punctuation">.</span><span class="token function">getMapper</span><span class="token punctuation">(</span><span class="token class-name">UserMapper</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token comment">// 使用Mapper调用对应的方法</span>
@@ -524,28 +524,28 @@ sqlSession<span class="token punctuation">.</span><span class="token function">c
     sqlSession<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 </ol>
-<h2 id="相应API"><a href="#相应API" class="headerlink" title="相应API"></a>相应API</h2><h3 id="SqlSession工厂构建器SqlSessionFactoryBuilder"><a href="#SqlSession工厂构建器SqlSessionFactoryBuilder" class="headerlink" title="SqlSession工厂构建器SqlSessionFactoryBuilder"></a>SqlSession工厂构建器SqlSessionFactoryBuilder</h3><p>常用API：SqlSessionFactory build(InputStream inputStream)<br>通过加载mybatis的核心文件的输入流的形式构建一个SqlSessionFactory对象</p>
+<h2 id="相应-API"><a href="#相应-API" class="headerlink" title="相应 API"></a>相应 API</h2><h3 id="SqlSession-工厂构建器-SqlSessionFactoryBuilder"><a href="#SqlSession-工厂构建器-SqlSessionFactoryBuilder" class="headerlink" title="SqlSession 工厂构建器 SqlSessionFactoryBuilder"></a>SqlSession 工厂构建器 SqlSessionFactoryBuilder</h3><p>常用 API：SqlSessionFactory build(InputStream inputStream)<br>通过加载 mybatis 的核心文件的输入流的形式构建一个 SqlSessionFactory 对象</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">String</span> resource <span class="token operator">=</span> <span class="token string">"org/mybatis/builder/mybatis-config.xml"</span><span class="token punctuation">;</span>
 <span class="token class-name">InputStream</span> inputStream <span class="token operator">=</span> <span class="token class-name">Resources</span><span class="token punctuation">.</span><span class="token function">getResourceAsStream</span><span class="token punctuation">(</span>resource<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token class-name">SqlSessionFactoryBuilder</span> builder <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SqlSessionFactoryBuilder</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token class-name">SqlSessionFactory</span> factory <span class="token operator">=</span> builder<span class="token punctuation">.</span><span class="token function">build</span><span class="token punctuation">(</span>inputStream<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>其中， Resources 工具类，这个类在 org.apache.ibatis.io 包中。Resources 类帮助你从类路径下、文件系统或<br>一个 web URL 中加载资源文件。</p>
-<h3 id="SqlSession工厂对象SqlSessionFactory"><a href="#SqlSession工厂对象SqlSessionFactory" class="headerlink" title="SqlSession工厂对象SqlSessionFactory"></a>SqlSession工厂对象SqlSessionFactory</h3><p>SqlSessionFactory 有多个个方法创建SqlSession 实例。常用的有如下两个：</p>
+<h3 id="SqlSession-工厂对象-SqlSessionFactory"><a href="#SqlSession-工厂对象-SqlSessionFactory" class="headerlink" title="SqlSession 工厂对象 SqlSessionFactory"></a>SqlSession 工厂对象 SqlSessionFactory</h3><p>SqlSessionFactory 有多个个方法创建 SqlSession 实例。常用的有如下两个：</p>
 <ul>
 <li><p>openSession()</p>
 <p>会默认开启一个事务，但事务不会自动提交 ，也就意味着需要手动提交该事务，更新操作数据才会持久化到数据库中</p>
 </li>
 <li><p>openSession(boolean autoCommit)</p>
-<p>参数为是否自动提交，如果设置为true，那么不需要手动提交事务</p>
+<p>参数为是否自动提交，如果设置为 true，那么不需要手动提交事务</p>
 </li>
 </ul>
-<h3 id="SqlSession会话对象"><a href="#SqlSession会话对象" class="headerlink" title="SqlSession会话对象"></a>SqlSession会话对象</h3><p>SqlSession 实例在MyBatis 中是非常强大的一个类。在这里你会看到所有执行语句、提交或回滚事务和获取映射器实例的方法。<br>执行语句的方法主要有：</p>
+<h3 id="SqlSession-会话对象"><a href="#SqlSession-会话对象" class="headerlink" title="SqlSession 会话对象"></a>SqlSession 会话对象</h3><p>SqlSession 实例在 MyBatis 中是非常强大的一个类。在这里你会看到所有执行语句、提交或回滚事务和获取映射器实例的方法。<br>执行语句的方法主要有：</p>
 <ul>
-<li><code>&lt;T&gt; T selectOne(String statement, Object parameter)</code> </li>
-<li><code>&lt;E&gt; List&lt;E&gt; selectList(String statement, Object parameter)</code> </li>
-<li><code>int insert(String statement, Object parameter)</code> </li>
-<li><code>int update(String statement, Object parameter)</code> </li>
+<li><code>&lt;T&gt; T selectOne(String statement, Object parameter)</code></li>
+<li><code>&lt;E&gt; List&lt;E&gt; selectList(String statement, Object parameter)</code></li>
+<li><code>int insert(String statement, Object parameter)</code></li>
+<li><code>int update(String statement, Object parameter)</code></li>
 <li><code>int delete(String statement, Object parameter)</code></li>
 </ul>
 <p>操作事务的方法：</p>
@@ -554,7 +554,7 @@ sqlSession<span class="token punctuation">.</span><span class="token function">c
 <li><code>void rollback()</code></li>
 </ul>
 <h2 id="核心配置文件"><a href="#核心配置文件" class="headerlink" title="核心配置文件"></a>核心配置文件</h2><ul>
-<li><p>configuration配置（按照层级关系）</p>
+<li><p>configuration 配置（按照层级关系）</p>
 <ul>
 <li><p>properties 属性</p>
 <p>实际开发中，习惯将数据源的配置信息单独抽取成一个<code>properties</code>文件，该标签可以加载额外配置的<code>properties</code>文件</p>
@@ -562,7 +562,7 @@ sqlSession<span class="token punctuation">.</span><span class="token function">c
 <li><p>setting 设置</p>
 </li>
 <li><p>typeAliases 类型别名</p>
-<p>为java类型设置一个短的名字，将全限定名定义别名为短限定名</p>
+<p>为 java 类型设置一个短的名字，将全限定名定义别名为短限定名</p>
 </li>
 <li><p>typeHandlers 类型处理器</p>
 </li>
@@ -572,16 +572,16 @@ sqlSession<span class="token punctuation">.</span><span class="token function">c
 </li>
 <li><p>environments 环境</p>
 <ul>
-<li>environment <ul>
+<li>environment<ul>
 <li>transactionManager 事务管理器<ol>
-<li>JDBC：这个配置就是直接使用了JDBC 的提交和回滚设置，它依赖于从数据源得到的连接来管理事务作用域。</li>
+<li>JDBC：这个配置就是直接使用了 JDBC 的提交和回滚设置，它依赖于从数据源得到的连接来管理事务作用域。</li>
 <li>MANAGED：这个配置几乎没做什么。它从来不提交或回滚一个连接，而是让容器来管理事务的整个生命周期（比如 JEE<br>应用服务器的上下文）。 默认情况下它会关闭连接，然而一些容器并不希望这样，因此需要将 closeConnection 属性设置<br>为 false 来阻止它默认的关闭行为。</li>
 </ol>
 </li>
 <li>dataSource 数据源<ol>
 <li>UNPOOLED：这个数据源的实现只是每次被请求时打开和关闭连接。</li>
 <li>POOLED：这种数据源的实现利用“池”的概念将 JDBC 连接对象组织起来。</li>
-<li>JNDI：这个数据源的实现是为了能在如 EJB 或应用服务器这类容器中使用，容器可以集中或在外部配置数据源，然后放置<br>   一个 JNDI 上下文的引用。</li>
+<li>JNDI：这个数据源的实现是为了能在如 EJB 或应用服务器这类容器中使用，容器可以集中或在外部配置数据源，然后放置<br>一个 JNDI 上下文的引用。</li>
 </ol>
 </li>
 </ul>
@@ -600,7 +600,7 @@ sqlSession<span class="token punctuation">.</span><span class="token function">c
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>properties</span> <span class="token attr-name">resource</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>jdbc.properties<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>typeAliases</span><span class="token punctuation">></span></span>
         <span class="token comment">&lt;!-- &lt;typeAlias type="com.example.pojo.User" alias="user" /> --></span>
-        <span class="token comment">&lt;!-- 包扫描 --></span>  
+        <span class="token comment">&lt;!-- 包扫描 --></span>
         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>package</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>com.example.pojo<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>typeAliases</span><span class="token punctuation">></span></span>
 
@@ -625,22 +625,22 @@ sqlSession<span class="token punctuation">.</span><span class="token function">c
 </li>
 <li><p><code>&lt;insert&gt;</code>：插入</p>
 <p>返回添加数据的主键</p>
-<p>​      <code>&lt;insert useGeneratedKeys=&quot;true&quot; keyProperty=&quot;id&quot;&gt;</code></p>
+<p>​ <code>&lt;insert useGeneratedKeys=&quot;true&quot; keyProperty=&quot;id&quot;&gt;</code></p>
 </li>
 <li><p><code>&lt;update&gt;</code>：修改</p>
 </li>
 <li><p><code>&lt;delete&gt;</code>：删除</p>
 </li>
 </ul>
-<h3 id="动态SQL"><a href="#动态SQL" class="headerlink" title="动态SQL"></a>动态SQL</h3><h4 id="lt-if-gt-：条件判断"><a href="#lt-if-gt-：条件判断" class="headerlink" title="&lt;if&gt;：条件判断"></a><code>&lt;if&gt;</code>：条件判断</h4><ul>
+<h3 id="动态-SQL"><a href="#动态-SQL" class="headerlink" title="动态 SQL"></a>动态 SQL</h3><h4 id="lt-if-gt-：条件判断"><a href="#lt-if-gt-：条件判断" class="headerlink" title="&lt;if&gt;：条件判断"></a><code>&lt;if&gt;</code>：条件判断</h4><ul>
 <li>test：条件表达式</li>
-<li>当条件为空时，SQL语句构造错误，可以选择<code>where 1 = 1</code>来解决，mybatis提供了<code>&lt;where&gt;</code>来解决</li>
+<li>当条件为空时，SQL 语句构造错误，可以选择<code>where 1 = 1</code>来解决，mybatis 提供了<code>&lt;where&gt;</code>来解决</li>
 <li>单条件动态查询：从多个条件中选择一个</li>
-<li>choose(when, otherwise) 类似于java中的switch语句</li>
+<li>choose(when, otherwise) 类似于 java 中的 switch 语句</li>
 <li>when：条件表达式</li>
 <li>otherwise：条件不成立时的表达式</li>
 </ul>
-<p>我们根据实体类的不同取值，使用不同的 SQL语句来进行查询。比如在 id如果不为空时可以根据id查询，如果<br>username 不同空时还要加入用户名作为条件。</p>
+<p>我们根据实体类的不同取值，使用不同的 SQL 语句来进行查询。比如在 id 如果不为空时可以根据 id 查询，如果<br>username 不同空时还要加入用户名作为条件。</p>
 <pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>select</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>findByCondition<span class="token punctuation">"</span></span> <span class="token attr-name">parameterType</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>user<span class="token punctuation">"</span></span> <span class="token attr-name">resultType</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>user<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
     select * from User
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>where</span><span class="token punctuation">></span></span>
@@ -651,7 +651,7 @@ sqlSession<span class="token punctuation">.</span><span class="token function">c
             and username=#&#123;username&#125;
         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>if</span><span class="token punctuation">></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>where</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>select</span><span class="token punctuation">></span></span>   <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>select</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h4 id="lt-foreach-gt-：用于遍历集合"><a href="#lt-foreach-gt-：用于遍历集合" class="headerlink" title="&lt;foreach&gt;：用于遍历集合"></a><code>&lt;foreach&gt;</code>：用于遍历集合</h4><ul>
 <li>collection：代表要遍历的集合元素，注意编写时不要写#{}</li>
@@ -669,7 +669,7 @@ sqlSession<span class="token punctuation">.</span><span class="token function">c
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>where</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>select</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="SQL片段抽取"><a href="#SQL片段抽取" class="headerlink" title="SQL片段抽取"></a>SQL片段抽取</h3><p>Sql 中可将重复的 sql 提取出来，使用时用 include 引用即可，最终达到 sql 重用的目的</p>
+<h3 id="SQL-片段抽取"><a href="#SQL-片段抽取" class="headerlink" title="SQL 片段抽取"></a>SQL 片段抽取</h3><p>Sql 中可将重复的 sql 提取出来，使用时用 include 引用即可，最终达到 sql 重用的目的</p>
 <pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token comment">&lt;!--抽取sql片段简化编写--></span>
 &lt;sql id="selectUser" select * from User<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sql</span><span class="token punctuation">></span></span>
 
@@ -708,22 +708,22 @@ sqlSession<span class="token punctuation">.</span><span class="token function">c
 <li>解决 数据库表的字段名称和实体类的属性名称不一致，不能自动封装数据的问题</li>
 </ul>
 <h2 id="参数封装"><a href="#参数封装" class="headerlink" title="参数封装"></a>参数封装</h2><h3 id="单个参数："><a href="#单个参数：" class="headerlink" title="单个参数："></a>单个参数：</h3><ul>
-<li><p>pojo类型：直接使用，属性名和参数占位符名称一致</p>
+<li><p>pojo 类型：直接使用，属性名和参数占位符名称一致</p>
 </li>
-<li><p>map集合：直接使用，键名和参数站位福名称一致</p>
+<li><p>map 集合：直接使用，键名和参数站位福名称一致</p>
 </li>
-<li><p>Collection：封装为map集合，可以使用@Param注解，替换Map集合中默认的arg键名</p>
+<li><p>Collection：封装为 map 集合，可以使用@Param 注解，替换 Map 集合中默认的 arg 键名</p>
 <p>默认操作：</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java">map<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"arg0"</span><span class="token punctuation">,</span> collection集合<span class="token punctuation">)</span><span class="token punctuation">;</span>
 map<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"collection"</span><span class="token punctuation">,</span> collection集合<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 </li>
-<li><p>List：封装为map集合</p>
+<li><p>List：封装为 map 集合</p>
 <p>默认操作：</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java">map<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"arg0"</span><span class="token punctuation">,</span> list集合<span class="token punctuation">)</span><span class="token punctuation">;</span>
 map<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"collection"</span><span class="token punctuation">,</span> collection集合<span class="token punctuation">)</span><span class="token punctuation">;</span>
 map<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"list"</span><span class="token punctuation">,</span> list集合<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 </li>
-<li><p>Array：封装为map集合</p>
+<li><p>Array：封装为 map 集合</p>
 <p>默认操作：</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java">map<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"arg0"</span><span class="token punctuation">,</span> array数组<span class="token punctuation">)</span><span class="token punctuation">;</span>
 map<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"array"</span><span class="token punctuation">,</span> array数组<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
@@ -731,7 +731,7 @@ map<span class="token punctuation">.</span><span class="token function">put</spa
 <li><p>其他类型：直接使用</p>
 </li>
 </ul>
-<h3 id="多个参数："><a href="#多个参数：" class="headerlink" title="多个参数："></a>多个参数：</h3><p>封装为map集合，可以使用@Param注解，替换Map集合中默认的arg键名</p>
+<h3 id="多个参数："><a href="#多个参数：" class="headerlink" title="多个参数："></a>多个参数：</h3><p>封装为 map 集合，可以使用@Param 注解，替换 Map 集合中默认的 arg 键名</p>
 <ul>
 <li><p>默认操作：</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java">map<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"arg0"</span><span class="token punctuation">,</span> 参数值<span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -739,7 +739,7 @@ map<span class="token punctuation">.</span><span class="token function">put</spa
 map<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"arg1"</span><span class="token punctuation">,</span> 参数值<span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 map<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"param2"</span><span class="token punctuation">,</span> 参数值<span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
-<li><p>若使用<code>@Param(&quot;username&quot;)</code> </p>
+<li><p>若使用<code>@Param(&quot;username&quot;)</code></p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java">map<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"username"</span><span class="token punctuation">,</span> 参数值<span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 map<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"param1"</span><span class="token punctuation">,</span> 参数值<span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 map<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"arg1"</span><span class="token punctuation">,</span> 参数值<span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -747,19 +747,19 @@ map<span class="token punctuation">.</span><span class="token function">put</spa
 </ul>
 <h2 id="参数接收"><a href="#参数接收" class="headerlink" title="参数接收"></a>参数接收</h2><p>参数占位符：</p>
 <ul>
-<li><p><code>$&#123;&#125;</code>：可能存在sql注入问题</p>
+<li><p><code>$&#123;&#125;</code>：可能存在 sql 注入问题</p>
 </li>
-<li><p><code>#&#123;&#125;</code>：会将其替换为？，防止sql注入</p>
+<li><p><code>#&#123;&#125;</code>：会将其替换为？，防止 sql 注入</p>
 </li>
 </ul>
 <p>使用时机：</p>
 <ul>
 <li><p>参数传递的时候使用<code>#&#123;&#125;</code></p>
 </li>
-<li><p>表名或者列名不固定的情况：<code>$&#123;&#125;</code>    （一般不用）</p>
+<li><p>表名或者列名不固定的情况：<code>$&#123;&#125;</code> （一般不用）</p>
 </li>
 </ul>
-<p>​    参数类型：parameterType：可以省略</p>
+<p>​ 参数类型：parameterType：可以省略</p>
 <p>特殊字符处理：</p>
 <ul>
 <li>转义字符</li>
@@ -767,11 +767,11 @@ map<span class="token punctuation">.</span><span class="token function">put</spa
 </ul>
 <p>接收参数时注意：</p>
 <ul>
-<li>散装参数：如果方法中有多个参数，需要使用@Param(“sql参数占位符名称”)</li>
+<li>散装参数：如果方法中有多个参数，需要使用@Param(“sql 参数占位符名称”)</li>
 <li>实体类封装参数：对象的属性名称要和参数占位符名称一致</li>
-<li>map集合：需要保证sql中的参数名和map集合的键的名称对应上</li>
+<li>map 集合：需要保证 sql 中的参数名和 map 集合的键的名称对应上</li>
 </ul>
-<h2 id="注解开发"><a href="#注解开发" class="headerlink" title="注解开发"></a>注解开发</h2><p>。。个人认为还是使用xml配置吧</p>
+<h2 id="注解开发"><a href="#注解开发" class="headerlink" title="注解开发"></a>注解开发</h2><p>。。个人认为还是使用 xml 配置吧</p>
 
                 
             </div>

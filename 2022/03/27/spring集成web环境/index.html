@@ -425,18 +425,18 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>应用上下文对象是通过<code>new ClasspathXmlApplicationContext</code>(spring配置文件)  方式获取的，但是每次从容器中获得Bean时都要编写new ClasspathXmlApplicationContext(spring配置文件) ，这样的弊端是配置文件加载多次，应用上下文对象创建多次。</p>
-<p>在Web项目中，可以使用<code>ServletContextListener</code>监听Web应用的启动，我们可以在Web应用启动时，就加载Spring的配置文件，创建应用上下文对象<code>ApplicationContext</code>，在将其存储到最大的域<code>servletContext</code>域中，这样就可以在任意位置从域中获得应用上下文<code>ApplicationContext</code>对象了。</p>
-<p>Spring提供了一个监听器<code>ContextLoaderListener</code>就是对上述功能的封装，该监听器内部加载Spring配置文件，创建应用上下文对象，并存储到<code>ServletContext</code>域中，提供了一个客户端工具<code>WebApplicationContextUtils</code>供使用者获得应用上下文对象。</p>
+                <p>应用上下文对象是通过<code>new ClasspathXmlApplicationContext</code>(spring 配置文件) 方式获取的，但是每次从容器中获得 Bean 时都要编写 new ClasspathXmlApplicationContext(spring 配置文件) ，这样的弊端是配置文件加载多次，应用上下文对象创建多次。</p>
+<p>在 Web 项目中，可以使用<code>ServletContextListener</code>监听 Web 应用的启动，我们可以在 Web 应用启动时，就加载 Spring 的配置文件，创建应用上下文对象<code>ApplicationContext</code>，在将其存储到最大的域<code>servletContext</code>域中，这样就可以在任意位置从域中获得应用上下文<code>ApplicationContext</code>对象了。</p>
+<p>Spring 提供了一个监听器<code>ContextLoaderListener</code>就是对上述功能的封装，该监听器内部加载 Spring 配置文件，创建应用上下文对象，并存储到<code>ServletContext</code>域中，提供了一个客户端工具<code>WebApplicationContextUtils</code>供使用者获得应用上下文对象。</p>
 <h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><ol>
-<li><p>导入Spring集成web的坐标</p>
+<li><p>导入 Spring 集成 web 的坐标</p>
 <pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.springframework<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>spring-web<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>5.0.5.RELEASE<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
-<li><p>在web.xml中配置<code>ContextLoaderListener</code>监听器</p>
+<li><p>在 web.xml 中配置<code>ContextLoaderListener</code>监听器</p>
 <pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token comment">&lt;!--全局参数--></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>context-param</span><span class="token punctuation">></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>param-name</span><span class="token punctuation">></span></span>contextConfigLocation<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>param-name</span><span class="token punctuation">></span></span>

@@ -417,37 +417,37 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="从输入url到页面显示"><a href="#从输入url到页面显示" class="headerlink" title="从输入url到页面显示"></a>从输入url到页面显示</h1><ul>
+                <h1 id="从输入-url-到页面显示"><a href="#从输入-url-到页面显示" class="headerlink" title="从输入 url 到页面显示"></a>从输入 url 到页面显示</h1><ul>
 <li><strong>输入地址</strong></li>
 </ul>
-<pre class="line-numbers language-none"><code class="language-none">浏览器首先从浏览器缓存,本地缓存,本地的hosts文件查询对应的ip;  
-如果在本地没找到,接下来会发送一个DNS请求到本地DNS服务器,本地DNS查询它的缓存记录;  
-如果没有,本地服务器向DNS根服务器查询(根服务器并没有记录具体的域名和IP地址的对应关系，而是告诉本地DNS服务器，你可以到域服务器上去继续查询，并给出域服务器的地址);  
+<pre class="line-numbers language-none"><code class="language-none">浏览器首先从浏览器缓存,本地缓存,本地的hosts文件查询对应的ip;
+如果在本地没找到,接下来会发送一个DNS请求到本地DNS服务器,本地DNS查询它的缓存记录;
+如果没有,本地服务器向DNS根服务器查询(根服务器并没有记录具体的域名和IP地址的对应关系，而是告诉本地DNS服务器，你可以到域服务器上去继续查询，并给出域服务器的地址);
 本地服务器继续向域服务器发出请求,域服务器返回一个解析服务器的地址,然后本地DNS服务器向解析服务器发出请求,就会收到一个域名和ip对应关系,将ip返回给用户,并把对应关系保存在缓存中<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
 <ul>
-<li><strong>建立TCP连接(三次握手)</strong></li>
+<li><strong>建立 TCP 连接(三次握手)</strong></li>
 </ul>
 <pre class="line-numbers language-none"><code class="language-none">第一次握手：客户端A将标志位SYN置为1,随机产生一个值为seq&#x3D;J（J的取值范围为&#x3D;1234567）的数据包到服务器，客户端A进入SYN_SENT状态，等待服务端B确认；
 第二次握手：服务端B收到数据包后由标志位SYN&#x3D;1知道客户端A请求建立连接，服务端B将标志位SYN和ACK都置为1，ack&#x3D;J+1，随机产生一个值seq&#x3D;K，并将该数据包发送给客户端A以确认连接请求，服务端B进入SYN_RCVD状态.
 第三次握手：客户端A收到确认后，检查ack是否为J+1，ACK是否为1，如果正确则将标志位ACK置为1，ack&#x3D;K+1，并将该数据包发送给服务端B，服务端B检查ack是否为K+1，ACK是否为1，如果正确则连接建立成功，客户端A和服务端B进入ESTABLISHED状态，完成三次握手，随后客户端A与服务端B之间可以开始传输数据了.<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
 <ul>
-<li><p><strong>发送http请求</strong></p>
+<li><p><strong>发送 http 请求</strong></p>
 </li>
 <li><p><strong>服务器处理请求</strong></p>
 </li>
 </ul>
-<p>后端从在固定的端口接收到TCP报文开始，它会对TCP连接进行处理，对HTTP协议进行解析，并按照报文格式进一步封装成HTTP Request对象，供上层使用。</p>
-<p>服务器返回一个HTPP响应,包括状态行,响应头,响应正文</p>
+<p>后端从在固定的端口接收到 TCP 报文开始，它会对 TCP 连接进行处理，对 HTTP 协议进行解析，并按照报文格式进一步封装成 HTTP Request 对象，供上层使用。</p>
+<p>服务器返回一个 HTPP 响应,包括状态行,响应头,响应正文</p>
 <ul>
-<li><strong>浏览器显示HTML</strong></li>
+<li><strong>浏览器显示 HTML</strong></li>
 </ul>
 <pre class="line-numbers language-none"><code class="language-none">浏览器在解析html文件时，会”自上而下“加载，并在加载过程中进行解析渲染。在解析过程中，如果遇到请求外部资源时，如图片、外链的CSS、iconfont等，请求过程是异步的，并不会影响html文档进行加载.
 　　解析过程中，浏览器首先会解析HTML文件构建DOM树，然后解析CSS文件构建渲染树，等到渲染树构建完成后，浏览器开始布局渲染树并将其绘制到屏幕上.<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <ul>
-<li>*<em>浏览器发送请求获取嵌入在 HTML 中的资源（图片、音频、视频、CSS、JS等）</em></li>
+<li>*<em>浏览器发送请求获取嵌入在 HTML 中的资源（图片、音频、视频、CSS、JS 等）</em></li>
 </ul>
 
                 

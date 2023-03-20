@@ -423,72 +423,72 @@
             <div id="articleContent">
                 <h2 id="概念（Server-applet）"><a href="#概念（Server-applet）" class="headerlink" title="概念（Server applet）"></a>概念（Server applet）</h2><p>运行在 Web 服务器或应用服务器上的程序,它是作为来自 Web 浏览器或其他 HTTP 客户端的请求和 HTTP 服务器上的数据库或应用程序之间的中间层</p>
 <ul>
-<li><p>Servlet就是一个接口，定义了Java类被浏览器访问到（tomcat识别）的规则。</p>
+<li><p>Servlet 就是一个接口，定义了 Java 类被浏览器访问到（tomcat 识别）的规则。</p>
 </li>
-<li><p>定义一个类，实现Servlet接口，重写方法</p>
+<li><p>定义一个类，实现 Servlet 接口，重写方法</p>
 </li>
 </ul>
 <h2 id="执行原理"><a href="#执行原理" class="headerlink" title="执行原理"></a>执行原理</h2><ol>
-<li>当服务器接收到客户端浏览器的请求后，会解析请求URL路径，获取访问的Servlet的资源路径</li>
-<li>查找web.xml文件，是否有对应的<url-pattern>标签体内容</li>
+<li>当服务器接收到客户端浏览器的请求后，会解析请求 URL 路径，获取访问的 Servlet 的资源路径</li>
+<li>查找 web.xml 文件，是否有对应的<url-pattern>标签体内容</li>
 <li>如果有，则在找到对应的<servlet-class>全类名</li>
-<li>tomcat会将字节码文件加载进内存，并且创建其对象</li>
+<li>tomcat 会将字节码文件加载进内存，并且创建其对象</li>
 <li>调用其方法</li>
 </ol>
 <h2 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h2><ol>
-<li><p>被创建：执行init()方法，只执行一次</p>
+<li><p>被创建：执行 init()方法，只执行一次</p>
 <ul>
-<li><p>Servlet什么时候被创建？</p>
-<p>默认情况下，第一次访问时，Servlet被创建</p>
-<p>可以配置执行Servlet的创建时机</p>
+<li><p>Servlet 什么时候被创建？</p>
+<p>默认情况下，第一次访问时，Servlet 被创建</p>
+<p>可以配置执行 Servlet 的创建时机</p>
 <pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>servlet</span><span class="token punctuation">></span></span>
-   <span class="token comment">&lt;!--负数表示在第一次访问时创建，非负数表示在服务器启动时创建 --></span> 
+   <span class="token comment">&lt;!--负数表示在第一次访问时创建，非负数表示在服务器启动时创建 --></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>load-on-startup</span><span class="token punctuation">></span></span>-1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>load-on-startup</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>servlet</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
-<li><p>Servlet的init方法，只执行一次，说明一个Servlet在内存中只存在一个对象，是单例的</p>
+<li><p>Servlet 的 init 方法，只执行一次，说明一个 Servlet 在内存中只存在一个对象，是单例的</p>
 <p><strong>多个用户同时访问时，可能存在线程安全问题</strong></p>
-<p>解决：尽量不要在Servlet中定义成员变量，即使定义了成员变量，也不要修改其值</p>
+<p>解决：尽量不要在 Servlet 中定义成员变量，即使定义了成员变量，也不要修改其值</p>
 </li>
 </ul>
 </li>
-<li><p>提供服务：执行service()方法，执行多次</p>
-<p>每次访问Servlet时，service方法都会被调用一次</p>
+<li><p>提供服务：执行 service()方法，执行多次</p>
+<p>每次访问 Servlet 时，service 方法都会被调用一次</p>
 </li>
-<li><p>被销毁：执行destroy方法，只执行一次</p>
-<p>Servlet被销毁时执行，服务器关闭时，Servlet被销毁</p>
-<p>只有服务器正常关闭才会执行destroy方法</p>
+<li><p>被销毁：执行 destroy 方法，只执行一次</p>
+<p>Servlet 被销毁时执行，服务器关闭时，Servlet 被销毁</p>
+<p>只有服务器正常关闭才会执行 destroy 方法</p>
 <blockquote>
-<p>destroy方法在Servlet被销毁之前执行，一般用于释放资源</p>
+<p>destroy 方法在 Servlet 被销毁之前执行，一般用于释放资源</p>
 </blockquote>
 </li>
 </ol>
 <h2 id="Servlet3-0："><a href="#Servlet3-0：" class="headerlink" title="Servlet3.0："></a>Servlet3.0：</h2><ul>
 <li><p>好处：</p>
-<p>支持注解配置，可以不需要web.xml了</p>
+<p>支持注解配置，可以不需要 web.xml 了</p>
 </li>
 <li><p>步骤：</p>
 <ol>
-<li>创建JavaEE项目，选择Servlet3.0以上版本，可以不创建web.xml</li>
-<li>定义一个类，实现Servlet接口</li>
+<li>创建 JavaEE 项目，选择 Servlet3.0 以上版本，可以不创建 web.xml</li>
+<li>定义一个类，实现 Servlet 接口</li>
 <li>重写方法</li>
-<li>在类上使用@WebServlet注解，进行配置@WebServlet(“资源路径”)<ul>
-<li>一个Servlet可以定义多个访问路径：@WebServlet({“&#x2F;d4”,”&#x2F;dd4”,”&#x2F;ddd4”})</li>
-<li>路径定义规则：<br>           1. &#x2F;xxx：路径匹配<br>           2. &#x2F;xxx&#x2F;xxx:多层路径，目录结构<br>           3. *.do：扩展名匹配</li>
+<li>在类上使用@WebServlet 注解，进行配置@WebServlet(“资源路径”)<ul>
+<li>一个 Servlet 可以定义多个访问路径：@WebServlet({“&#x2F;d4”,”&#x2F;dd4”,”&#x2F;ddd4”})</li>
+<li>路径定义规则： 1. &#x2F;xxx：路径匹配 2. &#x2F;xxx&#x2F;xxx:多层路径，目录结构 3. *.do：扩展名匹配</li>
 </ul>
 </li>
 </ol>
 </li>
 </ul>
-<h2 id="体系结构"><a href="#体系结构" class="headerlink" title="体系结构"></a>体系结构</h2><p>Servlet  – 接口<br>    |<br>GenericServlet  – 抽象类<br>    |<br>HttpServlet  –  抽象类</p>
+<h2 id="体系结构"><a href="#体系结构" class="headerlink" title="体系结构"></a>体系结构</h2><p>Servlet – 接口<br>|<br>GenericServlet – 抽象类<br>|<br>HttpServlet – 抽象类</p>
 <ul>
-<li><p>GenericServlet：将Servlet接口中除了service()以外的方法做了默认空实现</p>
-<p>将来定义Servlet类时，可以继承GenericServlet，实现service()方法即可</p>
+<li><p>GenericServlet：将 Servlet 接口中除了 service()以外的方法做了默认空实现</p>
+<p>将来定义 Servlet 类时，可以继承 GenericServlet，实现 service()方法即可</p>
 </li>
-<li><p>HttpServlet：对http协议的一种封装，简化操作</p>
+<li><p>HttpServlet：对 http 协议的一种封装，简化操作</p>
 <ol>
-<li>定义类继承HttpServlet</li>
-<li>重写doGet&#x2F;doPost方法</li>
+<li>定义类继承 HttpServlet</li>
+<li>重写 doGet&#x2F;doPost 方法</li>
 </ol>
 </li>
 </ul>

@@ -306,6 +306,55 @@
              <!-- 隐藏某个文章 -->
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
+                    <a href="/2022/04/14/%E5%85%B3%E4%BA%8ETest%E7%B1%BB%E4%B8%AD%E4%BD%BF%E7%94%A8AutoWired%E6%97%A0%E6%B3%95%E8%87%AA%E5%8A%A8%E6%B3%A8%E5%85%A5bean%E7%9A%84%E7%9A%84%E9%97%AE%E9%A2%98/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/92.jpg" class="responsive-img" alt="关于Test类中使用AutoWired无法自动注入bean的的问题">
+                            
+                            <span class="card-title">关于Test类中使用AutoWired无法自动注入bean的的问题</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                在 Test 类中使用@AutoWired 注解始终无法获取到 Bean，一直报空指针异常
+是需要配置 spring-test 的呀
+
+导入 spring 集成 junit 的坐标
+&lt;!--此处需要注意的是，spring5  及以上版
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-14
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-user fa-fw"></i>
+                                Wujiu
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/">
+                            <span class="chip bg-color">问题记录</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+              <!-- 隐藏某个文章 -->
+            
+             <!-- 隐藏某个文章 -->
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
                     <a href="/2022/04/13/ssm%E6%95%B4%E5%90%88/">
                         <div class="card-image">
                             
@@ -320,9 +369,9 @@
                         <div class="summary block-with-text">
                             
                                 
-将SQLSessionFactory配置到Spring容器中
+将 SQLSessionFactory 配置到 Spring 容器中
 &lt;!--加载jdbc.properties-->
-&lt;context:property-placeholder location="classpath:jdbc.pr
+&lt;context:property-placeholder location="classpath:jdb
                             
                         </div>
                         <div class="publish-info">
@@ -419,11 +468,11 @@
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                检查一下pom.xml中的c3p0依赖是否存在或者版本是否太低
+                                检查一下 pom.xml 中的 c3p0 依赖是否存在或者版本是否太低
 注意高版本的不再是
 &lt;dependency>
     &lt;groupId>c3p0&lt;/groupId>
-    &lt;artifactId>c3p0&lt;/
+    &lt;artifactId>c3p0&
                             
                         </div>
                         <div class="publish-info">
@@ -518,7 +567,7 @@
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                应用上下文对象是通过new ClasspathXmlApplicationContext(spring配置文件)  方式获取的，但是每次从容器中获得Bean时都要编写new ClasspathXmlApplicationContext(sp
+                                应用上下文对象是通过new ClasspathXmlApplicationContext(spring 配置文件) 方式获取的，但是每次从容器中获得 Bean 时都要编写 new ClasspathXmlApplicationContext
                             
                         </div>
                         <div class="publish-info">
@@ -567,7 +616,7 @@
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                概述它是spring框架中提供的一个对象，是对原始繁琐的Jdbc API对象的简单封装。spring框架为我们提供了很多的操作模板类。例如：操作关系型数据的JdbcTemplate和HibernateTemplate，操作nosql数据库的
+                                概述它是 spring 框架中提供的一个对象，是对原始繁琐的 Jdbc API 对象的简单封装。spring 框架为我们提供了很多的操作模板类。例如：操作关系型数据的 JdbcTemplate 和 HibernateTemplate，操作 
                             
                         </div>
                         <div class="publish-info">
@@ -666,10 +715,10 @@
                         <div class="summary block-with-text">
                             
                                 
-导入spring集成junit的坐标
+导入 spring 集成 junit 的坐标
 &lt;!--此处需要注意的是，spring5  及以上版本要求 junit 的版本必须是 4.12 及以上-->
 &lt;dependency>
-    &lt;groupId>org.spring
+    &lt;groupId>org.sp
                             
                         </div>
                         <div class="publish-info">
@@ -718,59 +767,10 @@
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                可以将DataSource的创建权交由Spring容器去完成
+                                可以将 DataSource 的创建权交由 Spring 容器去完成
 
-DataSource有无参构造方法，而Spring默认就是通过无参构造方法实例化对象的
-DataSource要想使用需要通过set方法设置数据库连接信息，而Spring可以通过
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-20
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-user fa-fw"></i>
-                                Wujiu
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/%E6%A1%86%E6%9E%B6/">
-                            <span class="chip bg-color">框架</span>
-                        </a>
-                        
-                        <a href="/tags/spring/">
-                            <span class="chip bg-color">spring</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-              <!-- 隐藏某个文章 -->
-            
-             <!-- 隐藏某个文章 -->
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2022/03/20/spring%E6%B3%A8%E8%A7%A3%E5%BC%80%E5%8F%91/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/27.jpg" class="responsive-img" alt="spring注解开发">
-                            
-                            <span class="card-title">spring注解开发</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                Spring原始注解Spring原始注解主要是替代bean的配置注意：使用注解进行开发时，需要在applicationContext.xml中配置组件扫描，作用是指定哪个包及其子包下的Bean需要进行扫描以便识别使用注解配置的类、字段和方法
+DataSource 有无参构造方法，而 Spring 默认就是通过无参构造方法实例化对象的
+DataSource 要想使用需要通过 set 方法设置数据库连接信息，而
                             
                         </div>
                         <div class="publish-info">

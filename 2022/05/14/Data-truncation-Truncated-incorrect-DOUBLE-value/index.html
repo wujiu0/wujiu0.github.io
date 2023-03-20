@@ -421,7 +421,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>使用update语句时，出现Data truncation: Truncated incorrect DOUBLE value</p>
+                <p>使用 update 语句时，出现 Data truncation: Truncated incorrect DOUBLE value</p>
 <pre class="line-numbers language-none"><code class="language-none">org.springframework.dao.DataIntegrityViolationException: PreparedStatementCallback; SQL [update t_user set uname&#x3D;? and usex&#x3D;? and uemail&#x3D;? and upassword&#x3D;? where uid&#x3D;?]; Data truncation: Truncated incorrect DOUBLE value: &#39;王五&#39;; nested exception is com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Truncated incorrect DOUBLE value: &#39;王五&#39;
 	org.springframework.jdbc.support.SQLStateSQLExceptionTranslator.doTranslate(SQLStateSQLExceptionTranslator.java:104)
 	org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:70)
@@ -441,7 +441,7 @@
 	javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
 	org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>也许你只是语句写错了，update语句中想要更新多个字段的值，应该使用逗号而不是and连接</p>
+<p>也许你只是语句写错了，update 语句中想要更新多个字段的值，应该使用逗号而不是 and 连接</p>
 
                 
             </div>

@@ -428,21 +428,21 @@
                 <ul>
 <li><p>database() 当前数据库名</p>
 </li>
-<li><p>单行注释<code>--(空格) </code>      在url栏中 +会被解释成空格&#x3D;&#x3D;&gt;<code>--+</code></p>
+<li><p>单行注释<code>--(空格) </code> 在 url 栏中 +会被解释成空格&#x3D;&#x3D;&gt;<code>--+</code></p>
 </li>
-<li><p>order by (n) 对查询结果的第n列进行排序,可以用来判断字段个数</p>
+<li><p>order by (n) 对查询结果的第 n 列进行排序,可以用来判断字段个数</p>
 </li>
-<li><p>联合查询(列数必须相等).select * from users where id &#x3D;’-1’union select 1,2,3 —-左边查询没结果(没有这个id),右边结果1,2,3</p>
+<li><p>联合查询(列数必须相等).select * from users where id &#x3D;’-1’union select 1,2,3 —-左边查询没结果(没有这个 id),右边结果 1,2,3</p>
 </li>
-<li><p>连接字符串<br> concat      普通拼接<br>concat_ws(‘~‘,1,2)       第一位是连接符<br>group_concat(1~2)</p>
+<li><p>连接字符串<br> concat 普通拼接<br>concat_ws(‘~‘,1,2) 第一位是连接符<br>group_concat(1~2)</p>
 </li>
 <li><p>information_schema<br>简单的信息数据库<br>里面都是视图,不是表,</p>
 <p>schemata &#x3D;&#x3D;&gt;数据库信息<br> schema_name 数据库名称</p>
-<p>tables &#x3D;&#x3D;&gt;数据库和表的关系<br> table_name	表名</p>
+<p>tables &#x3D;&#x3D;&gt;数据库和表的关系<br> table_name 表名</p>
 <p>columns &#x3D;&#x3D;&gt;表和列的关系<br> column_name 列名</p>
 </li>
 </ul>
-<p>length(database())&#x3D;  数据库名长度</p>
+<p>length(database())&#x3D; 数据库名长度</p>
 <p>left(database(),1)&#x3D;’ ‘ 爆破数据库名</p>
 <ul>
 <li>联合注入</li>
@@ -471,15 +471,15 @@ select * from student where id&#x3D;1 and exists(select usetname from admin);<sp
 <ul>
 <li><p>报错注入</p>
 <ul>
-<li><p>xpath语法错误</p>
+<li><p>xpath 语法错误</p>
 <p><strong>extractvalue()</strong></p>
-<p>语法：extractvalue(目标xml文档，Xpath_string)</p>
+<p>语法：extractvalue(目标 xml 文档，Xpath_string)</p>
 <p>利用第二个参数不满足格式时会报错,返回我们写入的非法格式内容,</p>
 <p><code>?id=&#39;and(select extractvalue(&quot;1&quot;,concat(&#39;~&#39;,(select语句))))</code></p>
 <p><strong>updatexml()</strong></p>
-<p>语法:updatexml(目标xml文档,xpath_string,new_value)</p>
+<p>语法:updatexml(目标 xml 文档,xpath_string,new_value)</p>
 <p>作用:用来改变文档中符合条件的节点的值</p>
-<p>利用方式和extractvalue类似</p>
+<p>利用方式和 extractvalue 类似</p>
 <p><code>?id=&#39;and(select updatexml(&quot;1&quot;,concat(&#39;~&#39;,(select语句)),&quot;1&quot;))</code></p>
 </li>
 <li><p>concat+rand()+group_by()导致主键重复</p>
@@ -494,10 +494,10 @@ floor(rand(0)*2)： 随机产生0或1<span aria-hidden="true" class="line-number
 <p><code>?id=&#39;union select 1 from (select count(*),concat((select database()),&quot; &quot;,floor(rand(0)*2))x from information_schema.tables group by x)a</code></p>
 <ul>
 <li><p>宽字节注入</p>
-<p>在提交<code>?id=1&#39;</code>时,发现运行的SQL语句为<code>select * from user where  id =&#39;1\&#39; #&#39;</code>,对单引号进行了转义</p>
-<p>宽字节注入就是利用mysql在使用GBK编码的时候,会认为两个字符是一个汉字(前一个字符的ASCII需要大于128).</p>
-<p>所以我们提交<code>id=1%df&#39; #</code>,运行的SQL语句就变为了<code>select * from user where id =&#39;1運&#39;#&#39;</code></p>
-<p>这是因为将%df和%5c解码成了一个汉字”运”(<code>\</code>的编码为5c)，从而失去了转义的作用，就可以进行联合注入了</p>
+<p>在提交<code>?id=1&#39;</code>时,发现运行的 SQL 语句为<code>select * from user where  id =&#39;1\&#39; #&#39;</code>,对单引号进行了转义</p>
+<p>宽字节注入就是利用 mysql 在使用 GBK 编码的时候,会认为两个字符是一个汉字(前一个字符的 ASCII 需要大于 128).</p>
+<p>所以我们提交<code>id=1%df&#39; #</code>,运行的 SQL 语句就变为了<code>select * from user where id =&#39;1運&#39;#&#39;</code></p>
+<p>这是因为将%df 和%5c 解码成了一个汉字”运”(<code>\</code>的编码为 5c)，从而失去了转义的作用，就可以进行联合注入了</p>
 </li>
 </ul>
 

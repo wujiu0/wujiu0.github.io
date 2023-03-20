@@ -418,14 +418,13 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <p>·</p>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token number">10</span>
-<span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-	console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
-<p>这段代码的执行结果并不是想象中的输出2</p>
+<p>这段代码的执行结果并不是想象中的输出 2</p>
 <p>而是会报如下一个错误：<code>Error:10 is not a function</code></p>
-<p>分析：查阅ECMAScript的语言规范，ECMAScript的自动分号插入规则</p>
+<p>分析：查阅 ECMAScript 的语言规范，ECMAScript 的自动分号插入规则</p>
 <p>在如上代码内并不会自动插入分号，而是会被这样解析：<code>var a = 10( function()&#123; console.log(2) &#125; )()</code></p>
 <p>这样就很容易理解了</p>
 <p>所以在立即执行函数之前一定要带上分号</p>

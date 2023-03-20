@@ -421,36 +421,33 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="php伪协议"><a href="#php伪协议" class="headerlink" title="php伪协议"></a>php伪协议</h2><p><em>需要首先将php.ini中的allwo_url_fopen和allow_url_include设置为On</em> </p>
-<h5 id="php-x2F-x2F-访问各个输入-x2F-输出流"><a href="#php-x2F-x2F-访问各个输入-x2F-输出流" class="headerlink" title="php:&#x2F;&#x2F;		访问各个输入&#x2F;输出流"></a>php:&#x2F;&#x2F;		访问各个输入&#x2F;输出流</h5><ul>
-<li><p>php:&#x2F;&#x2F;input 		访问请求的原始数据的只读流<br>可以获取到POST的数据</p>
+                <h2 id="php-伪协议"><a href="#php-伪协议" class="headerlink" title="php 伪协议"></a>php 伪协议</h2><p><em>需要首先将 php.ini 中的 allwo_url_fopen 和 allow_url_include 设置为 On</em></p>
+<h5 id="php-x2F-x2F-访问各个输入-x2F-输出流"><a href="#php-x2F-x2F-访问各个输入-x2F-输出流" class="headerlink" title="php:&#x2F;&#x2F; 访问各个输入&#x2F;输出流"></a>php:&#x2F;&#x2F; 访问各个输入&#x2F;输出流</h5><ul>
+<li><p>php:&#x2F;&#x2F;input 访问请求的原始数据的只读流<br>可以获取到 POST 的数据</p>
 <pre class="line-numbers language-php" data-language="php"><code class="language-php">http://127.0.0.1/cmd.php?file=php://input
 
 [POST DATA] <span class="token php language-php"><span class="token delimiter important">&lt;?php</span> <span class="token function">phpinfo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token delimiter important">?></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-
 </li>
-<li><p>php:&#x2F;&#x2F;output		只写的数据流<br>允许以print和echo一样的方式写入到输出缓冲区</p>
+<li><p>php:&#x2F;&#x2F;output 只写的数据流<br>允许以 print 和 echo 一样的方式写入到输出缓冲区</p>
 </li>
-<li><p>php:&#x2F;&#x2F;filter		 元封装器,设计用于数据流打开时的筛选过滤应用  </p>
+<li><p>php:&#x2F;&#x2F;filter 元封装器,设计用于数据流打开时的筛选过滤应用</p>
 <pre class="line-numbers language-php" data-language="php"><code class="language-php">php<span class="token punctuation">:</span><span class="token comment">//filter/read=convert.base64-encode/resource=flag.php</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<p>convert.base64-encode就是一个过滤器,flag.php就是要过滤的数据流.<br>转换过滤器 convert.*<br>字符串过滤器string.* 用于对字符串进行各类转换(加密,转换大小写等)</p>
+<p>convert.base64-encode 就是一个过滤器,flag.php 就是要过滤的数据流.<br>转换过滤器 convert._<br>字符串过滤器 string._ 用于对字符串进行各类转换(加密,转换大小写等)</p>
 <p><strong>语法</strong></p>
 <ul>
-<li>resource&#x3D;&lt;要过滤的数据流&gt;	指定要筛选过滤的数据流</li>
-<li>read&#x3D;&lt;读链的筛选列表&gt;		设定一个或多个过滤器名称,以管道符|分隔</li>
-<li>write&#x3D;&lt;写链的筛选列表&gt;		设定一个或多个过滤器名称,以管道符|分隔</li>
-<li>&lt;;两个链的筛选列表&gt;			任何没有以read&#x3D;或write&#x3D;作前缀的筛选器列表会视情况应用于读或写链</li>
+<li>resource&#x3D;&lt;要过滤的数据流&gt; 指定要筛选过滤的数据流</li>
+<li>read&#x3D;&lt;读链的筛选列表&gt; 设定一个或多个过滤器名称,以管道符|分隔</li>
+<li>write&#x3D;&lt;写链的筛选列表&gt; 设定一个或多个过滤器名称,以管道符|分隔</li>
+<li>&lt;;两个链的筛选列表&gt; 任何没有以 read&#x3D;或 write&#x3D;作前缀的筛选器列表会视情况应用于读或写链</li>
 </ul>
 </li>
-<li><p>php:&#x2F;&#x2F;fd		允许直接访问指定的文件描述符.例如php:&#x2F;&#x2F;fd&#x2F;3引用了文件描述符3</p>
+<li><p>php:&#x2F;&#x2F;fd 允许直接访问指定的文件描述符.例如 php:&#x2F;&#x2F;fd&#x2F;3 引用了文件描述符 3</p>
 </li>
-<li><p>php:&#x2F;&#x2F;memory和php:&#x2F;&#x2F;temp	这是一个类似文件包装器的数据流,允许读写临时数据.m总是把数据储存在内存中,而t会在内存量达到预定义的限制后(默认2MB)存入临时文件中.临时文件位置的决定和sys_get_temp_dir()的方式一致</p>
+<li><p>php:&#x2F;&#x2F;memory 和 php:&#x2F;&#x2F;temp 这是一个类似文件包装器的数据流,允许读写临时数据.m 总是把数据储存在内存中,而 t 会在内存量达到预定义的限制后(默认 2MB)存入临时文件中.临时文件位置的决定和 sys_get_temp_dir()的方式一致</p>
 </li>
 </ul>
 <h5 id="file-x2F-x2F-访问本地文件系统"><a href="#file-x2F-x2F-访问本地文件系统" class="headerlink" title="file:&#x2F;&#x2F; 访问本地文件系统"></a>file:&#x2F;&#x2F; 访问本地文件系统</h5><pre class="line-numbers language-php" data-language="php"><code class="language-php">http<span class="token punctuation">:</span><span class="token comment">//127.0.0.1/cmd.php?file=file://D:/soft/phpStudy/WWW/phpcode.txt</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
 
                 
             </div>

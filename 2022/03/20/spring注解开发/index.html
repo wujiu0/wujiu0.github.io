@@ -425,7 +425,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="Spring原始注解"><a href="#Spring原始注解" class="headerlink" title="Spring原始注解"></a>Spring原始注解</h2><p>Spring原始注解主要是替代bean的配置<br>注意：使用注解进行开发时，需要在applicationContext.xml中配置组件扫描，作用是指定哪个包及其子包下的Bean需要进行扫描以便识别使用注解配置的类、字段和方法。</p>
+                <h2 id="Spring-原始注解"><a href="#Spring-原始注解" class="headerlink" title="Spring 原始注解"></a>Spring 原始注解</h2><p>Spring 原始注解主要是替代 bean 的配置<br>注意：使用注解进行开发时，需要在 applicationContext.xml 中配置组件扫描，作用是指定哪个包及其子包下的 Bean 需要进行扫描以便识别使用注解配置的类、字段和方法。</p>
 <pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">context:</span>component-scan</span> <span class="token attr-name">base-package</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>com.example<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token namespace">context:</span>component-scan</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <table>
@@ -437,19 +437,19 @@
 </thead>
 <tbody><tr>
 <td>@Component</td>
-<td>使用在类上实例化Bean</td>
+<td>使用在类上实例化 Bean</td>
 </tr>
 <tr>
 <td>@Controller</td>
-<td>使用在web层类上实例化Bean</td>
+<td>使用在 web 层类上实例化 Bean</td>
 </tr>
 <tr>
 <td>@Service</td>
-<td>在service层类上实例化Bean</td>
+<td>在 service 层类上实例化 Bean</td>
 </tr>
 <tr>
 <td>@Respository</td>
-<td>在dao层上实例化Bean</td>
+<td>在 dao 层上实例化 Bean</td>
 </tr>
 <tr>
 <td>@Autowired</td>
@@ -457,7 +457,7 @@
 </tr>
 <tr>
 <td>@Qualifier</td>
-<td>结合@Autowired一起使用用于根据名称进行依赖注入</td>
+<td>结合@Autowired 一起使用用于根据名称进行依赖注入</td>
 </tr>
 <tr>
 <td>@Resource</td>
@@ -469,18 +469,18 @@
 </tr>
 <tr>
 <td>@Scope</td>
-<td>标注Bean的作用范围</td>
+<td>标注 Bean 的作用范围</td>
 </tr>
 <tr>
 <td>@PostConstruct</td>
-<td>使用在方法上标注该方法是Bean的初始化方法</td>
+<td>使用在方法上标注该方法是 Bean 的初始化方法</td>
 </tr>
 <tr>
 <td>@PreDestroy</td>
-<td>使用在方法上标注该方法是Bean的销毁方法</td>
+<td>使用在方法上标注该方法是 Bean 的销毁方法</td>
 </tr>
 </tbody></table>
-<h2 id="Spring新注解"><a href="#Spring新注解" class="headerlink" title="Spring新注解"></a>Spring新注解</h2><p>使用Spring新注解即可完全替代xml配置文件</p>
+<h2 id="Spring-新注解"><a href="#Spring-新注解" class="headerlink" title="Spring 新注解"></a>Spring 新注解</h2><p>使用 Spring 新注解即可完全替代 xml 配置文件</p>
 <table>
 <thead>
 <tr>
@@ -490,19 +490,19 @@
 </thead>
 <tbody><tr>
 <td>@Configuration</td>
-<td>用于指定当前类是一个Spring配置类</td>
+<td>用于指定当前类是一个 Spring 配置类</td>
 </tr>
 <tr>
 <td>@ComponentScan</td>
-<td>用于指定 Spring  在初始化容器时要扫描的包。<br>作用和在 Spring  的 xml  配置文件中的<code>&lt;context:component-scan  base-package=&quot;com.example&quot;/&gt;</code>一样</td>
+<td>用于指定 Spring 在初始化容器时要扫描的包。<br>作用和在 Spring 的 xml 配置文件中的<code>&lt;context:component-scan  base-package=&quot;com.example&quot;/&gt;</code>一样</td>
 </tr>
 <tr>
 <td>@Bean</td>
-<td>使用在方法上，标注该方法的返回值存储到Spring容器中(<code>name=&quot;xxx&quot;</code>)</td>
+<td>使用在方法上，标注该方法的返回值存储到 Spring 容器中(<code>name=&quot;xxx&quot;</code>)</td>
 </tr>
 <tr>
 <td>@PropertySource</td>
-<td>用于加载properties文件(“classpath:xxx.properties”)</td>
+<td>用于加载 properties 文件(“classpath:xxx.properties”)</td>
 </tr>
 <tr>
 <td>@Import</td>
