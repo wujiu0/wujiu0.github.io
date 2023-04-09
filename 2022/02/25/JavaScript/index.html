@@ -519,6 +519,9 @@ arr<span class="token punctuation">.</span><span class="token function">sort</sp
 <li>index：当前元素索引号</li>
 </ul>
 </li>
+<li><p>map() 可以处理数据，并且返回新的数组</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">arr<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">item<span class="token punctuation">,</span> index</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span> <span class="token keyword">return</span> item <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span> <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
 <li><p>filter() 筛选数组</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">arr<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">currentValue<span class="token punctuation">[</span><span class="token punctuation">,</span> index<span class="token punctuation">]</span></span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span> <span class="token keyword">return</span> currentValue <span class="token operator">></span> <span class="token number">1</span><span class="token punctuation">;</span> <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
@@ -537,7 +540,32 @@ arr<span class="token punctuation">.</span><span class="token function">sort</sp
 <li>后面每次遍历就会用后面的数组元素 累计到累计值里面 （类似求和里面的 sum ）</li>
 </ul>
 </li>
-<li></li>
+<li><p>join(str) 用于把数组中的所有元素转换一个字符串</p>
+<ul>
+<li>str: 数组元素是通过参数里面指定的分隔符进行分隔的</li>
+</ul>
+</li>
+<li><p>find() 查找元素,</p>
+<ul>
+<li><p>返回值：返回符合测试条件的第一个数组元素值，</p>
+<p>如果没有符合条件的则返回 undefined</p>
+</li>
+</ul>
+</li>
+<li><p>every() 检测数组所有元素是否都符合指定条件，</p>
+<ul>
+<li>如果所有元素都通过检测返回 true，否则返回 false</li>
+</ul>
+</li>
+<li><p>some() 检测数组中的元素是否满足指定条件  </p>
+<ul>
+<li>如果数组中有元素满足条件返回 true，否则返回 false</li>
+</ul>
+</li>
+<li><p>concat() 合并两个数组，返回生成新数组</p>
+</li>
+<li><p>reverse() 反转数组</p>
+</li>
 </ul>
 <h3 id="对象："><a href="#对象：" class="headerlink" title="对象："></a>对象：</h3><p>对象由属性和方法组成。</p>
 <h4 id="声明创建："><a href="#声明创建：" class="headerlink" title="声明创建："></a>声明创建：</h4><ul>
@@ -724,9 +752,19 @@ Object<span class="token punctuation">.</span><span class="token function">metho
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> o <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'zhangsan'</span><span class="token punctuation">,</span> <span class="token literal-property property">age</span><span class="token operator">:</span> <span class="token number">6</span> <span class="token punctuation">&#125;</span>
 Object<span class="token punctuation">.</span><span class="token function">assign</span><span class="token punctuation">(</span>o<span class="token punctuation">,</span> <span class="token literal-property property">gender</span><span class="token operator">:</span> <span class="token string">'男'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
 </ul>
-<h3 id="Array"><a href="#Array" class="headerlink" title="Array"></a>Array</h3><ul>
-<li>reduce</li>
-</ul>
+<h3 id="String"><a href="#String" class="headerlink" title="String"></a>String</h3><ol>
+<li>实例属性 <code>length</code> 用来获取字符串的度长</li>
+<li>实例方法 <code>split(&#39;分隔符&#39;)</code> 用来将字符串拆分成数组</li>
+<li>实例方法 <code>substring（需要截取的第一个字符的索引[,结束的索引号]）</code> 用于字符串截取</li>
+<li>实例方法 <code>startsWith(检测字符串[, 检测位置索引号])</code> 检测是否以某字符开头</li>
+<li>实例方法 <code>includes(搜索的字符串[, 检测位置索引号])</code> 判断一个字符串是否包含在另一个字符串中，根据情况返回 true 或 false</li>
+<li>实例方法 <code>toUpperCase</code> 用于将字母转换成大写</li>
+<li>实例方法 <code>toLowerCase</code> 用于将就转换成小写</li>
+<li>实例方法 <code>indexOf</code>  检测是否包含某字符</li>
+<li>实例方法 <code>endsWith</code> 检测是否以某字符结尾</li>
+<li>实例方法 <code>replace</code> 用于替换字符串，支持正则匹配</li>
+<li>实例方法 <code>match</code> 用于查找字符串，支持正则匹配</li>
+</ol>
 <h2 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h2><ul>
 <li><p>全局作用域：<code>&lt;script&gt;</code> 标签和 <code>.js</code> 文件的 〖 最外层 〗 就是所谓的全局作用域</p>
 <blockquote>
