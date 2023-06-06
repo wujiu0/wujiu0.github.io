@@ -504,11 +504,11 @@
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">let</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
 <span class="token comment">// 升序</span>
 arr<span class="token punctuation">.</span><span class="token function">sort</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span>b</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-  <span class="token keyword">return</span> a <span class="token operator">-</span>b<span class="token punctuation">;</span>
+  	<span class="token keyword">return</span> a <span class="token operator">-</span>b<span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token comment">// 降序</span>
 arr<span class="token punctuation">.</span><span class="token function">sort</span><span class="token punctuation">(</span><span class="token function">funtion</span> <span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span> b</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-<span class="token keyword">return</span> b <span class="token operator">-</span> a<span class="token punctuation">;</span>
+	<span class="token keyword">return</span> b <span class="token operator">-</span> a<span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 <li><p>forEach() 可用来遍历数组</p>
@@ -980,7 +980,7 @@ Student<span class="token punctuation">.</span>protytype<span class="token punct
 <li>返回值：指定的this值和初始化参数改造的原函数拷贝(新函数)</li>
 </ul>
 <blockquote>
-<p>因此当我们只是想改变 this 指向，并且不想调用这个函数的时候，可以使用 bind，比如改变定时器内部的<br>this指向.</p>
+<p>因此当我们只是想改变 this 指向，并且不想调用这个函数的时候，可以使用 bind，比如改变定时器内部的this指向.</p>
 </blockquote>
 </li>
 </ul>

@@ -417,7 +417,8 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><ul>
+                <p>[toc]</p>
+<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><ul>
 <li>层叠样式表,多个样式可以作用在同一个 HTML 元素上,同时生效</li>
 <li>降低耦合度,让分工协作更容易,提高开发效率</li>
 </ul>
@@ -724,7 +725,12 @@ E:nth-last-child(n)</span> <span class="token punctuation">&#123;</span><span cl
 <li>height:高度</li>
 </ul>
 <h3 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h3><ul>
-<li>list-style:none 去掉列表符号</li>
+<li>list-style-type 列表标志符号</li>
+<li>list-style-position 设置列表标志出现的位置</li>
+<li>list-style-image 自定义列表标志想</li>
+</ul>
+<ul>
+<li>list-style 列表简写（type image position）</li>
 </ul>
 <h3 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h3><ul>
 <li>vertical-align: middle; 调节图片垂直对齐方式</li>
@@ -748,8 +754,9 @@ E:nth-last-child(n)</span> <span class="token punctuation">&#123;</span><span cl
 <li>auto：根据是否溢出，自动显示或隐藏滚动条</li>
 </ul>
 <h3 id="元素本身隐藏"><a href="#元素本身隐藏" class="headerlink" title="元素本身隐藏"></a>元素本身隐藏</h3><ul>
-<li>visibility: hidden （占位置）</li>
-<li>display: none （不占位置）</li>
+<li>visibility: hidden （占位置，js事件不生效）</li>
+<li>display: none （不占位置，js事件不生效）</li>
+<li>opacity: 0 (占位置，js事件生效)</li>
 </ul>
 <h3 id="文字阴影"><a href="#文字阴影" class="headerlink" title="文字阴影"></a>文字阴影</h3><p>text-shadow</p>
 <table>
@@ -1234,6 +1241,9 @@ E:nth-last-child(n)</span> <span class="token punctuation">&#123;</span><span cl
 <blockquote>
 <p>开发中推荐多用类 + 后代，但不是层级越多越好，一个选择器中的类选择器的个数推荐 不要超过 3 个</p>
 </blockquote>
+<h2 id="视口"><a href="#视口" class="headerlink" title="视口"></a>视口</h2><p>显示HTML网页的区域，用来约束HTML尺寸</p>
+<p>默认网页宽度是980px</p>
+<p>iPhone6&#x2F;7&#x2F;8，设备宽度375px产出设计稿，二倍图设计稿尺寸：750px。</p>
 
                 
             </div>
