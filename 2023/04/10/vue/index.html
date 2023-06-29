@@ -419,6 +419,7 @@
             <div id="articleContent">
                 <h2 id="Vue-与-VueComponent-的关系"><a href="#Vue-与-VueComponent-的关系" class="headerlink" title="Vue 与 VueComponent 的关系"></a>Vue 与 VueComponent 的关系</h2><p><img src="/2023/04/10/vue/image-20230410165310033.png" alt="image-20230410165310033"></p>
 <h2 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h2><p><img src="/2023/04/10/vue/%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.png" alt="生命周期"></p>
+<h3 id="父子组件生命周期执行顺序"><a href="#父子组件生命周期执行顺序" class="headerlink" title="父子组件生命周期执行顺序"></a>父子组件生命周期执行顺序</h3><p>父beforeCreate -&gt; 父created -&gt; 父beforeMount -&gt;<br>子beforeCreate -&gt; 子created -&gt; 子beforeMount -&gt; 子mounted -&gt;<br>父mounted-&gt;父beforeUpdate-&gt;<br>子beforeUpdate-&gt;子updated-&gt;<br>父updated-&gt;父beforeDestroy-&gt;<br>子beforeDestroy-&gt;子destroyed-&gt;<br>父destroyed</p>
 <h2 id="脚手架文件结构"><a href="#脚手架文件结构" class="headerlink" title="脚手架文件结构"></a>脚手架文件结构</h2><p>├── node_modules<br>├── public<br>│ ├── favicon.ico: 页签图标<br>│ └── index.html: 主页面<br>├── src<br>│ ├── assets: 存放静态资源<br>│ │ └── logo.png<br>│ │── component: 存放组件<br>│ │ └── HelloWorld.vue<br>│ │── App.vue: 汇总所有组件<br>│ │── main.js: 入口文件<br>├── .gitignore: git 版本管制忽略的配置<br>├── babel.config.js: babel 的配置文件<br>├── package.json: 应用包配置文件<br>├── README.md: 应用描述文件<br>├── package-lock.json：包版本控制文件</p>
 <h2 id="关于不同版本的-Vue"><a href="#关于不同版本的-Vue" class="headerlink" title="关于不同版本的 Vue"></a>关于不同版本的 Vue</h2><ol>
 <li>vue.js 与 vue.runtime.xxx.js 的区别：<ol>
@@ -643,7 +644,7 @@
 </ol>
 <h2 id="nextTick"><a href="#nextTick" class="headerlink" title="nextTick"></a>nextTick</h2><ol>
 <li>语法：<code>this.$nextTick(回调函数)</code></li>
-<li>作用：在下一次 DOM 更新结束后执行其指定的回调。</li>
+<li>作用：在下一次 DOM 更新循环结束后执行其指定的回调。</li>
 <li>什么时候用：当改变数据后，要基于更新后的新 DOM 进行某些操作时，要在 nextTick 所指定的回调函数中执行。</li>
 </ol>
 <h2 id="Vue-封装的过度与动画"><a href="#Vue-封装的过度与动画" class="headerlink" title="Vue 封装的过度与动画"></a>Vue 封装的过度与动画</h2><ol>
@@ -1854,6 +1855,11 @@ router<span class="token punctuation">.</span><span class="token function">after
             <!-- 运行天数提醒. -->
             
             <br>
+            
+                <span id="icp"><img src="/medias/icp.png"
+                                    style="vertical-align: text-bottom;"/>
+                <a href="http://beian.miit.gov.cn/" target="_blank">晋ICP备2023016354号</a>
+            </span>
             
         </div>
         <div class="col s12 m4 l4 social-link social-statis">
