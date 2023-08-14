@@ -492,6 +492,26 @@
 <td>git pull 远程库地址别名 远程分支名</td>
 <td>将远程仓库对于分支最新内容拉下来后与当前本地分支直接合并</td>
 </tr>
+<tr>
+<td>git stash save [<message>]</td>
+<td>储藏当前修改（不提交）</td>
+</tr>
+<tr>
+<td>git stash list</td>
+<td>查看储藏记录</td>
+</tr>
+<tr>
+<td>git stash pop [–index] [-q | –quiet] [<stash>]</td>
+<td>取出之前储藏的修改</td>
+</tr>
+<tr>
+<td>git stash apply [–index] [-q | –quiet] [<stash>]</td>
+<td>取出之前储藏的修改（不从列表中删除）</td>
+</tr>
+<tr>
+<td>git stash drop [-q | –quiet] [<stash>]</td>
+<td>将指定储藏从储藏记录列表中删除</td>
+</tr>
 </tbody></table>
 <h2 id="ssh免密登陆"><a href="#ssh免密登陆" class="headerlink" title="ssh免密登陆"></a>ssh免密登陆</h2><p><code>ssh-keygen -t rsa -C 123@qq.com</code></p>
 
