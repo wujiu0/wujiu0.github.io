@@ -449,6 +449,14 @@
 <ul>
 <li>*<em>浏览器发送请求获取嵌入在 HTML 中的资源（图片、音频、视频、CSS、JS 等）</em></li>
 </ul>
+<h3 id="浏览器是如何进行界面渲染的"><a href="#浏览器是如何进行界面渲染的" class="headerlink" title="浏览器是如何进行界面渲染的"></a>浏览器是如何进行界面渲染的</h3><ol>
+<li>解析（Parser）HTML，生成 DOM 树(DOM Tree)</li>
+<li>同时解析（Parser） CSS，生成样式规则 (Style Rules)</li>
+<li>根据 DOM 树和样式规则，生成渲染树(Render Tree)</li>
+<li>进行布局 Layout(回流&#x2F;重排):根据生成的渲染树，得到节点的几何信息（位置，大小）</li>
+<li>进行绘制 Painting(重绘): 根据计算和获取的信息进行整个页面的绘制</li>
+<li>Display: 展示在页面上</li>
+</ol>
 
                 
             </div>
