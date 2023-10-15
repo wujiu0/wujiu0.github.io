@@ -430,6 +430,12 @@
 <li>根元素 意味着，<code>&lt;html&gt;</code>元素创建的BFC区域，覆盖了网页中所有的元素</li>
 <li>浮动元素和绝对定位元素</li>
 <li>overflow不等于visible的块盒</li>
+<li><code>display=flow-root</code>的盒子</li>
+</ul>
+<h3 id="解决什么问题"><a href="#解决什么问题" class="headerlink" title="解决什么问题"></a>解决什么问题</h3><ul>
+<li>bfc内的子元素不会产生margin塌陷的问题</li>
+<li>自己不会被其他浮动元素覆盖</li>
+<li>子元素浮动，元素自身高度也不会塌陷</li>
 </ul>
 <h2 id="包含块"><a href="#包含块" class="headerlink" title="包含块"></a>包含块</h2><ul>
 <li>普通元素，浮动元素：父元素的内容区域</li>
